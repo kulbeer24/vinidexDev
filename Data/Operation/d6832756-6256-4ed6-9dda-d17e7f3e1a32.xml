@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Operation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="d6832756-6256-4ed6-9dda-d17e7f3e1a32" Name="13.2 Send C_MICROAREAS">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="chunk_size" value="0"/>
+    <Item key="debug_mode_until" value=""/>
+    <Item key="description" value=""/>
+    <Item key="failure_message_id" value="e9b4e4ce-b495-4b3c-93bc-d10d1bc25b46"/>
+    <Item key="ignore_history" value="1"/>
+    <Item key="LogLevel" value="Everything"/>
+    <Item key="max_number_of_threads" value="1"/>
+    <Item key="operation_id" value="d6832756-6256-4ed6-9dda-d17e7f3e1a32"/>
+    <Item key="operation_type_id" value="1"/>
+    <Item key="run_success_op_if_no_source_files" value="0"/>
+    <Item key="schedule_policy" value="skip_if_running"/>
+    <Item key="source_chunk_node" value=""/>
+    <Item key="source_id" value="d6eeac2a-2df4-4529-8fc8-7bfc0f6dc89a"/>
+    <Item key="target_chunk_node" value=""/>
+    <Item key="target_chunk_size" value="0"/>
+    <Item key="target_id" value="ca58e57b-e04c-4eb0-bc12-3916e4885ea5"/>
+    <Item key="timeoutseconds" value="21600"/>
+    <Item key="timeoutuiunit" value="HOURS"/>
+    <Item key="trace" value="1"/>
+    <Item key="validate_source_text_file" value="0"/>
+  </Properties>
+  <Pipeline opType="Archive">
+    <Activities>
+      <SCRIPT activityId="de21e7e8-57a2-49e2-a661-72f61d3a1dfe" contentId="5e5a246c-096a-4e95-a8ab-2f966645dc4c" role="Script" type="23"/>
+      <SOURCE activityId="1f33f26e-754f-4700-9fa8-791411f9b375" contentId="d6eeac2a-2df4-4529-8fc8-7bfc0f6dc89a" role="Source" type="2"/>
+      <TARGET activityId="9c46999d-f0e9-465d-9ac0-25674c8a7005" contentId="ca58e57b-e04c-4eb0-bc12-3916e4885ea5" role="Target" type="3"/>
+    </Activities>
+  </Pipeline>
+  <Siblings/>
+</Entity>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="a0c76e2d-2082-4d69-8f48-b637a2f151ed" Name="23. Create C_FREEATTR_ITEM2">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="a0c76e2d-2082-4d69-8f48-b637a2f151ed"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+//$LoadedProductGroup=false;
+//
+////get data out of the excel file and create dictionaries requried
+//RunOperation("op.ad4ffb9f-ee83-4c4d-b9fd-ebde448f6c1c");
+//
+//if($LoadedProductGroup,
+			//Once data loaded and dictionary created, create the file for 
+			Length($Dic.C_Freeattr_item2);
+			if(Length($Dic.C_Freeattr_item2)&gt;0,
+				//if data in Dictionary
+					text="";
+					Header='ATTRIB\tDESCR\n';
+					text+=Header;
+					counter=0;
+						
+					//get all the keys from the dictionary
+					arrayKeys=GetKeys($Dic.C_Freeattr_item2);
+					lenArrayKeys=Length(arrayKeys);
+					
+					//walk through all the key/value pair within dictionary and get the string
+					While(counter&lt;lenArrayKeys,
+						key=arrayKeys[counter];
+						value=$Dic.C_Freeattr_item2[key];
+						text+=key+"\t"+value+"\n";
+
+						//increase the counter
+						counter++;
+					);
+
+					WriteFile("t.e499b03b-97cf-41f7-8ed9-b65ddef85d4b",text);
+				,
+				//if no data
+				WriteToOperationLog("No data retieved from Dictionary to send as C_FREEATTR_ITEM2");
+			);
+//		,
+//		//else
+//		RaiseError("Error occured while creating dictionary from Product Source external file");
+//);
+//
+//text
+&lt;/trans&gt;</konga.string>
+</Entity>

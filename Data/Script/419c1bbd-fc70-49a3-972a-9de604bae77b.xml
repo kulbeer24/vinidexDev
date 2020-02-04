@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="419c1bbd-fc70-49a3-972a-9de604bae77b" Name="9. Create c_itemarea:sql execute">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="419c1bbd-fc70-49a3-972a-9de604bae77b"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$Date.C_ITEMAREA.SalesPrd.Yr=CVTDate(Now(),'yyyy-mm-dd hh:MM:SS','yyyy');
+$Date.C_ITEMAREA.SalesPrd.PreviousYr=Int($Date.C_ITEMAREA.SalesPrd.Yr)-1;
+
+$jitterbit.scripting.db.max_rows = -1;
+sql = 'select 
+			"PUB"."sales-prd"."entity-code", "PUB"."sales-prd"."item-no",
+			"PUB"."customer"."st","PUB"."customer"."ps-site-loc"
+                  from "PUB"."sales-prd" join "PUB"."customer" on
+						"PUB"."sales-prd"."cust-no" = "PUB"."customer"."cust-no"
+				where "PUB"."sales-prd"."ar-entity"='+Quote('VX')+' AND "PUB"."sales-prd"."In-entity"='+Quote('VX')+
+				' AND "PUB"."sales-prd"."yr" IN ('+Quote($Date.C_ITEMAREA.SalesPrd.Yr)+','+Quote($Date.C_ITEMAREA.SalesPrd.PreviousYr)+' )';
+
+//DbExecute("s.d5b24428-e147-4b50-8bcf-3a7d16b43762",sql)
+
+WriteFile("t.9c042687-323f-40ed-817a-162377a33f31", DbExecute("s.d5b24428-e147-4b50-8bcf-3a7d16b43762",sql));
+FlushAllFiles("t.9c042687-323f-40ed-817a-162377a33f31");
+
+WriteFile("t.9c042687-323f-40ed-817a-162377a33f31", Replace(Replace(Replace( ReadFile("s.a6c81629-8826-495a-9fd4-1603ca75b77c"), '{{',''),'}}', ''),'},{',',\n'));
+FlushAllFiles("t.9c042687-323f-40ed-817a-162377a33f31");
+
+//Run the Operation to consume this local file and create c_itemarea file
+RunOperation("op.121e9797-f09b-4650-b76e-6ef328b9e6c0");
+
+
+//WriteToOperationLog("sql query:"+sql)
+
+&lt;/trans&gt;</konga.string>
+</Entity>

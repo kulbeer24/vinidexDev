@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Folder">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="37569a08-c0e4-4140-8b91-48d3a532dc14" Name="Extracts - Frequency">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="folder_id" value="37569a08-c0e4-4140-8b91-48d3a532dc14"/>
+    <Item key="protected" value="false"/>
+  </Properties>
+</Entity>

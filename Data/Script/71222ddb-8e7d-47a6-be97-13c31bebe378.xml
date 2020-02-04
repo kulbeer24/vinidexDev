@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="71222ddb-8e7d-47a6-be97-13c31bebe378" Name="5.1 Post script: Duplicate Item Warehouse">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="71222ddb-8e7d-47a6-be97-13c31bebe378"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+if($Debug,
+	WriteToOperationLog("Dictionary values:"+GetKeys($Dic.DuplicateItemWarehouse));
+);
+$LoadedDuplicateWarehouse=true;
+&lt;/trans&gt;</konga.string>
+</Entity>

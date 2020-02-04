@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Target">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="d403e755-c3ea-4e1e-b2e5-0841b6a716eb" Name="LocalFile: DB extract_c_microareas">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties/>
+  <Location type="LocalFile">
+    <Data>
+      <Properties>
+        <Item key="append_file" value="0"/>
+        <Item key="archive_encryption_mode" value=""/>
+        <Item key="archive_mode" value=""/>
+        <Item key="character_encoding" value="UTF-8"/>
+        <Item key="compress_format" value=""/>
+        <Item key="encrypt_choice" value="0"/>
+        <Item key="endoflinetype" value="0"/>
+        <Item key="error_folder" value=""/>
+        <Item key="file_name" value="DBextract_c_microareas.txt"/>
+        <Item key="file_share_create_directories" value="1"/>
+        <Item key="filenames_in_archive" value=""/>
+        <Item enc="true" key="locator" value="$00JcmRgjVfL3Dv2qWkYgGmDMAq6azNubs2UtLrQ81ccAM/M3dHK9tPvQ/I30GYPomNX79TT7xjZJB5c+25kE6MsQ=="/>
+        <Item key="skip_empty_files" value="0"/>
+        <Item key="success_folder" value=""/>
+        <Item key="writeHeaders" value="0"/>
+      </Properties>
+    </Data>
+  </Location>
+</Entity>

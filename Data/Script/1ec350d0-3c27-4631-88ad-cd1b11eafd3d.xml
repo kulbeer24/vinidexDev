@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="1ec350d0-3c27-4631-88ad-cd1b11eafd3d" Name="Test Script">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="1ec350d0-3c27-4631-88ad-cd1b11eafd3d"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+WriteToOperationLog("Data created:"+ReadFile("s.f95c0d16-cde9-484c-8511-9d2518433c16"));
+&lt;/trans&gt;</konga.string>
+</Entity>

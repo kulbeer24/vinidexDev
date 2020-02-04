@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="7a64df5d-0dd8-474a-bae1-2072be4d57b2" Name="Set File Name_C_FREEATTR_ITEM5">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="7a64df5d-0dd8-474a-bae1-2072be4d57b2"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$filename = 'C_FREEATTR_ITEM5'
+&lt;/trans&gt;</konga.string>
+</Entity>

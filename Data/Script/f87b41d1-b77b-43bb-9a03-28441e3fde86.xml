@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="f87b41d1-b77b-43bb-9a03-28441e3fde86" Name="Set File Name_LINEORDERSMIA(INV)">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="f87b41d1-b77b-43bb-9a03-28441e3fde86"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+
+$filename = 'LINEORDERSMIA(INV)'
+&lt;/trans&gt;</konga.string>
+</Entity>

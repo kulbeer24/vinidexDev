@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="5e5a246c-096a-4e95-a8ab-2f966645dc4c" Name="Set File Name C_MICROAREAS">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="5e5a246c-096a-4e95-a8ab-2f966645dc4c"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$filename = 'C_MICROAREAS';
+//WriteToOperationLog($filename);
+//WriteToOperationLog(ReadFile("s.d6eeac2a-2df4-4529-8fc8-7bfc0f6dc89a"))
+&lt;/trans&gt;</konga.string>
+</Entity>

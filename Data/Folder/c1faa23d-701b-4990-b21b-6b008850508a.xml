@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Folder">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="c1faa23d-701b-4990-b21b-6b008850508a" Name="JB Internal">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="folder_id" value="c1faa23d-701b-4990-b21b-6b008850508a"/>
+    <Item key="protected" value="false"/>
+  </Properties>
+</Entity>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="f3f4ed24-a0b5-426d-b0d5-0e58a1b32bbe" Name="Daily Extract">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="f3f4ed24-a0b5-426d-b0d5-0e58a1b32bbe"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$LoadedEntityLookup=$LoadedProductGroup=$LoadedSiteGroup=$LoadedStateLookup=false;
+
+//use lookup files to create dictionaries required for daily extracts
+Eval(
+	RunOperation("op.d2c93e1e-13fa-4b32-9314-841258a90274");
+	RunOperation("op.ad4ffb9f-ee83-4c4d-b9fd-ebde448f6c1c");
+	RunOperation("op.c90bd81a-b986-4dc8-8c5a-de10fb349fde");
+	RunOperation("op.beb84236-9880-4b1a-acf5-2a42ba5e4197");
+,
+	RaiseError("Issue occured while creating dictionaries from the lookups. Here is the last relevant error:"+GetLastError())
+);
+
+//once all the required dicitonaries are created, create the extracts
+if($LoadedEntityLookup &amp;&amp; $LoadedProductGroup &amp;&amp; $LoadedSiteGroup &amp;&amp; $LoadedStateLookup,
+	//all the extracts that need to run daily
+	RunOperation("op.338aa24e-3a76-4953-bea6-17f0b592b4c6",false);
+	RunOperation("op.4d239b7c-551d-423f-a668-f88af2076e82", false);
+	RunOperation("op.df8931db-312e-4c98-80a4-8a3d9c26f9c9",false);
+	RunOperation("op.ebd3810c-7b2a-49d9-866d-1927de0b3c27",false);
+	,
+RaiseError("Issue occured while creating dictionaries from the lookups. Here is the last relevant error:"+GetLastError())
+);
+&lt;/trans&gt;</konga.string>
+</Entity>

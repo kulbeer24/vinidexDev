@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Folder">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="7f84fba4-a62a-4751-9405-3a5d71c3dc89" Name="Duplicate Item Warehouse">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="folder_id" value="7f84fba4-a62a-4751-9405-3a5d71c3dc89"/>
+    <Item key="protected" value="false"/>
+  </Properties>
+</Entity>

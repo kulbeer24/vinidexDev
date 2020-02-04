@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="93c4a1ed-433b-45de-97a9-72f3459af693" Name="Lineordersmia and Lineordersmia(inv):Dictionary Creation_lookup">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="93c4a1ed-433b-45de-97a9-72f3459af693"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+
+
+////to get site code and site name in dictionary
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+//WriteToOperationLog("Length of Dictionary:"+Length($Dict.SiteCodeSiteName))
+
+//$LoadedStateLookup=false;
+//
+////dictionary creation from state lookup
+//Eval(RunOperation("op.c90bd81a-b986-4dc8-8c5a-de10fb349fde"),
+//	RaiseError("Error occured getting dictionary creation while doing a state lookup");
+//);
+//
+//$LoadedSiteGroup=false;
+//
+////dictionary creation from site group
+//Eval(RunOperation("op.d2c93e1e-13fa-4b32-9314-841258a90274");,
+//	RaiseError("Error occured getting dictionary creation while doing a site group lookup");
+//);
+
+&lt;/trans&gt;</konga.string>
+</Entity>

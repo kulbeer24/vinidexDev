@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="5fb5f20f-2a79-4851-8dd0-277856d31a1e" Name="C_ITEMLOCATION_Trans">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Tree"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="d5b24428-e147-4b50-8bcf-3a7d16b43762"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="target_text_doc" value="25b4982a-aee2-4400-af72-736ddc848b0d"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="5fb5f20f-2a79-4851-8dd0-277856d31a1e"/>
+  </Properties>
+  <InputStructure sourceId="d5b24428-e147-4b50-8bcf-3a7d16b43762">
+    <Properties>
+      <Item key="includeSchemaName" value="1"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">"PUB"."item-whs-d","PUB"."item-whs",</konga.string>
+    <DbFields/>
+    <Relations>
+      <Relation childField="Whs-code" childTable="&quot;PUB&quot;.&quot;item-whs-d&quot;" isSource="true" onetoOne="false" outerJoin="false" parentField="Whs-code" parentTable="&quot;PUB&quot;.&quot;item-whs&quot;" relationId="-1580684541636"/>
+      <Relation childField="In-entity" childTable="&quot;PUB&quot;.&quot;item-whs-d&quot;" isSource="true" onetoOne="false" outerJoin="false" parentField="In-entity" parentTable="&quot;PUB&quot;.&quot;item-whs&quot;" relationId="-1580684541638"/>
+      <Relation childField="Item-no" childTable="&quot;PUB&quot;.&quot;item-whs-d&quot;" isSource="true" onetoOne="false" outerJoin="false" parentField="Item-no" parentTable="&quot;PUB&quot;.&quot;item-whs&quot;" relationId="-1580684541637"/>
+    </Relations>
+    <SqlScript>
+      <Entry entryId="-1580684541599" type="1">
+        <konga.string name="script">SELECT * FROM "item-whs"</konga.string>
+      </Entry>
+      <Entry entryId="-1580684541600" type="2">
+        <konga.string name="script">item-whs.In-entity,item-whs.Item-no,item-whs.Whs-code,</konga.string>
+      </Entry>
+    </SqlScript>
+    <Filters>
+      <Entry column="Item-no" condition="=10000" sortOrder="NONE" table="&quot;PUB&quot;.&quot;item-whs&quot;"/>
+    </Filters>
+  </InputStructure>
+  <OutputStructure docId="25b4982a-aee2-4400-af72-736ddc848b0d"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[PUB:item?whs.PUB:item?whs?d.]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ITEM	&lt;trans&gt;
+PUB:item?whs.Item?no
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">LOCATION	&lt;trans&gt;
+PUB:item?whs.Whs?code
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SUPPLIER	&lt;trans&gt;
+PUB:item?whs.Vendor?code
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">REVIEWPER	&lt;trans&gt;
+1
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">MINRESLOT	&lt;trans&gt;
+PUB:item?whs.Econ?Ord?Qty
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">INCRESLOT	&lt;trans&gt;
+PUB:item?whs.Econ?Ord?Qty
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">CTRL_TYPE	&lt;trans&gt;
+class = PUB:item?whs.PUB:item?whs?d.Class;
+
+If(class == 'A' || class == 'B' || class == 'T',0,6)
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

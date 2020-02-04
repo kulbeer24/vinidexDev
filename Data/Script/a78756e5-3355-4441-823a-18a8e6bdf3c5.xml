@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="a78756e5-3355-4441-823a-18a8e6bdf3c5" Name="Free Attr Item Unique Keys Init">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="a78756e5-3355-4441-823a-18a8e6bdf3c5"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$FreeAttrItemUniqueKeys = Dict();
+
+&lt;/trans&gt;</konga.string>
+</Entity>

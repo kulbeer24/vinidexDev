@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="ec26d511-e02a-47a2-ba10-30287abcde55" Name="Weekly Extract">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="ec26d511-e02a-47a2-ba10-30287abcde55"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+//moved this code to a common script to not have to update multiple scripts
+
+//$LoadedEntityLookup=$LoadedProductGroup=$LoadedSiteGroup=$LoadedStateLookup=false;
+//
+////use lookup files to create dictionaries required for weekly extracts
+//Eval(
+//	RunOperation("op.d2c93e1e-13fa-4b32-9314-841258a90274");
+//	RunOperation("op.ad4ffb9f-ee83-4c4d-b9fd-ebde448f6c1c");
+//	RunOperation("op.c90bd81a-b986-4dc8-8c5a-de10fb349fde");
+//	RunOperation("op.beb84236-9880-4b1a-acf5-2a42ba5e4197");
+//,
+//	RaiseError("Issue occured while creating dictionaries from the lookups. Here is the last relevant error:"+GetLastError())
+//);
+
+Eval(RunScript("sc.06473af2-56d9-454f-bd86-d8f5c736513e");,
+	RaiseError("Issue occured while creating dictionaries from the lookups. Here is the last relevant error:"+GetLastError())
+);
+
+//once all the required dicitonaries are created, create the extracts
+if($LoadedEntityLookup &amp;&amp; $LoadedProductGroup &amp;&amp; $LoadedSiteGroup &amp;&amp; $LoadedStateLookup &amp;&amp; $LoadedDuplicateWarehouse,
+	//all the operationsthat will run weekly
+	RunOperation("op.7a2638da-6dbb-47d3-854e-442823fe5809", false);
+	RunOperation("op.2938c004-a6fa-4784-b2fa-857a697e81a1",false);
+	RunOperation("op.018d12c3-2a0d-40bc-8d50-a38cc0b31864",false);
+	RunOperation("op.d65613da-39cd-4ca0-94b2-2169a2b5cd9f",false);
+	RunOperation("op.cc7f519f-6cfb-4b81-82a0-72d41e41add5",false);
+	RunOperation("op.d161e637-fc1d-4e80-aaf6-03ef5927e741",false);
+	RunOperation("op.9eed60ec-4f4c-4f27-93db-a2fcd423fa1d",false);
+	RunOperation("op.0cead8d2-de94-40ac-9078-65cfe3aa9c17",false);
+	,
+RaiseError("Issue occured while creating dictionaries from the lookups. Here is the last relevant error:"+GetLastError())
+);
+&lt;/trans&gt;</konga.string>
+</Entity>

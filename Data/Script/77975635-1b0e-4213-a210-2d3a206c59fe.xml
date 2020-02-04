@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="77975635-1b0e-4213-a210-2d3a206c59fe" Name="Set File Name_OUTSTORDERS">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="77975635-1b0e-4213-a210-2d3a206c59fe"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$filename = 'C_OUTSTORDERS';
+&lt;/trans&gt;</konga.string>
+</Entity>

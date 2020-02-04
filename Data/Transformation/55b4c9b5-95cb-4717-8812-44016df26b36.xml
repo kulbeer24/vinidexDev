@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="55b4c9b5-95cb-4717-8812-44016df26b36" Name="14. Trans FREEATTR_AREA_1">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Flat"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="d5b24428-e147-4b50-8bcf-3a7d16b43762"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="target_text_doc" value="5e3ec180-a24f-45af-a8f7-6c6b845fe591"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="55b4c9b5-95cb-4717-8812-44016df26b36"/>
+  </Properties>
+  <InputStructure sourceId="d5b24428-e147-4b50-8bcf-3a7d16b43762">
+    <Properties>
+      <Item key="includeSchemaName" value="1"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">"PUB"."state",</konga.string>
+    <DbFields/>
+    <Relations/>
+    <SqlScript>
+      <Entry entryId="-1580684541605" type="1">
+        <konga.string name="script">SELECT * FROM "PUB"."state"</konga.string>
+      </Entry>
+      <Entry entryId="-1580684541606" type="2">
+        <konga.string name="script">"PUB"."state".St,</konga.string>
+      </Entry>
+    </SqlScript>
+    <Filters/>
+  </InputStructure>
+  <OutputStructure docId="5e3ec180-a24f-45af-a8f7-6c6b845fe591"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[PUB:state]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">//PRESCRIPT/	&lt;trans&gt;
+/*-------------------STart Test------------*/
+
+//RunOperation("op.c90bd81a-b986-4dc8-8c5a-de10fb349fde");
+
+/*-------------End Test--------------------*/
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">/PRECONDITION/	&lt;trans&gt;
+condition=false;
+if(Length(St)&gt;0,
+	key=ToUpper(St);
+	
+	keyValue='';
+	/*-------------------STart Test------------*/
+
+//	RunOperation("op.c90bd81a-b986-4dc8-8c5a-de10fb349fde");
+
+	/*-------------End Test--------------------*/
+
+	if(HasKey($Dic.C_FREEATTR_AREA1.AreaDescription,key),
+		value=$Dic.C_FREEATTR_AREA1.AreaDescription[key][0];
+		keyValue=value;
+	);
+	
+
+	if(Length(keyValue)&gt;0,
+		//to avaoid redundant states to come in the report
+		if(!HasKey($Dic.C_FREEATTR_AREA1.UniqueState,keyValue),
+			condition=true;
+			AddToDict($Dic.C_FREEATTR_AREA1.UniqueState,keyValue, keyValue);
+		);
+	);
+);
+Condition
+
+
+
+
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ATTRIB	&lt;trans&gt;
+key=ToUpper(St);
+value="";
+/*-------------------STart Test------------*/
+
+//RunOperation("op.c90bd81a-b986-4dc8-8c5a-de10fb349fde");
+
+/*-------------End Test--------------------*/
+
+//as per spec -logic state: Take Value from STATE.ST Match it 
+//column A in State Lookup File and Return Column B
+if(HasKey($Dic.C_FREEATTR_AREA1.AreaDescription,key),
+	value=$Dic.C_FREEATTR_AREA1.AreaDescription[key][0];
+);
+
+value
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">DESCR	&lt;trans&gt;
+key=ToUpper(St);
+value="";
+
+/*-------------------STart Test------------*/
+
+//RunOperation("op.c90bd81a-b986-4dc8-8c5a-de10fb349fde");
+
+/*-------------End Test--------------------*/
+
+//Based on the value returned for Field ATTRIB return the value from Column C in the State Look up file
+if(HasKey($Dic.C_FREEATTR_AREA1.AreaDescription,key),
+	value=$Dic.C_FREEATTR_AREA1.AreaDescription[key][1];
+);
+
+value
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

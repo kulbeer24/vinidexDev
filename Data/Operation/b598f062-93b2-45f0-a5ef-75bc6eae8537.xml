@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Operation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="b598f062-93b2-45f0-a5ef-75bc6eae8537" Name="6.1 Create C_OUTSTORDERS">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="chunk_size" value="0"/>
+    <Item key="debug_mode_until" value=""/>
+    <Item key="description" value=""/>
+    <Item key="failure_message_id" value="e9b4e4ce-b495-4b3c-93bc-d10d1bc25b46"/>
+    <Item key="ignore_history" value="1"/>
+    <Item key="LogLevel" value="Everything"/>
+    <Item key="max_number_of_threads" value="2"/>
+    <Item key="operation_id" value="b598f062-93b2-45f0-a5ef-75bc6eae8537"/>
+    <Item key="operation_type_id" value="3"/>
+    <Item key="run_success_op_if_no_source_files" value="0"/>
+    <Item key="schedule_policy" value="skip_if_running"/>
+    <Item key="source_chunk_node" value=""/>
+    <Item key="source_id" value="d5b24428-e147-4b50-8bcf-3a7d16b43762"/>
+    <Item key="success_operation_id" value="6244d124-a3b3-4117-9bb8-d2d0a3f9ace8"/>
+    <Item key="target_chunk_node" value="-flat-"/>
+    <Item key="target_chunk_size" value="0"/>
+    <Item key="target_id" value="d6d3ab38-5dc4-44f8-9c7a-49d1bfecc45f"/>
+    <Item key="timeoutseconds" value="7200"/>
+    <Item key="timeoutuiunit" value="HOURS"/>
+    <Item key="trace" value="1"/>
+    <Item key="validate_source_text_file" value="0"/>
+  </Properties>
+  <Pipeline opType="Transformation">
+    <Activities>
+      <SOURCE activityId="8cca7310-031f-43da-bc2e-3862d36ca6c6" contentId="d5b24428-e147-4b50-8bcf-3a7d16b43762" role="Source" type="2"/>
+      <TRANSFORMATION activityId="30eb570f-caab-4f17-be12-55172ed54df1" contentId="afba1ef1-7d38-4d28-b5de-92eeb98f92b6" role="Transformation" type="4"/>
+      <TARGET activityId="21b8dc5e-42b5-4530-99fe-da81badb8933" contentId="d6d3ab38-5dc4-44f8-9c7a-49d1bfecc45f" role="Target" type="3"/>
+    </Activities>
+  </Pipeline>
+  <Siblings/>
+</Entity>

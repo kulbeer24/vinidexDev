@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="37bcaeb7-a1cf-4ed5-b3e4-ad5103e6d542" Name="Trans_C_FREEATTR_AREA_2">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Flat"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="d5b24428-e147-4b50-8bcf-3a7d16b43762"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="target_text_doc" value="5e3ec180-a24f-45af-a8f7-6c6b845fe591"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="37bcaeb7-a1cf-4ed5-b3e4-ad5103e6d542"/>
+  </Properties>
+  <InputStructure sourceId="d5b24428-e147-4b50-8bcf-3a7d16b43762">
+    <Properties>
+      <Item key="includeSchemaName" value="1"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">"PUB"."country",</konga.string>
+    <DbFields/>
+    <Relations/>
+    <SqlScript>
+      <Entry entryId="-1580684541621" type="1">
+        <konga.string name="script">SELECT * FROM "PUB"."country"</konga.string>
+      </Entry>
+      <Entry entryId="-1580684541622" type="2">
+        <konga.string name="script">"PUB"."country".Country-code,</konga.string>
+      </Entry>
+    </SqlScript>
+    <Filters/>
+  </InputStructure>
+  <OutputStructure docId="5e3ec180-a24f-45af-a8f7-6c6b845fe591"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[PUB:country]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ATTRIB	&lt;trans&gt;
+Country?code
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">DESCR	&lt;trans&gt;
+Description
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

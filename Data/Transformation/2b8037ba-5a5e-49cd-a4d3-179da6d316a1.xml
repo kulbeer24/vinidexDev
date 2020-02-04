@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="2b8037ba-5a5e-49cd-a4d3-179da6d316a1" Name="Trans PR-Group_C_FREEATTR_ITEM3">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Flat"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="d5b24428-e147-4b50-8bcf-3a7d16b43762"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="target_text_doc" value="cdb2580c-9506-4634-8e2d-166c17723d89"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="2b8037ba-5a5e-49cd-a4d3-179da6d316a1"/>
+  </Properties>
+  <InputStructure sourceId="d5b24428-e147-4b50-8bcf-3a7d16b43762">
+    <Properties>
+      <Item key="includeSchemaName" value="1"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">"PUB"."pr-group-sum",</konga.string>
+    <DbFields/>
+    <Relations/>
+    <SqlScript>
+      <Entry entryId="-1580684541624" type="1">
+        <konga.string name="script">SELECT * FROM "PUB"."pr-group-sum"</konga.string>
+      </Entry>
+      <Entry entryId="-1580684541625" type="2">
+        <konga.string name="script">"PUB"."pr-group-sum".Prod-sum-group,</konga.string>
+      </Entry>
+    </SqlScript>
+    <Filters/>
+  </InputStructure>
+  <OutputStructure docId="cdb2580c-9506-4634-8e2d-166c17723d89"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[PUB:pr?group?sum]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">/PRECONDITION/	&lt;trans&gt;
+IF(sum?total==1,
+AddToDict($C_FREEATTR_ITEM_PR_GROUP_DICT, Prod?sum?group, true));
+
+false
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

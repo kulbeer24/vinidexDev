@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="9f114959-5df8-4f52-b249-74a405eb4d51" Name="test script - randon">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="9f114959-5df8-4f52-b249-74a405eb4d51"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$Date.C_ITEMAREA.SalesPrd.Yr=CVTDate(Now(),'yyyy-mm-dd hh:MM:SS','yyyy');
+$Date.C_ITEMAREA.SalesPrd.PreviousYr=Int($Date.C_ITEMAREA.SalesPrd.Yr)-1;
+
+sql = 'select 
+			count(*)
+                  from "PUB"."sales-prd" join "PUB"."customer" on
+						"PUB"."sales-prd"."cust-no" = "PUB"."customer"."cust-no"
+				where "PUB"."sales-prd"."ar-entity"='+Quote('VX')+' AND "PUB"."sales-prd"."In-entity"='+Quote('VX')+			
+				' AND "PUB"."sales-prd"."yr" IN ('+Quote($Date.C_ITEMAREA.SalesPrd.Yr)+','+Quote($Date.C_ITEMAREA.SalesPrd.PreviousYr)+' )';
+
+WriteToOperationLog(DbExecute("s.d5b24428-e147-4b50-8bcf-3a7d16b43762",sql))
+&lt;/trans&gt;</konga.string>
+</Entity>

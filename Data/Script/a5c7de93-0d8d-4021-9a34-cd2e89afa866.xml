@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="a5c7de93-0d8d-4021-9a34-cd2e89afa866" Name="15.0 C_MACROAREAS:Common Runpoint">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="a5c7de93-0d8d-4021-9a34-cd2e89afa866"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+//$LoadedStateLookup=false;
+//
+////get data out of the excel file and create dictionaries requried
+//operationsExcelSiteSourceandDictionaryCreation=RunOperation("op.c90bd81a-b986-4dc8-8c5a-de10fb349fde");
+//
+//if($LoadedStateLookup,
+//		//Create C_Macroareas
+//		RunOperation("op.a22b20ac-820b-49a6-970c-754cb8a29ffa");
+//		,
+//		//else
+//		RaiseError("Error occured while creating dictionary from Site Source external file");
+//);
+
+//Create C_Macroareas
+		RunOperation("op.a22b20ac-820b-49a6-970c-754cb8a29ffa");
+&lt;/trans&gt;</konga.string>
+</Entity>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="344ed933-131c-4c20-923a-0bf55ab7a752" Name="C_LINEORDERSMIA V3">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Tree"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="d5b24428-e147-4b50-8bcf-3a7d16b43762"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="target_text_doc" value="282b677c-295d-4309-96c9-8752ec8d81bf"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="344ed933-131c-4c20-923a-0bf55ab7a752"/>
+  </Properties>
+  <InputStructure sourceId="d5b24428-e147-4b50-8bcf-3a7d16b43762">
+    <Properties>
+      <Item key="includeSchemaName" value="1"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">"PUB"."order","PUB"."customer","PUB"."order-line","PUB"."pps-header","PUB"."pps-line",</konga.string>
+    <DbFields/>
+    <Relations>
+      <Relation childField="Order-no" childTable="&quot;PUB&quot;.&quot;pps-header&quot;" isSource="true" onetoOne="false" outerJoin="false" parentField="Order-no" parentTable="&quot;PUB&quot;.&quot;order&quot;" relationId="-1580684541682"/>
+      <Relation childField="Ar-entity" childTable="&quot;PUB&quot;.&quot;pps-header&quot;" isSource="true" onetoOne="false" outerJoin="false" parentField="Ar-entity" parentTable="&quot;PUB&quot;.&quot;order&quot;" relationId="-1580684541681"/>
+      <Relation childField="Cust-no" childTable="&quot;PUB&quot;.&quot;customer&quot;" isSource="true" onetoOne="true" outerJoin="false" parentField="Cust-no" parentTable="&quot;PUB&quot;.&quot;order&quot;" relationId="-1580684541683"/>
+      <Relation childField="Ar-entity" childTable="&quot;PUB&quot;.&quot;order-line&quot;" isSource="true" onetoOne="false" outerJoin="false" parentField="Ar-entity" parentTable="&quot;PUB&quot;.&quot;order&quot;" relationId="-1580684541684"/>
+      <Relation childField="Order-no" childTable="&quot;PUB&quot;.&quot;order-line&quot;" isSource="true" onetoOne="false" outerJoin="false" parentField="Order-no" parentTable="&quot;PUB&quot;.&quot;order&quot;" relationId="-1580684541685"/>
+      <Relation childField="Pps-no" childTable="&quot;PUB&quot;.&quot;pps-line&quot;" isSource="true" onetoOne="false" outerJoin="true" parentField="Pps-no" parentTable="&quot;PUB&quot;.&quot;pps-header&quot;" relationId="-1580684541686"/>
+      <Relation childField="Ar-entity" childTable="&quot;PUB&quot;.&quot;pps-line&quot;" isSource="true" onetoOne="false" outerJoin="true" parentField="Ar-entity" parentTable="&quot;PUB&quot;.&quot;pps-header&quot;" relationId="-1580684541687"/>
+    </Relations>
+    <SqlScript/>
+    <Filters>
+      <Entry column="Ship-date" condition="&gt;='05/03/2019'" sortOrder="NONE" table="&quot;PUB&quot;.&quot;pps-header&quot;"/>
+      <Entry column="Ar-entity" condition="='VX'" sortOrder="NONE" table="&quot;PUB&quot;.&quot;order&quot;"/>
+      <Entry column="Internal-ind" condition="=0" sortOrder="NONE" table="&quot;PUB&quot;.&quot;order&quot;"/>
+      <Entry column="Order-date" condition="&gt;='06/03/2019'" sortOrder="NONE" table="&quot;PUB&quot;.&quot;order&quot;"/>
+    </Filters>
+  </InputStructure>
+  <OutputStructure docId="282b677c-295d-4309-96c9-8752ec8d81bf"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[PUB:order.PUB:order?line.]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ITEM	&lt;trans&gt;
+PUB:order.PUB:order?line.Item?no
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">MICROAREA	&lt;trans&gt;
+PUB:order.PUB:customer$Cust?no + "_" + PUB:order.PUB:customer$St + "_" +PUB:order.PUB:customer$Bu?entity + "_" + PUB:order.PUB:customer$Ps?site?loc
+&lt;/trans&gt; </konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ORDERID	&lt;trans&gt;
+PUB:order.Order?no + FindByPos(SourceInstanceCount(),PUB:order.PUB:pps?header#.Pps?no);
+//PUB:order.Order?no + PUB:order.PUB:pps?header#.Pps?no
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">LINE_N	&lt;trans&gt;
+PUB:order.PUB:order?line.Line?no
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">REQYEAR	&lt;trans&gt;
+PUB:order.PUB:order?line.Request?date
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">REQMONTH	&lt;trans&gt;
+PUB:order.PUB:order?line.Request?date
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">REQDAY	&lt;trans&gt;
+PUB:order.PUB:order?line.Request?date
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">QUANTITY	&lt;trans&gt;
+FindByPos(SourceInstanceCount(),FindByPos(SourceInstanceCount(),PUB:order.PUB:pps?header#.PUB:pps?line#.Qty?picked));
+//PUB:order.PUB:order?line.PUB:pps?line.Qty?picked
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SHIPYEAR	&lt;trans&gt;
+FindByPos(SourceInstanceCount(),PUB:order.PUB:pps?header#.Ship?date)
+//PUB:order.PUB:pps?header.Ship?date
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SHIPMONTH	&lt;trans&gt;
+FindByPos(SourceInstanceCount(),PUB:order.PUB:pps?header#.Ship?date)
+//PUB:order.PUB:pps?header.Ship?date
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SHIPDAY	&lt;trans&gt;
+FindByPos(SourceInstanceCount(),PUB:order.PUB:pps?header#.Ship?date)
+//PUB:order.PUB:pps?header.Ship?date
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ORDERTYPE	&lt;trans&gt;
+//PUB:customer.PUB:order.ord?type
+PUB:order.ord?type
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">QUANTITY_1	&lt;trans&gt;
+//PUB:customer.PUB:order.PUB:order?line.qty?ord
+PUB:order.PUB:order?line.qty?ord
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

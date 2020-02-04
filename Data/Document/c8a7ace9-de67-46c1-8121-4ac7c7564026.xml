@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Document">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="c8a7ace9-de67-46c1-8121-4ac7c7564026" Name="C_ITEMAREA">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="document_id" value="c8a7ace9-de67-46c1-8121-4ac7c7564026"/>
+    <Item key="edifact" value="0"/>
+    <Item key="escape_sequences" value="1"/>
+    <Item key="format_type_id" value="2"/>
+    <Item key="qualifier_mode" value="WHEN_NEEDED"/>
+    <Item key="text_qualifier" value=""/>
+    <Item key="use_end_of_line" value="1"/>
+  </Properties>
+  <Delimiter value="&#9;"/>
+  <Structure>
+    <Properties>
+      <Item key="fixedField" value="0"/>
+    </Properties>
+    <Segment name="" occurenceType="Only Once" parent="_Root" segmentId="0">
+      <Fields>
+        <Field default="" fieldId="1" fixWidth="false" format="" name="ITEM" required="0" type="String"/>
+        <Field default="" fieldId="2" fixWidth="false" format="" name="AREA" required="0" type="String"/>
+        <Field default="" fieldId="3" fixWidth="false" format="" name="SRCLOCATION" required="0" type="String"/>
+        <Field default="" fieldId="4" fixWidth="false" format="" name="LISTPRICE" required="0" type="String"/>
+        <Field default="" fieldId="5" fixWidth="false" format="" name="BOSYEAR" required="0" type="String"/>
+        <Field default="" fieldId="6" fixWidth="false" format="" name="BOSMONTH" required="0" type="String"/>
+        <Field default="" fieldId="7" fixWidth="false" format="" name="BOSDAY" required="0" type="String"/>
+        <Field default="" fieldId="8" fixWidth="false" format="" name="EOSYEAR" required="0" type="String"/>
+        <Field default="" fieldId="9" fixWidth="false" format="" name="EOSMONTH" required="0" type="String"/>
+        <Field default="" fieldId="10" fixWidth="false" format="" name="EOSDAY" required="0" type="String"/>
+        <Field default="" fieldId="11" fixWidth="false" format="" name="SUPERSEDED" required="0" type="String"/>
+        <Field default="" fieldId="12" fixWidth="false" format="" name="SUPERSEDED_AREA" required="0" type="String"/>
+        <Field default="" fieldId="13" fixWidth="false" format="" name="SUPERSESSION_FACTOR" required="0" type="String"/>
+      </Fields>
+    </Segment>
+  </Structure>
+</Entity>

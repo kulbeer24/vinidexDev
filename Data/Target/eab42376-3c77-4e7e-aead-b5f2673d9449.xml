@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Target">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="eab42376-3c77-4e7e-aead-b5f2673d9449" Name="Temp_Excel_ProductGroup_Source">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties/>
+  <Location type="TemporaryStorage">
+    <Data>
+      <Properties>
+        <Item key="append_file" value="0"/>
+        <Item key="archive_encryption_mode" value=""/>
+        <Item key="archive_mode" value=""/>
+        <Item key="character_encoding" value="UTF-8"/>
+        <Item key="compress_format" value=""/>
+        <Item key="encrypt_choice" value="0"/>
+        <Item key="endoflinetype" value="0"/>
+        <Item key="error_folder" value=""/>
+        <Item key="file_name" value="ProductGroupSource.csv"/>
+        <Item key="file_share_create_directories" value="1"/>
+        <Item key="filenames_in_archive" value=""/>
+        <Item enc="true" key="locator" value="$00VfekppfS8wyVXk4OjDihv9Y6HjKHFCZRqqZNscYqmCnNNka0ghMrh1SU3bdFqfpP"/>
+        <Item key="skip_empty_files" value="0"/>
+        <Item key="success_folder" value=""/>
+        <Item key="writeHeaders" value="0"/>
+      </Properties>
+    </Data>
+  </Location>
+</Entity>

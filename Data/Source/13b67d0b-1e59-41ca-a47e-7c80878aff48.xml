@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Source">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="13b67d0b-1e59-41ca-a47e-7c80878aff48" Name="LocalFile: DB extract_c_microareas">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties/>
+  <Location type="LocalFile">
+    <Data>
+      <Properties>
+        <Item key="character_encoding" value="UTF-8"/>
+        <Item key="encrypt_choice" value="0"/>
+        <Item key="error_folder" value=""/>
+        <Item key="file_name" value="DBextract_c_microareas.txt"/>
+        <Item key="filterOption.ignoreCase" value="0"/>
+        <Item key="filterOption.regularExpression" value="0"/>
+        <Item key="ignore_first" value="0"/>
+        <Item key="ignore_last" value="0"/>
+        <Item enc="true" key="locator" value="$00DRaIAycB0v15+sxXmlIG0rldTPvbABdmOWW2NcJUL0daYK3hb8oZ4JmlsP5LNDLzfoJPy5S6NiaSmbBzyl6ezQ=="/>
+        <Item key="renamefileto" value=""/>
+        <Item key="success_folder" value=""/>
+        <Item key="trigger_filename" value=""/>
+        <Item key="uncompress_format" value=""/>
+        <Item key="use_trigger_file" value="0"/>
+      </Properties>
+    </Data>
+  </Location>
+</Entity>

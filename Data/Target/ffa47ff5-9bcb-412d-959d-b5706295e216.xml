@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Target">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="ffa47ff5-9bcb-412d-959d-b5706295e216" Name="Temp_freeattr_area_1_">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties/>
+  <Location type="TemporaryStorage">
+    <Data>
+      <Properties>
+        <Item key="append_file" value="0"/>
+        <Item key="archive_encryption_mode" value=""/>
+        <Item key="archive_mode" value=""/>
+        <Item key="character_encoding" value="UTF-8"/>
+        <Item key="compress_format" value=""/>
+        <Item key="encrypt_choice" value="0"/>
+        <Item key="endoflinetype" value="0"/>
+        <Item key="error_folder" value=""/>
+        <Item key="file_name" value="freeattr_area_1"/>
+        <Item key="file_share_create_directories" value="1"/>
+        <Item key="filenames_in_archive" value=""/>
+        <Item key="skip_empty_files" value="0"/>
+        <Item key="success_folder" value=""/>
+        <Item key="writeHeaders" value="1"/>
+      </Properties>
+    </Data>
+  </Location>
+</Entity>

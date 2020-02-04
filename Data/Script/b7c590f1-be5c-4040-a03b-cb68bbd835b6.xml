@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="b7c590f1-be5c-4040-a03b-cb68bbd835b6" Name="14.1 create C_AREAS: getting the unique area using dictionary">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="b7c590f1-be5c-4040-a03b-cb68bbd835b6"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$Dic.C_Areas.UniqueArea=Dict();
+&lt;/trans&gt;</konga.string>
+</Entity>

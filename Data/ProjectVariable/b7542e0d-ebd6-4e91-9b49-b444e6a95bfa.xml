@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="ProjectVariable">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="b7542e0d-ebd6-4e91-9b49-b444e6a95bfa" Name="Debug">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="description" value=""/>
+    <Item key="hide_value" value="0"/>
+    <Item key="label" value=""/>
+    <Item key="projectvariable_id" value="b7542e0d-ebd6-4e91-9b49-b444e6a95bfa"/>
+    <Item enc="true" key="value" value="$004n8KV9Utws6MOy9OIDlwoguWiXjDsBhhK+0ivJPWecM="/>
+  </Properties>
+</Entity>

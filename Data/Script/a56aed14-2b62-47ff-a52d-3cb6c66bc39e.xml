@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="a56aed14-2b62-47ff-a52d-3cb6c66bc39e" Name="3. C_ITEMLOCATION:SQL Query">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="a56aed14-2b62-47ff-a52d-3cb6c66bc39e"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$jitterbit.scripting.db.max_rows = -1;
+
+sql = 'select 
+			"PUB"."item-whs"."Item-no",
+			"PUB"."item-whs"."Whs-code",		
+			"PUB"."item-whs"."Econ-Ord-Qty",
+			"PUB"."item-whs"."Vendor-code",
+			"PUB"."item-whs-d"."cost",
+			"PUB"."item-whs-d"."class",
+			"PUB"."item-whs"."buyer-code"
+                  from "PUB"."item-whs" 
+							inner join "PUB"."item" on "PUB"."item-whs"."in-entity"="PUB"."item"."in-entity"
+																											AND "PUB"."item-whs"."item-no"="PUB"."item"."item-no"
+							inner join "PUB"."item-whs-d" ON "PUB"."item-whs"."In-entity"="PUB"."item-whs-d"."In-entity"
+                                      AND "PUB"."item-whs"."Item-no"="PUB"."item-whs-d"."Item-no"
+                                      AND "PUB"."item-whs"."Whs-code"="PUB"."item-whs-d"."Whs-code"
+								where "PUB"."item-whs"."In-entity"='+Quote('VX')+' AND "PUB"."item-whs"."Item-no"!=0 AND 
+									("PUB"."item-whs"."Whs-code" LIKE '+Quote('%5')+' OR
+									 "PUB"."item-whs"."Whs-code" LIKE '+Quote('%6')+'OR 
+										"PUB"."item-whs"."Whs-code" LIKE '+Quote('%7')+') AND "PUB"."item"."active"=1 AND "PUB"."item"."SO99"=1 
+			
+						';
+
+WriteFile("t.6e70a25a-1fdb-445c-b6c8-48b4be6e6280", DbExecute("s.d5b24428-e147-4b50-8bcf-3a7d16b43762",sql));
+FlushAllFiles("t.6e70a25a-1fdb-445c-b6c8-48b4be6e6280");
+
+
+WriteFile("t.6e70a25a-1fdb-445c-b6c8-48b4be6e6280",
+	 Replace(Replace(Replace( ReadFile("s.d751e088-3a67-42de-956e-ec24dcc7bed1"), '{{',''),'}}', ''),'},{',',\n'));
+FlushAllFiles("t.6e70a25a-1fdb-445c-b6c8-48b4be6e6280");
+
+&lt;/trans&gt;</konga.string>
+</Entity>

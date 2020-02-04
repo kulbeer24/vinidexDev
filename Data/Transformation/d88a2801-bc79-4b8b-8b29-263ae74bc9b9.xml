@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="d88a2801-bc79-4b8b-8b29-263ae74bc9b9" Name="10. LINEORDERSMIA(INV) Trans">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Tree"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="d5b24428-e147-4b50-8bcf-3a7d16b43762"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="target_text_doc" value="836ee80b-6ead-46aa-a221-756e635184ca"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="d88a2801-bc79-4b8b-8b29-263ae74bc9b9"/>
+  </Properties>
+  <InputStructure sourceId="d5b24428-e147-4b50-8bcf-3a7d16b43762">
+    <Properties>
+      <Item key="includeSchemaName" value="1"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">"PUB"."invoice-line","PUB"."customer","PUB"."invoice",</konga.string>
+    <DbFields/>
+    <Relations>
+      <Relation childField="Ar-entity" childTable="&quot;PUB&quot;.&quot;invoice-line&quot;" isSource="true" onetoOne="false" outerJoin="true" parentField="Ar-entity" parentTable="&quot;PUB&quot;.&quot;invoice&quot;" relationId="-1580684541673"/>
+      <Relation childField="Document" childTable="&quot;PUB&quot;.&quot;invoice-line&quot;" isSource="true" onetoOne="false" outerJoin="true" parentField="Document" parentTable="&quot;PUB&quot;.&quot;invoice&quot;" relationId="-1580684541671"/>
+      <Relation childField="In-entity" childTable="&quot;PUB&quot;.&quot;invoice-line&quot;" isSource="true" onetoOne="false" outerJoin="true" parentField="In-entity" parentTable="&quot;PUB&quot;.&quot;invoice&quot;" relationId="-1580684541672"/>
+      <Relation childField="Cust-no" childTable="&quot;PUB&quot;.&quot;customer&quot;" isSource="true" onetoOne="true" outerJoin="false" parentField="Cust-no" parentTable="&quot;PUB&quot;.&quot;invoice&quot;" relationId="-1580684541674"/>
+    </Relations>
+    <SqlScript/>
+    <Filters/>
+  </InputStructure>
+  <OutputStructure docId="836ee80b-6ead-46aa-a221-756e635184ca"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[PUB:invoice.PUB:invoice?line.]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ITEM	&lt;trans&gt;
+PUB:invoice.PUB:invoice?line.Item?no
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">MICROAREA	&lt;trans&gt;
+cust_no=PUB:invoice.Cust?no;
+cust_st=PUB:invoice.PUB:customer$St;
+cust_bu_entity=PUB:invoice.PUB:customer$Bu?entity;
+//site_code=PUB:invoice.PUB:invoice?line.Whs?code;
+site_loc=PUB:invoice.PUB:customer$Ps?site?loc;
+
+//site_name="";
+
+/*---------Start Test----------*/
+
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+
+/*---------End Test------------*/
+
+
+
+//if(HasKey($Dic.LINESORDERMIA_INV.Location, site_code)
+//		, 
+//		site_name=$Dic.LINESORDERMIA_INV.Location[site_code];
+//		,
+//		WriteToOperationLog("this code not present in the dictionary")
+//	);
+
+
+data= cust_no +"_" + cust_st + "_" + cust_bu_entity + "_" + site_loc;
+
+//WriteToOperationLog("Microarea:"+data);
+
+data
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ORDERID	&lt;trans&gt;
+PUB:invoice.Document
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">LINE_N	&lt;trans&gt;
+PUB:invoice.PUB:invoice?line.Line?no
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">QUANTITY	&lt;trans&gt;
+PUB:invoice.PUB:invoice?line.Qty?shipped
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">UNITPRICE	&lt;trans&gt;
+PUB:invoice.PUB:invoice?line.Taxable?amt
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

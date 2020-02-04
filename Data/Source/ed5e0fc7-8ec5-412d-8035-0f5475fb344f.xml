@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Source">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="ed5e0fc7-8ec5-412d-8035-0f5475fb344f" Name="LocalFile_test:test Extracts">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties/>
+  <Location type="LocalFile">
+    <Data>
+      <Properties>
+        <Item key="character_encoding" value=""/>
+        <Item key="encrypt_choice" value="0"/>
+        <Item key="error_folder" value=""/>
+        <Item key="file_name" value="testExtract.txt"/>
+        <Item key="filterOption.ignoreCase" value="0"/>
+        <Item key="filterOption.regularExpression" value="0"/>
+        <Item key="ignore_first" value="0"/>
+        <Item key="ignore_last" value="0"/>
+        <Item enc="true" key="locator" value="$00DDn419Wp/WkKPBsS3aJxlCO28k9E+hbjmJuvJ6y9NN8s2sFmuii8WhxrnLWs7qydAye4Dz62Jl5IVaowS493JQ=="/>
+        <Item key="renamefileto" value=""/>
+        <Item key="success_folder" value=""/>
+        <Item key="trigger_filename" value=""/>
+        <Item key="uncompress_format" value=""/>
+        <Item key="use_trigger_file" value="0"/>
+      </Properties>
+    </Data>
+  </Location>
+</Entity>

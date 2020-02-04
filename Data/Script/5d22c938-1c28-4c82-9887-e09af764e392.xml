@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="5d22c938-1c28-4c82-9887-e09af764e392" Name="27 C_FREEATTR_ITEM6: Create File">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="5d22c938-1c28-4c82-9887-e09af764e392"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$LoadedProductGroup=false;
+
+//get data out of the excel file and create dictionaries requried
+RunOperation("op.ad4ffb9f-ee83-4c4d-b9fd-ebde448f6c1c");
+text='';
+header='ATTRIB\tDESCR\n';
+text+=header;
+if($LoadedProductGroup,
+			arrayKeys=GetKeys($Dic.c_freeattr_item6);
+			countKeys=Length(arrayKeys);
+			counter=0;
+			While(counter&lt;countKeys,
+					key=arrayKeys[counter];
+					text+=key+'\t\n';
+					counter++;
+				);
+			
+			WriteToOperationLog("text written:"+text);
+
+			//write text to temp file
+			WriteFile("t.da0ee59a-13e5-4314-ac54-2f44f3478c37",text);
+			FlushAllFiles("t.da0ee59a-13e5-4314-ac54-2f44f3478c37");
+
+			//send the file to FTP
+			RunOperation("op.316d4eb0-6cd5-495b-b0d3-5f39f5073fdd");
+		,
+		//else
+		RaiseError("Error occured while creating dictionary from Product Source external file");
+);
+
+//text
+
+&lt;/trans&gt;</konga.string>
+</Entity>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Operation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="aaad5179-26b6-42fd-a90a-f7f2f51c94da" Name="5.1 Duplicate item warehouse: Excel transformation">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="chunk_size" value="0"/>
+    <Item key="debug_mode_until" value=""/>
+    <Item key="description" value=""/>
+    <Item key="ignore_history" value="1"/>
+    <Item key="LogLevel" value="Everything"/>
+    <Item key="max_number_of_threads" value="1"/>
+    <Item key="operation_id" value="aaad5179-26b6-42fd-a90a-f7f2f51c94da"/>
+    <Item key="operation_type_id" value="3"/>
+    <Item key="run_success_op_if_no_source_files" value="0"/>
+    <Item key="schedule_policy" value="skip_if_running"/>
+    <Item key="source_chunk_node" value=""/>
+    <Item key="source_id" value="81d27ee9-900c-4c44-b00f-f6c7d991c2fe"/>
+    <Item key="target_chunk_node" value=""/>
+    <Item key="target_chunk_size" value="0"/>
+    <Item key="timeoutseconds" value="7200"/>
+    <Item key="timeoutuiunit" value="HOURS"/>
+    <Item key="trace" value="1"/>
+    <Item key="validate_source_text_file" value="0"/>
+  </Properties>
+  <Pipeline opType="Transformation">
+    <Activities>
+      <SOURCE activityId="1c32a716-2a74-44eb-9a42-51b247d8f950" contentId="81d27ee9-900c-4c44-b00f-f6c7d991c2fe" role="Source" type="2"/>
+      <TRANSFORMATION activityId="15a02078-9267-4622-af9f-5f129b0f439b" contentId="2b0ec908-afe1-490e-a022-5d1596d00065" role="Transformation" type="4"/>
+      <SCRIPT activityId="bc3e4d9c-f0d3-43ec-a494-1357761e85d6" contentId="71222ddb-8e7d-47a6-be97-13c31bebe378" role="Script" type="23"/>
+    </Activities>
+  </Pipeline>
+  <Siblings/>
+</Entity>

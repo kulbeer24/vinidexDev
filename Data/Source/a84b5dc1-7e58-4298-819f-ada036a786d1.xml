@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Source">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="a84b5dc1-7e58-4298-819f-ada036a786d1" Name="Excel - ProductGroup Source">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties/>
+  <Location type="Database">
+    <Data>
+      <Properties>
+        <Item enc="true" key="connectstring" value="$00q8pnm8764pIjdAaYjseErn1tx4LSd5LUcWYb4Wk1Nr/TOMlMB/tXxiqCLGDvHUsMef7LvxEzQukQ92PMIhZsfCMCgrGXXnjaZXII5tUU3xwL+E+AcQ2MDymR8hVFz+0hxWm4a8CeGCEr69c/r2T2xZf8j9qeYxgfkFNmcx8cobftOhD9zffDDUtchcuxz74V"/>
+        <Item key="db_begin_quote" value="`"/>
+        <Item key="db_end_quote" value="`"/>
+        <Item key="dbname" value=""/>
+        <Item key="driver" value="Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)"/>
+        <Item key="driver_begin_quote" value="["/>
+        <Item key="driver_end_quote" value="]"/>
+        <Item key="drivertype" value="1"/>
+        <Item key="fetch_size" value="0"/>
+        <Item key="manual_mode" value="1"/>
+        <Item key="optional_connectstring" value=""/>
+        <Item key="timeout" value="300"/>
+        <Item key="transactionIsolationLevel" value="0"/>
+      </Properties>
+    </Data>
+  </Location>
+</Entity>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Operation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="c10842e4-9404-4169-8c93-88494d501ee2" Name="Create C_FREEATTR_ITEM4">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="chunk_size" value="0"/>
+    <Item key="debug_mode_until" value=""/>
+    <Item key="description" value=""/>
+    <Item key="failure_message_id" value="e9b4e4ce-b495-4b3c-93bc-d10d1bc25b46"/>
+    <Item key="ignore_history" value="1"/>
+    <Item key="LogLevel" value="Everything"/>
+    <Item key="max_number_of_threads" value="1"/>
+    <Item key="operation_id" value="c10842e4-9404-4169-8c93-88494d501ee2"/>
+    <Item key="operation_type_id" value="3"/>
+    <Item key="run_success_op_if_no_source_files" value="0"/>
+    <Item key="schedule_policy" value="skip_if_running"/>
+    <Item key="source_chunk_node" value=""/>
+    <Item key="source_id" value="88673a5a-c001-4352-bd21-9c6725971ee5"/>
+    <Item key="success_operation_id" value="ee534ccf-9f66-4740-bb09-471f0d8b07b5"/>
+    <Item key="target_chunk_node" value=""/>
+    <Item key="target_chunk_size" value="0"/>
+    <Item key="target_id" value="8c02282c-9f44-4fa8-9095-dc694d338a03"/>
+    <Item key="timeoutseconds" value="7200"/>
+    <Item key="timeoutuiunit" value="HOURS"/>
+    <Item key="trace" value="1"/>
+    <Item key="validate_source_text_file" value="0"/>
+  </Properties>
+  <Pipeline opType="Transformation">
+    <Activities>
+      <SCRIPT activityId="fbf58a42-cc97-4dcc-bbcd-39a570cf2568" contentId="f05f6435-ac32-4aec-85e8-16eb83abe9ed" role="Script" type="23"/>
+      <SOURCE activityId="15415f60-7518-4b54-ac5a-49da81e66a1b" contentId="88673a5a-c001-4352-bd21-9c6725971ee5" role="Source" type="2"/>
+      <SCRIPT activityId="660866ee-a328-4958-b810-d74a4d9910a3" contentId="a78756e5-3355-4441-823a-18a8e6bdf3c5" role="Script" type="23"/>
+      <TRANSFORMATION activityId="60e1e2b1-1066-450b-a3e9-5695882b4441" contentId="26054b98-f01a-4676-9b63-6d14e289351f" role="Transformation" type="4"/>
+      <TARGET activityId="725156c3-a75f-4123-ba71-63edfeb5c9d0" contentId="8c02282c-9f44-4fa8-9095-dc694d338a03" role="Target" type="3"/>
+    </Activities>
+  </Pipeline>
+  <Siblings/>
+</Entity>

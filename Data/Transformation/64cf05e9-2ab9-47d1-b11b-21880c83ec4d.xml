@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="64cf05e9-2ab9-47d1-b11b-21880c83ec4d" Name="15. C_MACROAREAS">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Tree"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="d5b24428-e147-4b50-8bcf-3a7d16b43762"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="target_text_doc" value="c8e845bd-41ed-4443-b578-2530e39eee34"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="64cf05e9-2ab9-47d1-b11b-21880c83ec4d"/>
+  </Properties>
+  <InputStructure sourceId="d5b24428-e147-4b50-8bcf-3a7d16b43762">
+    <Properties>
+      <Item key="includeSchemaName" value="1"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">"PUB"."customer","PUB"."state",</konga.string>
+    <DbFields/>
+    <Relations>
+      <Relation childField="St" childTable="&quot;PUB&quot;.&quot;state&quot;" isSource="true" onetoOne="true" outerJoin="true" parentField="St" parentTable="&quot;PUB&quot;.&quot;customer&quot;" relationId="-1580684541709"/>
+    </Relations>
+    <SqlScript/>
+    <Filters/>
+  </InputStructure>
+  <OutputStructure docId="c8e845bd-41ed-4443-b578-2530e39eee34"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[PUB:customer.]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">/PRECONDITION/	&lt;trans&gt;
+//code=ToUpper(PUB:customer.St);
+//condition=false;
+////check if this st already is part of the file
+//if(HasKey($Dic.C_MACROAREAS.redundancy,code)
+//	,
+//	//don't add to the file if already present
+//	 condition=false
+//	,
+//		condition=true;
+//
+//		//add to the dictionary for future reference
+//		AddToDict($Dic.C_MACROAREAS.redundancy, code, code);
+//	);
+//condition
+
+
+
+condition=false;
+if(Length(PUB:customer.St)&gt;0,
+	key=ToUpper(PUB:customer.St);
+	
+	keyValue='';
+	/*-------------------STart Test------------*/
+
+//	RunOperation("op.c90bd81a-b986-4dc8-8c5a-de10fb349fde");
+
+	/*-------------End Test--------------------*/
+
+	if(HasKey($Dic.C_MACROAREAS.AreaDescription,key),
+		value=$Dic.C_MACROAREAS.AreaDescription[key][0];
+		keyValue=value;
+	);
+	
+
+	if(Length(keyValue)&gt;0,
+		//to avaoid redundant states to come in the report
+		if(!HasKey($Dic.C_MACROAREAS.redundancy,keyValue),
+			condition=true;
+			AddToDict($Dic.C_MACROAREAS.redundancy,keyValue, keyValue);
+		);
+	);
+);
+Condition
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">MACROAREA	&lt;trans&gt;
+key=ToUpper(PUB:customer.St);
+value="";
+
+/*---------------------Start Test-----------------*/
+
+//RunOperation("op.c90bd81a-b986-4dc8-8c5a-de10fb349fde");
+/*---------------------End Test-------------------*/
+
+
+if(HasKey($Dic.C_MACROAREAS.AreaDescription, key),
+	value=$Dic.C_MACROAREAS.AreaDescription[key][0];
+
+);
+value
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">DESCR	&lt;trans&gt;
+key=ToUpper(PUB:customer.St);
+value="";
+
+/*---------------------Start Test-----------------*/
+
+//RunOperation("op.c90bd81a-b986-4dc8-8c5a-de10fb349fde");
+/*---------------------End Test-------------------*/
+
+
+if(HasKey($Dic.C_MACROAREAS.AreaDescription, key),
+	value=$Dic.C_MACROAREAS.AreaDescription[key][1];
+
+);
+value
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

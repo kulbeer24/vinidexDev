@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Source">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="81d27ee9-900c-4c44-b00f-f6c7d991c2fe" Name="Excel - Duplicate item warehouse">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties/>
+  <Location type="Database">
+    <Data>
+      <Properties>
+        <Item enc="true" key="connectstring" value="$00lF7XV1INBor4nxiHnKkWRE2f1+uZaAdqXEfNbpDa/OeGUedkPLBVadXsPPSx7EHOsNBVlhClDhA6pllnDmx0wiAaY8xv4GKpOyRANwHcyc1dLBMObZhis+FtJA6lrwAlsSB24F8Iezb15Vwu6TyZCRUXXGT2wkejcTbizxIhKFmTOCU8eHc2nsZ7hE2wUUmg"/>
+        <Item key="db_begin_quote" value="`"/>
+        <Item key="db_end_quote" value="`"/>
+        <Item key="dbname" value=""/>
+        <Item key="driver" value="Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)"/>
+        <Item key="driver_begin_quote" value="["/>
+        <Item key="driver_end_quote" value="]"/>
+        <Item key="drivertype" value="1"/>
+        <Item key="fetch_size" value="0"/>
+        <Item key="manual_mode" value="1"/>
+        <Item key="optional_connectstring" value=""/>
+        <Item key="timeout" value="300"/>
+        <Item key="transactionIsolationLevel" value="0"/>
+      </Properties>
+    </Data>
+  </Location>
+</Entity>

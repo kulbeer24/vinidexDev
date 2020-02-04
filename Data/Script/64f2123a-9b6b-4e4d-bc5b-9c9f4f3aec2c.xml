@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="64f2123a-9b6b-4e4d-bc5b-9c9f4f3aec2c" Name="3.1 Post Script: StateLookup Success variable">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="64f2123a-9b6b-4e4d-bc5b-9c9f4f3aec2c"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$LoadedStateLookup=true;
+&lt;/trans&gt;</konga.string>
+</Entity>

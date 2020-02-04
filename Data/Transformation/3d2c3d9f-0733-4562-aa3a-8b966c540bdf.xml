@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="3d2c3d9f-0733-4562-aa3a-8b966c540bdf" Name="Site Location Dictionary">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Flat"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="d5b24428-e147-4b50-8bcf-3a7d16b43762"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="target_text_doc" value="70111ab9-ec3f-4511-91e4-7836cb012f7e"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="3d2c3d9f-0733-4562-aa3a-8b966c540bdf"/>
+  </Properties>
+  <InputStructure sourceId="d5b24428-e147-4b50-8bcf-3a7d16b43762">
+    <Properties>
+      <Item key="includeSchemaName" value="0"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">customer,</konga.string>
+    <DbFields/>
+    <Relations/>
+    <SqlScript>
+      <Entry entryId="-1580684541619" type="1">
+        <konga.string name="script">SELECT * FROM "customer"</konga.string>
+      </Entry>
+      <Entry entryId="-1580684541620" type="2">
+        <konga.string name="script">customer.Cust-no,</konga.string>
+      </Entry>
+    </SqlScript>
+    <Filters/>
+  </InputStructure>
+  <OutputStructure docId="70111ab9-ec3f-4511-91e4-7836cb012f7e"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[customer]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">CustomerId	&lt;trans&gt;
+Cust?no
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">WarehouseCode	&lt;trans&gt;
+Ps?site?loc
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

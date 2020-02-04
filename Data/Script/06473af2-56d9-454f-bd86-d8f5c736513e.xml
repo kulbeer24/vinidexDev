@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="06473af2-56d9-454f-bd86-d8f5c736513e" Name="0.0 Common Script: Create Lookup Dictionaries">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="06473af2-56d9-454f-bd86-d8f5c736513e"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$LoadedEntityLookup=$LoadedProductGroup=$LoadedSiteGroup=$LoadedStateLookup=$LoadedDuplicateWarehouse=false;
+
+//use lookup files to create dictionaries required for daily extracts
+Eval(
+	RunOperation("op.d2c93e1e-13fa-4b32-9314-841258a90274");
+	RunOperation("op.ad4ffb9f-ee83-4c4d-b9fd-ebde448f6c1c");
+	RunOperation("op.c90bd81a-b986-4dc8-8c5a-de10fb349fde");
+	RunOperation("op.beb84236-9880-4b1a-acf5-2a42ba5e4197");
+	RunOperation("op.5610358e-0bea-4f8a-bb76-091f205db306")
+,
+	RaiseError("Issue occured while creating dictionaries from the lookups. Here is the last relevant error:"+GetLastError())
+);
+&lt;/trans&gt;</konga.string>
+</Entity>

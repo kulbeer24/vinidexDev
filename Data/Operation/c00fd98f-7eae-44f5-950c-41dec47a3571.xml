@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Operation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="c00fd98f-7eae-44f5-950c-41dec47a3571" Name="Send C_FREEATTR_ITEM5">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="chunk_size" value="0"/>
+    <Item key="debug_mode_until" value=""/>
+    <Item key="description" value=""/>
+    <Item key="failure_message_id" value="e9b4e4ce-b495-4b3c-93bc-d10d1bc25b46"/>
+    <Item key="ignore_history" value="1"/>
+    <Item key="LogLevel" value="Everything"/>
+    <Item key="max_number_of_threads" value="1"/>
+    <Item key="operation_id" value="c00fd98f-7eae-44f5-950c-41dec47a3571"/>
+    <Item key="operation_type_id" value="1"/>
+    <Item key="run_success_op_if_no_source_files" value="0"/>
+    <Item key="schedule_policy" value="skip_if_running"/>
+    <Item key="source_chunk_node" value=""/>
+    <Item key="source_id" value="5d06c760-65da-4f18-ae84-4f8e09f0c936"/>
+    <Item key="target_chunk_node" value=""/>
+    <Item key="target_chunk_size" value="0"/>
+    <Item key="target_id" value="ca58e57b-e04c-4eb0-bc12-3916e4885ea5"/>
+    <Item key="timeoutseconds" value="7200"/>
+    <Item key="timeoutuiunit" value="HOURS"/>
+    <Item key="trace" value="1"/>
+    <Item key="validate_source_text_file" value="0"/>
+  </Properties>
+  <Pipeline opType="Archive">
+    <Activities>
+      <SCRIPT activityId="2b303305-7663-44d9-b6eb-3b219293e40a" contentId="7a64df5d-0dd8-474a-bae1-2072be4d57b2" role="Script" type="23"/>
+      <SOURCE activityId="74dec599-6040-42a9-b8d6-36bddb29f92e" contentId="5d06c760-65da-4f18-ae84-4f8e09f0c936" role="Source" type="2"/>
+      <TARGET activityId="281eb5c9-9465-4cba-a4ae-959e2e8f52c7" contentId="ca58e57b-e04c-4eb0-bc12-3916e4885ea5" role="Target" type="3"/>
+    </Activities>
+  </Pipeline>
+  <Siblings/>
+</Entity>

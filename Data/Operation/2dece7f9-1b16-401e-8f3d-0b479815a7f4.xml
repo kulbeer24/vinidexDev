@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Operation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="2dece7f9-1b16-401e-8f3d-0b479815a7f4" Name="24.0 Create C_FREEATTTR_ITEM3(SET_GROUP_MAP)">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="chunk_size" value="0"/>
+    <Item key="debug_mode_until" value=""/>
+    <Item key="description" value=""/>
+    <Item key="ignore_history" value="1"/>
+    <Item key="LogLevel" value="Everything"/>
+    <Item key="max_number_of_threads" value="1"/>
+    <Item key="operation_id" value="2dece7f9-1b16-401e-8f3d-0b479815a7f4"/>
+    <Item key="operation_type_id" value="3"/>
+    <Item key="run_success_op_if_no_source_files" value="0"/>
+    <Item key="schedule_policy" value="skip_if_running"/>
+    <Item key="source_chunk_node" value="-flat-"/>
+    <Item key="source_id" value="d5b24428-e147-4b50-8bcf-3a7d16b43762"/>
+    <Item key="success_operation_id" value="8af9f75c-d7d1-4b61-ba3a-2defdbaaebca"/>
+    <Item key="target_chunk_node" value="-flat-"/>
+    <Item key="target_chunk_size" value="0"/>
+    <Item key="timeoutseconds" value="7200"/>
+    <Item key="timeoutuiunit" value="HOURS"/>
+    <Item key="trace" value="1"/>
+    <Item key="validate_source_text_file" value="0"/>
+  </Properties>
+  <Pipeline opType="Transformation">
+    <Activities>
+      <SCRIPT activityId="2922e130-2b88-4c76-a632-8b606f480bbe" contentId="36320653-582a-4e1e-9658-746600ebbc17" role="Script" type="23"/>
+      <SOURCE activityId="227628bc-1684-4ba0-8e81-1e7c627f9ec5" contentId="d5b24428-e147-4b50-8bcf-3a7d16b43762" role="Source" type="2"/>
+      <TRANSFORMATION activityId="cbfc4675-b554-4894-ac30-87f92d775417" contentId="2b8037ba-5a5e-49cd-a4d3-179da6d316a1" role="Transformation" type="4"/>
+    </Activities>
+  </Pipeline>
+  <Siblings/>
+</Entity>

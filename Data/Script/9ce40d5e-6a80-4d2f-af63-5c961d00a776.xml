@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="9ce40d5e-6a80-4d2f-af63-5c961d00a776" Name="Set File Name_ONORDER_DET(PO)">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="9ce40d5e-6a80-4d2f-af63-5c961d00a776"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+
+$filename = 'C_ONORDER_DET (PO)'
+&lt;/trans&gt;</konga.string>
+</Entity>

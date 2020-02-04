@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Operation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="355438d5-a180-44ee-9842-98df2c477453" Name="8.1 Send C_ONORDER_DET(PO)">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="chunk_size" value="0"/>
+    <Item key="debug_mode_until" value=""/>
+    <Item key="description" value=""/>
+    <Item key="failure_message_id" value="e9b4e4ce-b495-4b3c-93bc-d10d1bc25b46"/>
+    <Item key="ignore_history" value="1"/>
+    <Item key="LogLevel" value="Everything"/>
+    <Item key="max_number_of_threads" value="1"/>
+    <Item key="operation_id" value="355438d5-a180-44ee-9842-98df2c477453"/>
+    <Item key="operation_type_id" value="1"/>
+    <Item key="run_success_op_if_no_source_files" value="0"/>
+    <Item key="schedule_policy" value="skip_if_running"/>
+    <Item key="source_chunk_node" value=""/>
+    <Item key="source_id" value="43fa8db3-700a-410a-bc39-ff99a9cfbb61"/>
+    <Item key="target_chunk_node" value=""/>
+    <Item key="target_chunk_size" value="0"/>
+    <Item key="target_id" value="ca58e57b-e04c-4eb0-bc12-3916e4885ea5"/>
+    <Item key="timeoutseconds" value="7200"/>
+    <Item key="timeoutuiunit" value="HOURS"/>
+    <Item key="trace" value="1"/>
+    <Item key="validate_source_text_file" value="0"/>
+  </Properties>
+  <Pipeline opType="Archive">
+    <Activities>
+      <SCRIPT activityId="c85788a1-51a8-43a5-8157-a88f2fe8c78b" contentId="9ce40d5e-6a80-4d2f-af63-5c961d00a776" role="Script" type="23"/>
+      <SOURCE activityId="455cd358-867e-4219-a5ff-0100ed199d75" contentId="43fa8db3-700a-410a-bc39-ff99a9cfbb61" role="Source" type="2"/>
+      <TARGET activityId="63954f97-769d-435c-a2b6-36f6e33e3692" contentId="ca58e57b-e04c-4eb0-bc12-3916e4885ea5" role="Target" type="3"/>
+    </Activities>
+  </Pipeline>
+  <Siblings/>
+</Entity>

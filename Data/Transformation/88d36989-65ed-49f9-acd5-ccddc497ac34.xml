@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="88d36989-65ed-49f9-acd5-ccddc497ac34" Name="14. C_AREAS">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Flat"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="d5b24428-e147-4b50-8bcf-3a7d16b43762"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="target_text_doc" value="4949266b-b3b7-4200-be87-e5d60022fa77"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="88d36989-65ed-49f9-acd5-ccddc497ac34"/>
+  </Properties>
+  <InputStructure sourceId="d5b24428-e147-4b50-8bcf-3a7d16b43762">
+    <Properties>
+      <Item key="includeSchemaName" value="1"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">"PUB"."customer",</konga.string>
+    <DbFields/>
+    <Relations/>
+    <SqlScript>
+      <Entry entryId="-1580684541626" type="1">
+        <konga.string name="script">SELECT * FROM "PUB"."customer"</konga.string>
+      </Entry>
+      <Entry entryId="-1580684541627" type="2">
+        <konga.string name="script">"PUB"."customer".Cust-no,</konga.string>
+      </Entry>
+    </SqlScript>
+    <Filters/>
+  </InputStructure>
+  <OutputStructure docId="4949266b-b3b7-4200-be87-e5d60022fa77"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[PUB:customer]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">/PRECONDITION/	&lt;trans&gt;
+ps_site_loc=ToUpper(Ps?site?loc);
+
+//default value
+sourceLoc=Ps?site?loc;
+
+state=ToUpper(St);
+stateDesc='';
+
+if(HasKey($Dic.C_AREAS.StateLookup,state),
+		stateDesc=$Dic.C_AREAS.StateLookup[state];
+	);
+
+
+/*------------TeST-----*/
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+/*------------End TeST-----*/
+
+if(HasKey($Dic.C_area.srclocation,ps_site_loc),
+		sourceLoc=$Dic.C_area.srclocation[ps_site_loc];
+);
+
+
+//stateDesc+"_"+Bu?entity+"_"+sourceLoc
+condition=false;
+area=ToUpper(stateDesc+"_"+Bu?entity+"_"+sourceLoc);
+
+if(!HasKey($Dic.C_Areas.UniqueArea, area),
+		AddToDict($Dic.C_Areas.UniqueArea, area, area);
+		condition=true;
+);
+condition
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">AREA	&lt;trans&gt;
+ps_site_loc=ToUpper(Ps?site?loc);
+
+//default value
+sourceLoc=Ps?site?loc;
+
+state=ToUpper(St);
+stateDesc='';
+
+if(HasKey($Dic.C_AREAS.StateLookup,state),
+		stateDesc=$Dic.C_AREAS.StateLookup[state];
+	);
+
+
+/*------------TeST-----*/
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+/*------------End TeST-----*/
+
+if( HasKey($Dic.C_area.srclocation,ps_site_loc),
+		sourceLoc=$Dic.C_area.srclocation[ps_site_loc];
+);
+
+
+stateDesc+"_"+Bu?entity+"_"+sourceLoc
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">DESCR	&lt;trans&gt;
+ps_site_loc=ToUpper(Ps?site?loc);
+
+//default value
+sourceLoc=Ps?site?loc;
+
+state=ToUpper(St);
+stateDesc='';
+buEntityValue='';
+
+//state description
+if(HasKey($Dic.C_AREAS.StateLookup,state),
+		stateDesc=$Dic.C_AREAS.StateLookup[state];
+	);
+
+/*--Test entity lookup--*/
+//RunOperation("op.beb84236-9880-4b1a-acf5-2a42ba5e4197");
+/*--end test--*/
+
+//bu-entity
+buEntityKey=ToUpper(Bu?entity);
+if(HasKey($Dic.C_AREAS.EntityLookup, buEntityKey),
+	buEntityValue=$Dic.C_AREAS.EntityLookup[buEntityKey];
+);
+
+//source location
+if( HasKey($Dic.C_area.srclocation,ps_site_loc),
+		sourceLoc=$Dic.C_area.srclocation[ps_site_loc];
+);
+
+
+stateDesc+"_"+buEntityValue+"_"+sourceLoc
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SOURCELOC	&lt;trans&gt;
+ps_site_loc=ToUpper(Ps?site?loc);
+
+/*------------TeST-----*/
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+/*------------End TeST-----*/
+
+sourceLoc='';
+
+if(Length($Dic.C_area.srclocation)&gt;0,
+		sourceLoc=$Dic.C_area.srclocation[ps_site_loc];
+);
+
+sourceLoc
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">MACROAREA	&lt;trans&gt;
+//St
+
+state=ToUpper(St);
+stateDesc='';
+
+if(HasKey($Dic.C_AREAS.StateLookup,state),
+		stateDesc=$Dic.C_AREAS.StateLookup[state];
+	);
+
+stateDesc
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SEASAREAGROUP	&lt;trans&gt;
+""
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">DSPAREAGROUP	&lt;trans&gt;
+""
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">FREEATTR1	&lt;trans&gt;
+state=ToUpper(St);
+stateDesc='';
+
+if(HasKey($Dic.C_AREAS.StateLookup,state),
+		stateDesc=$Dic.C_AREAS.StateLookup[state];
+	);
+
+stateDesc
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">FREEATTR2	&lt;trans&gt;
+buEntityValue='';
+
+//bu-entity
+buEntityKey=ToUpper(Bu?entity);
+if(HasKey($Dic.C_AREAS.EntityLookup, buEntityKey),
+	buEntityValue=$Dic.C_AREAS.EntityLookup[buEntityKey];
+);
+
+buEntityValue
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">FREEATTR6	&lt;trans&gt;
+Key=ToUpper(Bu?entity);
+
+value='';
+
+//Take the Customer.BU-ENTITY Value, match to column A in the entity Look up file and return the value in column C
+if(HasKey($Dic.C_AREAS.FREEATTR6_7_8, key),
+	value=$Dic.C_AREAS.FREEATTR6_7_8[key][0];
+);
+
+value
+	
+
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">FREEATTR7	&lt;trans&gt;
+Key=ToUpper(Bu?entity);
+
+value='';
+
+//Take the Customer.BU-ENTITY Value, match to column A in the entity Look up file and return the value in column D
+if(HasKey($Dic.C_AREAS.FREEATTR6_7_8, key),
+	value=$Dic.C_AREAS.FREEATTR6_7_8[key][1];
+);
+
+value
+	
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">FREEATTR8	&lt;trans&gt;
+Key=ToUpper(Bu?entity);
+
+value='';
+
+//Take the Customer.BU-ENTITY Value, match to column A in the entity Look up file and return the value in column E
+if(HasKey($Dic.C_AREAS.FREEATTR6_7_8, key),
+	value=$Dic.C_AREAS.FREEATTR6_7_8[key][2];
+);
+
+value
+	
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

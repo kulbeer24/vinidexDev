@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="e545fe04-1252-4a9c-8a81-54853c957171" Name="C_Masterfile: Calculating unitCost">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="e545fe04-1252-4a9c-8a81-54853c957171"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+
+$jitterbit.scripting.db.max_rows = -1;
+//sql='select "PUB"."ITEM-WHS"."Cost" from "PUB"."ITEM-WHS"';
+sql='select COUNT(*) from "PUB"."ITEM-WHS"';
+totalnum=DbExecute("s.d5b24428-e147-4b50-8bcf-3a7d16b43762",sql);
+totalnum[0][0]
+//sql = sql = 'select 
+//				"PUB"."order-line"."Item-no",			
+//				"PUB"."customer"."Cust-no",
+//				"PUB"."customer"."St",
+//				"PUB"."customer"."Bu-entity",
+//				"PUB"."customer"."ps-site-loc",
+//				"PUB"."order"."Order-no",
+//				"PUB"."pps-header"."Pps-no",	
+//				"PUB"."order-line"."Line-no"	,
+//				"PUB"."order-line"."Request-date"	,
+//				"PUB"."pps-line"."Qty-picked",
+//				"PUB"."pps-header"."Ship-date",
+//				"PUB"."order-line"."gross-price",
+//				"PUB"."order"."ord-type",
+//				"PUB"."order-line"."whs-order"	,
+//				"PUB"."order-line"."qty-ord"
+//                  from "PUB"."order"
+//				inner join "PUB"."customer" ON "PUB"."customer"."Cust-no" = "PUB"."order"."Cust-no" 
+//                  inner join "PUB"."order-line" ON "PUB"."order"."Ar-entity" = "PUB"."order-line"."Ar-entity" and 
+//                                                "PUB"."order"."Order-no"  = "PUB"."order-line"."Order-no" 
+//                   inner join "PUB"."pps-header" ON "PUB"."order"."Ar-entity" = "PUB"."pps-header"."Ar-entity" and 
+//                                                "PUB"."order"."Order-no" = "PUB"."pps-header"."Order-no" 
+//                    inner join  "PUB"."pps-line" ON "PUB"."order-line"."Ar-entity"  = "PUB"."pps-line"."Ar-entity" and 
+//                                                 "PUB"."order"."Order-no" = "PUB"."pps-line"."order-no" and
+//             															"PUB"."order-line"."line-no"  = "PUB"."pps-line"."line-no" and
+//    																	"PUB"."pps-header"."pps-no" = "PUB"."pps-line"."pps-no"
+//                  where "PUB"."pps-line"."shipped"=1 and "PUB"."order"."Ar-entity"  ='+Quote('VX')+' 
+//	and "PUB"."order"."Order-date"&gt;='+Quote($Date.start)+' and "PUB"."order"."Order-date"&lt;'+Quote($Date.end)+'
+//	 and "PUB"."order"."Internal-ind"=0';
+&lt;/trans&gt;</konga.string>
+</Entity>

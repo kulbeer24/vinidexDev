@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="fe6105bb-913e-4704-a63b-8efdbe14b07d" Name="EntityLookup - Excel Transformation: DB to text">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Flat"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="0fe37bea-b880-4016-b655-d002f49fe909"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="target_text_doc" value="5718841b-2f37-442e-9fc3-d65beeb5ec62"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="fe6105bb-913e-4704-a63b-8efdbe14b07d"/>
+  </Properties>
+  <InputStructure sourceId="0fe37bea-b880-4016-b655-d002f49fe909">
+    <Properties>
+      <Item key="includeSchemaName" value="0"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">['Entity Lookup$'],</konga.string>
+    <DbFields/>
+    <Relations/>
+    <SqlScript>
+      <Entry entryId="-1580684541639" type="1">
+        <konga.string name="script">SELECT * FROM ['Entity Lookup$']</konga.string>
+      </Entry>
+    </SqlScript>
+    <Filters/>
+  </InputStructure>
+  <OutputStructure docId="5718841b-2f37-442e-9fc3-d65beeb5ec62"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[?Entity?Lookup??]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">//PRESCRIPT/	&lt;trans&gt;
+$Dic.C_AREAS.FREEATTR6_7_8=Dict();
+$Dic.C_AREAS.EntityLookup=Dict();
+$Dic.C_FREEATTR_AREA2.entitylookup=Dict();
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">Text	&lt;trans&gt;
+//data="Entity:"+Entity+" name: "+Name+" Region:"+Region+" Cost Centre:"+Cost?Centre+" Sales Centre:"+Sales?Centre?;
+
+//WriteToOperationLog("data received:"+data)
+
+key=ToUpper(Entity);
+
+//single dictionary for attributes 6,7,8 for c_areas
+if(!HasKey($Dic.C_AREAS.FREEATTR6_7_8,key),
+	arr=Array();
+	arr[0]=Region;
+	arr[1]=Cost?Centre;
+	arr[2]=Sales?Centre?;
+	AddToDict($Dic.C_AREAS.FREEATTR6_7_8, key, arr);
+	
+);
+
+//creating dictionary for entity lookup for c_Areas
+if(!HasKey($Dic.C_AREAS.EntityLookup,key),
+	value=Sales?Centre?;
+	AddToDict($Dic.C_AREAS.EntityLookup,key,value )
+);
+
+//creating dictionary for entity lookup for c_freeattr2
+if(!HasKey($Dic.C_FREEATTR_AREA2.entitylookup,key),
+	value=Sales?Centre?;
+	AddToDict($Dic.C_FREEATTR_AREA2.entitylookup,key,value )
+);
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

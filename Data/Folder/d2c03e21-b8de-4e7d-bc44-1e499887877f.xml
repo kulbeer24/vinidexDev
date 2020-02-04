@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Folder">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="d2c03e21-b8de-4e7d-bc44-1e499887877f" Name="EntityLookup">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="folder_id" value="d2c03e21-b8de-4e7d-bc44-1e499887877f"/>
+    <Item key="protected" value="false"/>
+  </Properties>
+</Entity>

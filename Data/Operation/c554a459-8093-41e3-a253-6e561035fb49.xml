@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Operation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="c554a459-8093-41e3-a253-6e561035fb49" Name="0.2 Send C_MASTERFILE to FTP">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="chunk_size" value="0"/>
+    <Item key="debug_mode_until" value="2019-12-20T02:01Z"/>
+    <Item key="description" value=""/>
+    <Item key="failure_message_id" value="e9b4e4ce-b495-4b3c-93bc-d10d1bc25b46"/>
+    <Item key="ignore_history" value="1"/>
+    <Item key="LogLevel" value="Everything"/>
+    <Item key="max_number_of_threads" value="1"/>
+    <Item key="operation_id" value="c554a459-8093-41e3-a253-6e561035fb49"/>
+    <Item key="operation_type_id" value="1"/>
+    <Item key="run_success_op_if_no_source_files" value="0"/>
+    <Item key="schedule_policy" value="skip_if_running"/>
+    <Item key="source_chunk_node" value=""/>
+    <Item key="source_id" value="352b8223-e8a0-42ea-892d-e93775b38fa9"/>
+    <Item key="target_chunk_node" value=""/>
+    <Item key="target_chunk_size" value="0"/>
+    <Item key="target_id" value="ca58e57b-e04c-4eb0-bc12-3916e4885ea5"/>
+    <Item key="timeoutseconds" value="21600"/>
+    <Item key="timeoutuiunit" value="HOURS"/>
+    <Item key="trace" value="1"/>
+    <Item key="validate_source_text_file" value="0"/>
+  </Properties>
+  <Pipeline opType="Archive">
+    <Activities>
+      <SCRIPT activityId="bc46b922-ab0a-4b14-a860-503377ff4ee8" contentId="00177e16-7fb7-4e53-80da-4635dfad64c1" role="Script" type="23"/>
+      <SOURCE activityId="2d04da99-f283-4270-82b1-08170947adee" contentId="352b8223-e8a0-42ea-892d-e93775b38fa9" role="Source" type="2"/>
+      <TARGET activityId="6810615c-099f-4830-ac81-e4687bd74df4" contentId="ca58e57b-e04c-4eb0-bc12-3916e4885ea5" role="Target" type="3"/>
+    </Activities>
+  </Pipeline>
+  <Siblings/>
+</Entity>

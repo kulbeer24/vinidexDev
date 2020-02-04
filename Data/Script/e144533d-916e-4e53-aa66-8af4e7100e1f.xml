@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="e144533d-916e-4e53-aa66-8af4e7100e1f" Name="1.1 Site Code: Dictionary Creation">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="e144533d-916e-4e53-aa66-8af4e7100e1f"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$Dict.SiteCodeSiteName=Dict();
+$Dic.C_itemLocation.Location=Dict();
+$Dic.c_itemLocation.SourceLocationFile=Dict();
+$Dic.C_CurrentSTK.Location=Dict();
+$Dic.C_OutOrders.Location=Dict();
+$Dic.C_ONORDER_DET.Location=Dict();
+$Dic.LINESORDERMIA_INV.Location=Dict();
+$Dic.c_itemArea.SRCLocation=Dict();
+$Dic.C_area.srclocation=Dict();
+$Dic.C_Microareas.srclocation=Dict();
+$Dic.Lineordersmia.Microarea_PS_Site_Loc=Dict();
+//$Dic.C_freeattr_item_3=Dict();
+//$Dic.c_freeattr_item6=Dict();
+&lt;/trans&gt;</konga.string>
+</Entity>

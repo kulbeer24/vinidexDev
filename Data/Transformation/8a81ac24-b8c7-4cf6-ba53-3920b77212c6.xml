@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="8a81ac24-b8c7-4cf6-ba53-3920b77212c6" Name="C_MASTERFILE_Trans V2">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Flat"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="d5b24428-e147-4b50-8bcf-3a7d16b43762"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="SourceBatchNodePath" value=""/>
+    <Item key="SourceBatchSize" value="0"/>
+    <Item key="target_text_doc" value="b1951daa-4bbb-4586-9820-4dadc53ab0f6"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="8a81ac24-b8c7-4cf6-ba53-3920b77212c6"/>
+  </Properties>
+  <InputStructure sourceId="d5b24428-e147-4b50-8bcf-3a7d16b43762">
+    <Properties>
+      <Item key="includeSchemaName" value="1"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">"PUB"."item",</konga.string>
+    <DbFields/>
+    <Relations>
+      <Relation childField="Item-no" childTable="&quot;PUB&quot;.&quot;item-uomconv&quot;" isSource="true" onetoOne="false" outerJoin="true" parentField="Item-no" parentTable="&quot;PUB&quot;.&quot;item&quot;" relationId="-1580684541676"/>
+      <Relation childField="To-uom" childTable="&quot;PUB&quot;.&quot;item-uomconv&quot;" isSource="true" onetoOne="false" outerJoin="true" parentField="Uom-code" parentTable="&quot;PUB&quot;.&quot;item&quot;" relationId="-1580684541675"/>
+    </Relations>
+    <SqlScript>
+      <Entry entryId="-1580684541611" type="1">
+        <konga.string name="script">SELECT * FROM "PUB"."item" WHERE "Active"=1 and  "SO99"=1</konga.string>
+        <konga.string name="where">"Active"=1 and  "SO99"=1</konga.string>
+      </Entry>
+      <Entry entryId="-1580684541612" type="2">
+        <konga.string name="script">"PUB"."item".In-entity,"PUB"."item".Item-no,</konga.string>
+      </Entry>
+    </SqlScript>
+    <Filters>
+      <Entry column="Active" condition="=1" sortOrder="NONE" table="&quot;PUB&quot;.&quot;item&quot;"/>
+      <Entry column="From-uom" condition="='PA'" sortOrder="NONE" table="&quot;PUB&quot;.&quot;item-uomconv&quot;"/>
+      <Entry column="In-entity" condition="='VX'" sortOrder="NONE" table="&quot;PUB&quot;.&quot;item-uomconv&quot;"/>
+      <Entry column="Conv-charac" condition="='P'" sortOrder="NONE" table="&quot;PUB&quot;.&quot;item-uomconv&quot;"/>
+      <Entry column="SO99" condition="=1" sortOrder="NONE" table="&quot;PUB&quot;.&quot;item&quot;"/>
+    </Filters>
+  </InputStructure>
+  <OutputStructure docId="b1951daa-4bbb-4586-9820-4dadc53ab0f6"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[PUB:item]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ITEM	&lt;trans&gt;
+Item?no
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">DESCR	&lt;trans&gt;
+
+decription=Description;
+//decription='fg;25;dsf;sa';
+Replace(decription,";","");
+
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ITEM_TYPE	&lt;trans&gt;
+item_type
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">DIVIS	&lt;trans&gt;
+'VX'
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">PRODFAM	&lt;trans&gt;
+Prod?group
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SEASGROUP	&lt;trans&gt;
+'DEF'
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SERVCLAS	&lt;trans&gt;
+""
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">PLANGROUP	&lt;trans&gt;
+Mli
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">MUNIT	&lt;trans&gt;
+
+//confirmed by Louise on Teams
+Uom?code
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">UNITCOST	&lt;trans&gt;
+//PUB:item.PUB:item?whs?d.Cost
+
+//the script does the manipulation and get the result back
+//RunScript("sc.e545fe04-1252-4a9c-8a81-54853c957171")
+0.01
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">UNITVOL	&lt;trans&gt;
+Weight/1000
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">UNITWEIGHT	&lt;trans&gt;
+Weight
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">UNITCUBE	&lt;trans&gt;
+Volume
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">PALLETQTY	&lt;trans&gt;
+//PUB:item.PUB:item?uomconv$Ratio
+//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?uomconv#.Ratio)
+
+
+// sql = 'select 
+//				"PUB"."ITEM-UOMCONV"."ratio"
+//                  from "PUB"."ITEM-UOMCONV"
+//				 where
+//				"PUB"."ITEM-UOMCONV"."ITEM-NO"="PUB"."ITEM"."ITEM-NO" AND "PUB"."ITEM-UOMCONV"."CONV-CHARAC"=='+Quote('P')+' AND
+//				"PUB"."ITEM-UOMCONV"."FROM-UOM"='+Quote('PA')+' AND "PUB"."ITEM-UOMCONV"."TO-UOM"="PUB."ITEM"."UOM-CODE"
+//';
+
+//data="";
+////logic pending
+//sql='select "PUB"."ITEM-UOMCONV"."ratio"
+//                  from "PUB"."ITEM-UOMCONV" 
+//				inner join  "PUB"."ITEM" 
+//					ON 
+//					"PUB"."ITEM-UOMCONV"."ITEM-NO"="PUB"."ITEM"."ITEM-NO" AND "PUB"."ITEM-UOMCONV"."TO-UOM"="PUB"."ITEM"."Uom-code"
+//				where
+//				"PUB"."ITEM-UOMCONV"."CONV-CHARAC"='+Quote('P')+' AND
+//				"PUB"."ITEM-UOMCONV"."FROM-UOM"='+Quote('PA');
+//Eval(
+//	dataArray=DbExecute("s.d5b24428-e147-4b50-8bcf-3a7d16b43762",sql);
+//	data=dataArray[0][0];
+//,
+//		RaiseError('Error occured when calculating Palletqty in C_masterfile, while getting the data out of DB');
+//);
+//data;
+
+//PUB:item.PUB:item?uomconv.Ratio
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">MINSALSLOT	&lt;trans&gt;
+1
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">FREEATTR1	&lt;trans&gt;
+prodgroup=Prod?group;
+
+/*-------_Start Test---*/
+
+//RunOperation("op.ad4ffb9f-ee83-4c4d-b9fd-ebde448f6c1c");
+
+/*-------End test=-----*/
+
+value="";
+if(HasKey($Dic.C_masterfile.FreeAttr1,prodgroup),
+	value=$Dic.C_masterfile.FreeAttr1[prodgroup];
+);
+value
+
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">FREEATTR2	&lt;trans&gt;
+prodgroup=Prod?group;
+
+value="";
+if(HasKey($Dic.C_masterfile.FreeAttr2,prodgroup),
+	value=$Dic.C_masterfile.FreeAttr2[prodgroup];
+);
+value
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">FREEATTR3	&lt;trans&gt;
+prodgroup=Prod?group;
+
+value="";
+if(HasKey($Dic.C_masterfile.FreeAttr3,prodgroup),
+	value=$Dic.C_masterfile.FreeAttr3[prodgroup];
+);
+value
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">FREEATTR4	&lt;trans&gt;
+Prod?group
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">FREEATTR5	&lt;trans&gt;
+prodgroup=Prod?group;
+
+value="";
+if(HasKey($Dic.C_masterfile.FreeAttr5,prodgroup),
+	value=$Dic.C_masterfile.FreeAttr5[prodgroup];
+);
+value
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">FREEATTR6	&lt;trans&gt;
+prodgroup=Prod?group;
+
+value="";
+if(HasKey($Dic.C_masterfile.FreeAttr6,prodgroup),
+	value=$Dic.C_masterfile.FreeAttr6[prodgroup];
+);
+value
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">FREEATTR7	&lt;trans&gt;
+Mli
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">Custom_1	&lt;trans&gt;
+length
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">Custom_2	&lt;trans&gt;
+diameter
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">Custom_3	&lt;trans&gt;
+sdr
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Folder">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="8ae770b8-e988-4445-ab2e-75d4b7affe85" Name="6. C_OUTSTORDERS">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="folder_id" value="8ae770b8-e988-4445-ab2e-75d4b7affe85"/>
+    <Item key="protected" value="false"/>
+  </Properties>
+</Entity>

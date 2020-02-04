@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="a4da12cb-214b-41b0-bbc9-7aa3b62b0860" Name="C_PRODFAMS Trans">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Tree"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="d5b24428-e147-4b50-8bcf-3a7d16b43762"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="target_text_doc" value="bd26549e-34d3-4608-a411-6a366468adfe"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="a4da12cb-214b-41b0-bbc9-7aa3b62b0860"/>
+  </Properties>
+  <InputStructure sourceId="d5b24428-e147-4b50-8bcf-3a7d16b43762">
+    <Properties>
+      <Item key="includeSchemaName" value="1"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">"PUB"."pr-group","PUB"."pr-group-sum",</konga.string>
+    <DbFields/>
+    <Relations>
+      <Relation childField="From-pr-group" childTable="&quot;PUB&quot;.&quot;pr-group-sum&quot;" isSource="true" onetoOne="false" outerJoin="false" parentField="Prod-group" parentTable="&quot;PUB&quot;.&quot;pr-group&quot;" relationId="-1580684541635"/>
+    </Relations>
+    <SqlScript>
+      <Entry entryId="-1580684541597" type="1">
+        <konga.string name="script">SELECT * FROM "pr-group"</konga.string>
+      </Entry>
+      <Entry entryId="-1580684541598" type="2">
+        <konga.string name="script">pr-group.Prod-group,</konga.string>
+      </Entry>
+    </SqlScript>
+    <Filters/>
+  </InputStructure>
+  <OutputStructure docId="bd26549e-34d3-4608-a411-6a366468adfe"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[PUB:pr?group.PUB:pr?group?sum.]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">PRODFAM	&lt;trans&gt;
+PUB:pr?group.Prod?group
+//PUB:pr?group?sum.PUB:pr?group.Prod?group
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">DESCR	&lt;trans&gt;
+PUB:pr?group.Description
+//PUB:pr?group?sum.PUB:pr?group.Description
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">MACROFAM	&lt;trans&gt;
+PUB:pr?group.PUB:pr?group?sum.Prod?sum?group
+//PUB:pr?group?sum.Prod?sum?group
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

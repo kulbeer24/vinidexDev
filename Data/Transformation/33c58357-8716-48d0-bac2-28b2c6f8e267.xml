@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="33c58357-8716-48d0-bac2-28b2c6f8e267" Name="Copy of DB to text (2)">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Flat"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="9aa11e8a-5e23-4301-b406-d88fb8817b20"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="target_text_doc" value="2c2a96ec-089f-46bb-8a61-363014c9069f"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="33c58357-8716-48d0-bac2-28b2c6f8e267"/>
+  </Properties>
+  <InputStructure sourceId="9aa11e8a-5e23-4301-b406-d88fb8817b20">
+    <Properties>
+      <Item key="includeSchemaName" value="0"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">Sheet2$_xlnm#_FilterDatabase,</konga.string>
+    <DbFields/>
+    <Relations/>
+    <SqlScript>
+      <Entry entryId="-1580684541637" type="1">
+        <konga.string name="script">SELECT * FROM [Sheet2$_xlnm#_FilterDatabase]</konga.string>
+      </Entry>
+    </SqlScript>
+    <Filters/>
+  </InputStructure>
+  <OutputStructure docId="2c2a96ec-089f-46bb-8a61-363014c9069f"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[Sheet2?_xlnm?_FilterDatabase]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">/PRECONDITION/	&lt;trans&gt;
+//condition=false;
+////$Site.code='A7';
+//if(Wh==$Site.code,
+//condition=true;
+//);
+//
+//condition
+
+key=Wh;
+siteName=Site?Name;
+
+//Dictionary for C_ItemLocation.location
+if(!HasKey($Dic.C_itemLocation.Location, key),
+	AddToDict($Dic.C_itemLocation.Location,key, siteName);
+
+);
+
+//Dictionary for Dic.C_ONORDER_DET.Location
+if(!HasKey($Dic.C_ONORDER_DET.Location, key),
+	AddToDict($Dic.C_ONORDER_DET.Location,key, siteName);
+
+);
+
+//Dictionary for C_CurrentSTK.location
+if(!HasKey($Dic.C_CurrentSTK.Location, key),
+	AddToDict($Dic.C_CurrentSTK.Location,key, siteName);
+
+);
+
+//Dictionary for C_OutOrders.Location
+if(!HasKey($Dic.C_OutOrders.Location, key),
+	AddToDict($Dic.C_OutOrders.Location,key, siteName);
+
+);
+//$value=$Dic.C_itemLocation.Location['A7'];
+true
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SiteName	&lt;trans&gt;
+siteCode=Wh;
+
+//create and/or add to dictionary
+if(!HasKey($Dict.SiteCodeSiteName, siteCode),
+	AddToDict($Dict.SiteCodeSiteName,siteCode,Site?Name);
+);
+
+//$Site.name=Site?Name
+//Length($Dict.SiteCodeSiteName)
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">Supplier	&lt;trans&gt;
+SO99?Vendor
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SrcLocation	&lt;trans&gt;
+SO99?SRLOC
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

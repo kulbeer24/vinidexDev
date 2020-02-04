@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Operation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="aad2b108-80c0-4284-9295-4a413b13b67f" Name="11.1 Create LineOrdersMia csv">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="chunk_size" value="0"/>
+    <Item key="debug_mode_until" value=""/>
+    <Item key="description" value=""/>
+    <Item key="failure_message_id" value="e9b4e4ce-b495-4b3c-93bc-d10d1bc25b46"/>
+    <Item key="ignore_history" value="1"/>
+    <Item key="LogLevel" value="Everything"/>
+    <Item key="max_number_of_threads" value="1"/>
+    <Item key="operation_id" value="aad2b108-80c0-4284-9295-4a413b13b67f"/>
+    <Item key="operation_type_id" value="3"/>
+    <Item key="run_success_op_if_no_source_files" value="0"/>
+    <Item key="schedule_policy" value="skip_if_running"/>
+    <Item key="source_chunk_node" value="-flat-"/>
+    <Item key="source_id" value="9f367659-5083-4cc1-8bfb-b24d77fa7535"/>
+    <Item key="target_chunk_node" value="-flat-"/>
+    <Item key="target_chunk_size" value="0"/>
+    <Item key="target_id" value="5cd60f02-4019-401c-bda2-95b2569838a9"/>
+    <Item key="timeoutseconds" value="21600"/>
+    <Item key="timeoutuiunit" value="HOURS"/>
+    <Item key="trace" value="1"/>
+    <Item key="validate_source_text_file" value="0"/>
+  </Properties>
+  <Pipeline opType="Transformation">
+    <Activities>
+      <SOURCE activityId="59cc7847-7994-4d39-a7fe-e1ed46552c17" contentId="9f367659-5083-4cc1-8bfb-b24d77fa7535" role="Source" type="2"/>
+      <TRANSFORMATION activityId="f32a2ce2-beae-4bd9-b2a5-dbb0075ad717" contentId="b8c453b5-1901-4656-90fd-784f7598b9c2" role="Transformation" type="4"/>
+      <TARGET activityId="a6335018-9128-486d-9bee-c5b6223295b3" contentId="5cd60f02-4019-401c-bda2-95b2569838a9" role="Target" type="3"/>
+    </Activities>
+  </Pipeline>
+  <Siblings/>
+</Entity>

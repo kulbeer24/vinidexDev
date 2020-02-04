@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Operation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="c90bd81a-b986-4dc8-8c5a-de10fb349fde" Name="3.0 StateLookup: Get updated file from sharepoint to LocalFile">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="chunk_size" value="0"/>
+    <Item key="debug_mode_until" value=""/>
+    <Item key="description" value=""/>
+    <Item key="failure_message_id" value="e9b4e4ce-b495-4b3c-93bc-d10d1bc25b46"/>
+    <Item key="ignore_history" value="1"/>
+    <Item key="LogLevel" value="Everything"/>
+    <Item key="max_number_of_threads" value="1"/>
+    <Item key="operation_id" value="c90bd81a-b986-4dc8-8c5a-de10fb349fde"/>
+    <Item key="operation_type_id" value="1"/>
+    <Item key="run_success_op_if_no_source_files" value="0"/>
+    <Item key="schedule_policy" value="skip_if_running"/>
+    <Item key="source_chunk_node" value=""/>
+    <Item key="source_id" value="082a22d2-aad5-42d1-b254-1530092e5f0e"/>
+    <Item key="success_operation_id" value="bfd4ad00-e2cf-4953-be5d-a2cc0bcbbaac"/>
+    <Item key="target_chunk_node" value=""/>
+    <Item key="target_chunk_size" value="0"/>
+    <Item key="target_id" value="f5f8f963-cb57-4ad1-aef7-b20555056a45"/>
+    <Item key="timeoutseconds" value="7200"/>
+    <Item key="timeoutuiunit" value="HOURS"/>
+    <Item key="trace" value="1"/>
+    <Item key="validate_source_text_file" value="0"/>
+  </Properties>
+  <Pipeline opType="Archive">
+    <Activities>
+      <SOURCE activityId="5b70eb38-0cc4-48b4-bdfb-b98e51700939" contentId="082a22d2-aad5-42d1-b254-1530092e5f0e" role="Source" type="2"/>
+      <TARGET activityId="aafae7cd-fd3d-4d9a-a945-513c5b36b98e" contentId="f5f8f963-cb57-4ad1-aef7-b20555056a45" role="Target" type="3"/>
+    </Activities>
+  </Pipeline>
+  <Siblings/>
+</Entity>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="6f560175-2732-450e-8fb3-73771844a43d" Name="11. Create LineOrdersMia sql execute:sql query">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="6f560175-2732-450e-8fb3-73771844a43d"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$jitterbit.scripting.db.max_rows = -1;
+sql = sql = 'select 
+				"PUB"."order-line"."Item-no",			
+				"PUB"."customer"."Cust-no",
+				"PUB"."customer"."St",
+				"PUB"."customer"."Bu-entity",
+				"PUB"."customer"."ps-site-loc",
+				"PUB"."order-line"."Order-no",
+				"PUB"."pps-header"."Pps-no",	
+				"PUB"."order-line"."Line-no"	,
+				"PUB"."order-line"."Request-date"	,
+				"PUB"."pps-line"."Qty-picked",
+				"PUB"."pps-header"."Ship-date",
+				"PUB"."order-line"."gross-price",
+				"PUB"."order"."ord-type",
+				"PUB"."order-line"."whs-order"	,
+				"PUB"."order-line"."qty-ord",
+				"PUB"."order-line"."ar-entity"
+                  from "PUB"."order"
+				inner join "PUB"."customer" ON "PUB"."customer"."Cust-no" = "PUB"."order"."Cust-no" 
+                  inner join "PUB"."order-line" ON "PUB"."order"."Ar-entity" = "PUB"."order-line"."Ar-entity" and 
+                                                "PUB"."order"."Order-no"  = "PUB"."order-line"."Order-no" 
+                   inner join "PUB"."pps-header" ON "PUB"."order"."Ar-entity" = "PUB"."pps-header"."Ar-entity" and 
+                                                "PUB"."order"."Order-no" = "PUB"."pps-header"."Order-no" 
+                    inner join  "PUB"."pps-line" ON "PUB"."order-line"."Ar-entity"  = "PUB"."pps-line"."Ar-entity" and 
+                                                 "PUB"."order"."Order-no" = "PUB"."pps-line"."order-no" and
+             															"PUB"."order-line"."line-no"  = "PUB"."pps-line"."line-no" and
+    																	"PUB"."pps-header"."pps-no" = "PUB"."pps-line"."pps-no"
+                  where "PUB"."pps-line"."shipped"=1 and "PUB"."order"."Ar-entity"  ='+Quote('VX')+' 
+	and "PUB"."order"."Order-date"&gt;='+Quote($Date.OrderDate_StartDate)+' and "PUB"."order"."Order-date"&lt;='+Quote($Date.today)+'
+	 and "PUB"."order"."Internal-ind"=0 and "PUB"."pps-header"."Ship-date"&gt;='+Quote($Date.start)+' and "PUB"."pps-header"."Ship-date"&lt;='+Quote($Date.end)+'
+		and "PUB"."pps-line"."Qty-picked"!=0';
+
+
+WriteToOperationLog("SQL Query:"+sql+"\n");
+
+WriteFile("t.739e95a9-3686-4f4b-8c2a-3e3658ed3960", DbExecute("s.d5b24428-e147-4b50-8bcf-3a7d16b43762",sql));
+FlushAllFiles("t.739e95a9-3686-4f4b-8c2a-3e3658ed3960");
+
+WriteFile("t.739e95a9-3686-4f4b-8c2a-3e3658ed3960", Replace(Replace(Replace( ReadFile("s.9f367659-5083-4cc1-8bfb-b24d77fa7535"), '{{',''),'}}', ''),'},{',',\n'));
+FlushAllFiles("t.739e95a9-3686-4f4b-8c2a-3e3658ed3960");
+
+//WriteToOperationLog("Data retrieved from DB:"+ReadFile("s.8bfa1ced-e005-4d46-ba37-94e5054c344f"););
+//$filename = 'LINEORDERSMIA';
+&lt;/trans&gt;</konga.string>
+</Entity>

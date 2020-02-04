@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Source">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="d5b24428-e147-4b50-8bcf-3a7d16b43762" Name="MXP Progress DB">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties/>
+  <Location type="Database">
+    <Data>
+      <Properties>
+        <Item enc="true" key="connectstring" value="$004rP+3s82ntbzjtpg0H7h+TjeF49Q/6OaQYMHI8HO91HYrVdHJTJd1Y0srkxveV1qOBWOb5O2RaU44JCXX3zi53dJpAtgJk+66FLHrOwLpFFBzMwqyJS3efgwDurCg6nLFYkX9moCh4v+zo/UwQQt+w=="/>
+        <Item key="db_begin_quote" value="&quot;"/>
+        <Item key="db_end_quote" value="&quot;"/>
+        <Item key="dbname" value=""/>
+        <Item key="driver" value="DATADIRECT 4.10 32-BIT Progress SQL92 v9.1E"/>
+        <Item key="drivertype" value="1"/>
+        <Item key="fetch_size" value="0"/>
+        <Item key="manual_mode" value="1"/>
+        <Item key="optional_connectstring" value=""/>
+        <Item enc="true" key="password" value="$00Hjsl/1VUAVtAAcYHYxwARyvNe2Stii+W2bFsa6qIWtU="/>
+        <Item key="timeout" value="300"/>
+        <Item key="transactionIsolationLevel" value="0"/>
+      </Properties>
+    </Data>
+  </Location>
+</Entity>

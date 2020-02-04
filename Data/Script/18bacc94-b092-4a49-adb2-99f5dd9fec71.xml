@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="18bacc94-b092-4a49-adb2-99f5dd9fec71" Name="Set File Name_C_ONORDER_DET (GIT)">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="18bacc94-b092-4a49-adb2-99f5dd9fec71"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$filename = 'C_ONORDER_DET (GIT)';
+WriteToOperationLog($filename);
+WriteToOperationLog(ReadFile("s.e202ac0b-3bc2-4247-b71d-f1ce23fa0397"))
+&lt;/trans&gt;</konga.string>
+</Entity>

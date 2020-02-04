@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="03208a8d-2116-487c-891f-69dab0e3e5e9" Name="11.2 LineOrdersMIA: Create header">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="03208a8d-2116-487c-891f-69dab0e3e5e9"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+
+DeleteFiles("s.bb5076aa-08f8-4a03-af37-b757a9deba4f");
+text='ITEM	MICROAREA	ORDERID	LINE_N	REQYEAR	REQMONTH	REQDAY	PICKEDQUANTITY	ONTIMEQTY	SHIPYEAR	SHIPMONTH	SHIPDAY	UNITPRICE	ORDERTYPE	SHIPFROM	ORDERQUANTITY	REBATEPRICE\n';
+
+WriteFile("t.90c8fb88-c0ed-416a-88af-0f9150832803",text);
+&lt;/trans&gt;</konga.string>
+</Entity>

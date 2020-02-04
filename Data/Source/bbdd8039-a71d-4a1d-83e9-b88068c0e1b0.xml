@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Source">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="bbdd8039-a71d-4a1d-83e9-b88068c0e1b0" Name="Line_OrdersMia_GV">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties/>
+  <Location type="GlobalData">
+    <Data>
+      <Properties>
+        <Item key="archive_password" value=""/>
+        <Item key="encrypt_choice" value="0"/>
+        <Item key="file_name" value=""/>
+        <Item key="ignore_first" value="0"/>
+        <Item key="ignore_last" value="0"/>
+        <Item key="locator" value="so_string"/>
+        <Item key="login" value=""/>
+        <Item key="password" value=""/>
+        <Item key="renamefileto" value=""/>
+        <Item key="uncompress_format" value=""/>
+      </Properties>
+    </Data>
+  </Location>
+</Entity>

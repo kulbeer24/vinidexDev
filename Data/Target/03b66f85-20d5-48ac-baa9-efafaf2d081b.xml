@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Target">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="03b66f85-20d5-48ac-baa9-efafaf2d081b" Name="Copy of Temp_C_MICROAREAS">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties/>
+  <Location type="TemporaryStorage">
+    <Data>
+      <Properties>
+        <Item key="append_file" value="0"/>
+        <Item key="archive_encryption_mode" value=""/>
+        <Item key="archive_mode" value=""/>
+        <Item key="character_encoding" value="UTF-8"/>
+        <Item key="compress_format" value=""/>
+        <Item key="encrypt_choice" value="0"/>
+        <Item key="endoflinetype" value="0"/>
+        <Item key="error_folder" value=""/>
+        <Item key="file_name" value="C_MICROAREAS.csv"/>
+        <Item key="file_share_create_directories" value="1"/>
+        <Item key="filenames_in_archive" value=""/>
+        <Item enc="true" key="locator" value="$00b6zoRXvA0I9caeYA00w1AtYShWU/H8B1Pjf8mzB3iRg="/>
+        <Item key="skip_empty_files" value="0"/>
+        <Item key="success_folder" value=""/>
+        <Item key="writeHeaders" value="1"/>
+      </Properties>
+    </Data>
+  </Location>
+</Entity>

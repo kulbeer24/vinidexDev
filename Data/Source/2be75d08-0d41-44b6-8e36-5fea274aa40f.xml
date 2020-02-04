@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Source">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="2be75d08-0d41-44b6-8e36-5fea274aa40f" Name="JB Internal FTP - EntityLookup">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties/>
+  <Location type="FTP">
+    <Data>
+      <Properties>
+        <Item key="character_encoding" value=""/>
+        <Item key="encrypt_choice" value="0"/>
+        <Item key="error_folder" value=""/>
+        <Item key="file_name" value="Entity Lookup.xlsx"/>
+        <Item key="filterOption.ignoreCase" value="0"/>
+        <Item key="filterOption.regularExpression" value="0"/>
+        <Item key="ftp.nlst" value="0"/>
+        <Item key="ignore_first" value="0"/>
+        <Item key="ignore_last" value="0"/>
+        <Item enc="true" key="locator" value="$00Do6MyRlcbMqnqIITTsr7SVVL7ISzwamXQenVMW1fCGA="/>
+        <Item enc="true" key="login" value="$00dU3pUw9Ym++I3Nuequ6jXyTeXVslOcOH83sCvMYumHH9fqreWVhoFLaY5YMIqUhp"/>
+        <Item key="passive_mode" value="1"/>
+        <Item enc="true" key="password" value="$00IO7efIuKgz5jG1aCRBsuMt2Mh3jFYb298ki11/roGJg="/>
+        <Item key="path" value="/Kulbeer/vinidex"/>
+        <Item key="proxy_tunnel" value="1"/>
+        <Item key="renamefileto" value=""/>
+        <Item key="success_folder" value=""/>
+        <Item key="transfer_type" value="2"/>
+        <Item key="trigger_filename" value=""/>
+        <Item key="uncompress_format" value=""/>
+        <Item key="use_trigger_file" value="0"/>
+      </Properties>
+    </Data>
+  </Location>
+</Entity>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="d904d0f5-91e3-4cba-8560-3e8ea4689244" Name="14.1 Set FileName C_AREAS">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="d904d0f5-91e3-4cba-8560-3e8ea4689244"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$filename = 'C_AREAS';
+//WriteToOperationLog($filename);
+&lt;/trans&gt;</konga.string>
+</Entity>

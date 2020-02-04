@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="e25bd627-753e-421b-a179-a0715f8d9dc5" Name="Excel: State Lookup">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Flat"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="3a96b7df-69ad-408a-806e-0e139efce350"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="target_text_doc" value="6eef6730-5dd0-4b30-9233-731c776e1b01"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="e25bd627-753e-421b-a179-a0715f8d9dc5"/>
+  </Properties>
+  <InputStructure sourceId="3a96b7df-69ad-408a-806e-0e139efce350">
+    <Properties>
+      <Item key="includeSchemaName" value="0"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">['State Lookup$'],</konga.string>
+    <DbFields/>
+    <Relations/>
+    <SqlScript>
+      <Entry entryId="-1580684541638" type="1">
+        <konga.string name="script">SELECT * FROM ['State Lookup$']</konga.string>
+      </Entry>
+    </SqlScript>
+    <Filters/>
+  </InputStructure>
+  <OutputStructure docId="6eef6730-5dd0-4b30-9233-731c776e1b01"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[?State?Lookup??]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">Text	&lt;trans&gt;
+key= ToUpper(MXP?Value);
+
+//create a dictionary for lookup in macroareas file
+if(!HasKey($Dic.C_MACROAREAS.AreaDescription, key),
+	arrayItem=Array();
+	arrayItem[0]=Translation;
+	arrayItem[1]=Description;
+	AddToDict($Dic.C_MACROAREAS.AreaDescription,key, arrayItem);
+);
+
+//create a dictionary for lookup in c_freeattr_area1 file
+if(!HasKey($Dic.C_FREEATTR_AREA1.AreaDescription, key),
+	arrayItem=Array();
+	arrayItem[0]=Translation;
+	arrayItem[1]=Description;
+	AddToDict($Dic.C_FREEATTR_AREA1.AreaDescription,key, arrayItem);
+);
+
+
+
+//create a dictionary for lookup in c_areas file
+//check against column A and return column B
+if(!HasKey($Dic.C_AREAS.StateLookup, key),
+	value=Translation;
+
+	AddToDict($Dic.C_AREAS.StateLookup,key, value);
+);
+
+
+//create a dictionary for lookup in C_microareas file
+//check against column A and return column B
+if(!HasKey($Dic.C_MICROAREAS.StateLookup, key),
+	value=Translation;
+
+	AddToDict($Dic.C_MICROAREAS.StateLookup,key, value);
+);
+//create a dictionary for lookup in lineordersmia file
+//check against column A and return column B
+if(!HasKey($Dic.lineordersmia.Statelookup, key),
+	value=Translation;
+
+	AddToDict($Dic.lineordersmia.Statelookup,key, value);
+);
+
+//create a dictionary for lookup in itemarea file
+//check against column A and return column B
+if(!HasKey($DIc.Itemarea.Statelookup, key),
+	value=Translation;
+
+	AddToDict($DIc.Itemarea.Statelookup,key, value);
+);
+
+//create a dictionary for lookup in c_outorders file
+//check against column A and return column B
+if(!HasKey($Dic.C_OutOrders.Statelookup, key),
+	value=Translation;
+
+	AddToDict($Dic.C_OutOrders.Statelookup,key, value);
+);
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Folder">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="d7175f24-eadc-4b69-81d0-77b15b68f4fa" Name="Global variables">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="folder_id" value="d7175f24-eadc-4b69-81d0-77b15b68f4fa"/>
+    <Item key="protected" value="false"/>
+  </Properties>
+</Entity>

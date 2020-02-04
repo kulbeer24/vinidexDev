@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="3aaa1f88-4b87-4192-bccc-56c13be5cfcc" Name="12.0 C_ONORDER_DET(GIT): Common Runpoint">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="3aaa1f88-4b87-4192-bccc-56c13be5cfcc"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+//$LoadedSiteGroup=false;
+//
+////get data out of the excel file and create dictionaries requried
+//operationsExcelSiteSourceandDictionaryCreation= RunOperation("op.d2c93e1e-13fa-4b32-9314-841258a90274");
+//
+//
+//if($LoadedSiteGroup,
+//		//Create C_ONORDER_DET (GIT)
+//		RunOperation("op.16db1024-1777-4eb5-8c94-f1d7df811e57");
+//	,
+//		//else
+//		RaiseError("Error occured while creating dictionary from Site Source external file");
+//);
+
+//Create C_ONORDER_DET (GIT)
+RunOperation("op.16db1024-1777-4eb5-8c94-f1d7df811e57");
+&lt;/trans&gt;</konga.string>
+</Entity>

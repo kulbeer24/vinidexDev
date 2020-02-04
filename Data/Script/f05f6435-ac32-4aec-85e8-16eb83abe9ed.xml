@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="f05f6435-ac32-4aec-85e8-16eb83abe9ed" Name="ProductGroup Source Load">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="f05f6435-ac32-4aec-85e8-16eb83abe9ed"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+
+//IF($LoadedProductGroup!=true,
+//
+//RunOperation("op.ad4ffb9f-ee83-4c4d-b9fd-ebde448f6c1c", true);
+//);
+&lt;/trans&gt;</konga.string>
+</Entity>

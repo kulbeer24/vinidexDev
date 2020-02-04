@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="ab6bab97-fc5a-42bf-8eab-2abf7d479c38" Name="Test Script ordersMIA">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="ab6bab97-fc5a-42bf-8eab-2abf7d479c38"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$jitterbit.scripting.db.max_rows = -1;
+ sql = 'select 
+				count(*)
+                  from "PUB"."invoice-line"
+				inner join "PUB"."order-line" on "PUB"."invoice-line"."ar-entity"="PUB"."order-line"."ar-entity" and
+																			"PUB"."invoice-line"."order-no"="PUB"."order-line"."order-no" and 
+																			"PUB"."invoice-line"."line-no"="PUB"."order-line"."line-no"';
+
+//$filename='test_lineordersmia.csv';
+//WriteFile("t.06b4e8da-5ffa-4eab-bf24-f8dc3346e8cd", 
+//			DbExecute("s.d5b24428-e147-4b50-8bcf-3a7d16b43762",sql);
+//);//write array to temp file to convert to string
+//FlushFile("t.06b4e8da-5ffa-4eab-bf24-f8dc3346e8cd");
+
+//"PUB"."invoice-line"."reb-per-uom",			
+//				"PUB"."invoice-line"."ar-entity",
+//				"PUB"."invoice-line"."order-no",
+//				"PUB"."invoice-line"."line-no"
+
+//sql='select count (*) from "PUB"."invoice-line"';
+
+WriteToOperationLog(DbExecute("s.d5b24428-e147-4b50-8bcf-3a7d16b43762",sql))
+&lt;/trans&gt;</konga.string>
+</Entity>

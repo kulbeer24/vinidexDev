@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Folder">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="7df877e8-b662-4cb9-910c-93a024417863" Name="Vinidex FTP Site">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="folder_id" value="7df877e8-b662-4cb9-910c-93a024417863"/>
+    <Item key="protected" value="false"/>
+  </Properties>
+</Entity>

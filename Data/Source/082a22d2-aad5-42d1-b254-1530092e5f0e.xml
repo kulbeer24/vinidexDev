@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Source">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="082a22d2-aad5-42d1-b254-1530092e5f0e" Name="SFTP - Lookup - State Look up">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties/>
+  <Location type="FTP">
+    <Data>
+      <Properties>
+        <Item key="character_encoding" value=""/>
+        <Item key="encrypt_choice" value="4"/>
+        <Item key="error_folder" value=""/>
+        <Item key="file_name" value="State Lookup.xlsx"/>
+        <Item key="filterOption.ignoreCase" value="0"/>
+        <Item key="filterOption.regularExpression" value="0"/>
+        <Item key="ftp.nlst" value="0"/>
+        <Item key="ignore_first" value="0"/>
+        <Item key="ignore_last" value="0"/>
+        <Item enc="true" key="locator" value="$00dYtws/LsXMh2aACIPg1qdSW4O9S90GYO74JjDjByiGul0RcJh7iwr/H/HamoOGru"/>
+        <Item enc="true" key="login" value="$00t4P1505nUq7RIT0navb9ZsiI/JAmfQAX/pPWA1rYNwqOXOuuxhtcDU8IZQw+bQAF"/>
+        <Item key="passive_mode" value="1"/>
+        <Item enc="true" key="password" value="$00PCeGESCL4eBjIsM6if8P3R5RJ5RsgmN1Om7l1Xk4DqE="/>
+        <Item key="path" value="/"/>
+        <Item key="port" value="22"/>
+        <Item key="proxy_tunnel" value="1"/>
+        <Item key="renamefileto" value=""/>
+        <Item key="success_folder" value=""/>
+        <Item key="transfer_type" value="2"/>
+        <Item key="trigger_filename" value=""/>
+        <Item key="uncompress_format" value=""/>
+        <Item key="use_trigger_file" value="0"/>
+      </Properties>
+    </Data>
+  </Location>
+</Entity>

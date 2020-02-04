@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="d9aa4f3b-6dac-47e8-af80-c4ce36420ff3" Name="Limit Rows">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="d9aa4f3b-6dac-47e8-af80-c4ce36420ff3"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$jitterbit.scripting.db.max_rows=100;
+
+&lt;/trans&gt; </konga.string>
+</Entity>

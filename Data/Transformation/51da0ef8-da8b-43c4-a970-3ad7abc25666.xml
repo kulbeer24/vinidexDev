@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="51da0ef8-da8b-43c4-a970-3ad7abc25666" Name="Copy of C_OUTSTORDERS">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Tree"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="d5b24428-e147-4b50-8bcf-3a7d16b43762"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="target_text_doc" value="de59a67a-4308-41ac-9b75-6b88623b74fb"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="51da0ef8-da8b-43c4-a970-3ad7abc25666"/>
+  </Properties>
+  <InputStructure sourceId="d5b24428-e147-4b50-8bcf-3a7d16b43762">
+    <Properties>
+      <Item key="includeSchemaName" value="1"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">"PUB"."order","PUB"."customer","PUB"."order-line",</konga.string>
+    <DbFields/>
+    <Relations>
+      <Relation childField="Ar-entity" childTable="&quot;PUB&quot;.&quot;order&quot;" isSource="true" onetoOne="true" outerJoin="false" parentField="Ar-entity" parentTable="&quot;PUB&quot;.&quot;order-line&quot;" relationId="-1580684541697"/>
+      <Relation childField="Order-no" childTable="&quot;PUB&quot;.&quot;order&quot;" isSource="true" onetoOne="true" outerJoin="false" parentField="Order-no" parentTable="&quot;PUB&quot;.&quot;order-line&quot;" relationId="-1580684541696"/>
+      <Relation childField="In-entity" childTable="&quot;PUB&quot;.&quot;order&quot;" isSource="true" onetoOne="true" outerJoin="false" parentField="In-entity" parentTable="&quot;PUB&quot;.&quot;order-line&quot;" relationId="-1580684541695"/>
+      <Relation childField="Order-code" childTable="&quot;PUB&quot;.&quot;customer&quot;" isSource="true" onetoOne="true" outerJoin="false" parentField="Order-code" parentTable="&quot;PUB&quot;.&quot;order-line&quot;" relationId="-1580684541698"/>
+    </Relations>
+    <SqlScript/>
+    <Filters>
+      <Entry column="Order-no" condition="='1013120'" sortOrder="NONE" table="&quot;PUB&quot;.&quot;order&quot;"/>
+      <Entry column="Cust-no" condition="'vxb'" sortOrder="NONE" table="&quot;PUB&quot;.&quot;customer&quot;"/>
+      <Entry column="Request-date" condition="='2001-06-01'" sortOrder="NONE" table="&quot;PUB&quot;.&quot;order-line&quot;"/>
+    </Filters>
+  </InputStructure>
+  <OutputStructure docId="de59a67a-4308-41ac-9b75-6b88623b74fb"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[PUB:order?line.]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ITEM	&lt;trans&gt;
+PUB:order?line.Order?no
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">MICROAREA	&lt;trans&gt;
+//PUB:order?line.PUB:order$Cust?no + "_" + PUB:order?line.PUB:customer$St + "_" + PUB:order?line.PUB:customer$Bu?entity + "_" + PUB:order?line.PUB:customer$Ps?site?loc 
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ORDERID	&lt;trans&gt;
+PUB:order?line.Order?no
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

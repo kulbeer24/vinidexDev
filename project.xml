@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Project name="Vinidex  - MXP &amp; SO99 Integration" projectId="0f5dc94a-f74e-4f6c-a7d8-dd652d82af31">
+  <EntityType name="Script">
+    <Entity entityId="01c3b1a7-f2dc-4dd9-8c29-f0aedfb8a842" name="print item"/>
+    <Entity entityId="8f3143e6-3f4a-4d2a-8f35-b731d728be5f" name="Set File Name_C_PRODFAMS"/>
+    <Entity entityId="1995a0fe-582d-4800-9723-46beb576371c" name="Set File Name_C_ITEMLOCATION"/>
+    <Entity entityId="00177e16-7fb7-4e53-80da-4635dfad64c1" name="Set File Name_C_MASTERFILE"/>
+    <Entity entityId="d85ed1d5-bf26-4678-9af6-f0356a5af795" name="Set File Name_LINEORDERSMIA"/>
+    <Entity entityId="77975635-1b0e-4213-a210-2d3a206c59fe" name="Set File Name_OUTSTORDERS"/>
+    <Entity entityId="55185d16-fba5-440d-9dcb-e13c8d5430e0" name="Set File Name_C_CURRENTSTK"/>
+    <Entity entityId="a767e57b-4a81-464d-9de9-f56bac70dd8e" name="Set File Name_C_FREEATTR_AREA_1-STATE"/>
+    <Entity entityId="9ce40d5e-6a80-4d2f-af63-5c961d00a776" name="Set File Name_ONORDER_DET(PO)"/>
+    <Entity entityId="a9c3ecc3-58a4-45c8-9c2f-6a89a0163c9f" name="Set File Name C_ITEMAREA"/>
+    <Entity entityId="f87b41d1-b77b-43bb-9a03-28441e3fde86" name="Set File Name_LINEORDERSMIA(INV)"/>
+    <Entity entityId="6f560175-2732-450e-8fb3-73771844a43d" name="11. Create LineOrdersMia sql execute:sql query"/>
+    <Entity entityId="1ec350d0-3c27-4631-88ad-cd1b11eafd3d" name="Test Script"/>
+    <Entity entityId="18bacc94-b092-4a49-adb2-99f5dd9fec71" name="Set File Name_C_ONORDER_DET (GIT)"/>
+    <Entity entityId="691f8c02-1a7b-44eb-93e3-134b3e70493b" name="Test file script"/>
+    <Entity entityId="5e5a246c-096a-4e95-a8ab-2f966645dc4c" name="Set File Name C_MICROAREAS"/>
+    <Entity entityId="f4f509d8-090e-41d3-b278-861127d42241" name="Set File Name_C_F"/>
+    <Entity entityId="5076556a-c264-432c-8d49-2162cd50a303" name="Set File Name_C_MACROAREAS"/>
+    <Entity entityId="d9aa4f3b-6dac-47e8-af80-c4ce36420ff3" name="Limit Rows"/>
+    <Entity entityId="93c4a1ed-433b-45de-97a9-72f3459af693" name="Lineordersmia and Lineordersmia(inv):Dictionary Creation_lookup"/>
+    <Entity entityId="ab6bab97-fc5a-42bf-8eab-2abf7d479c38" name="Test Script ordersMIA"/>
+    <Entity entityId="9c5b6332-f6ae-439b-90d7-34fe309aa5e8" name="11.0 LINESORDERMIA: date selection: common run"/>
+    <Entity entityId="03208a8d-2116-487c-891f-69dab0e3e5e9" name="11.2 LineOrdersMIA: Create header"/>
+    <Entity entityId="a33d727f-5b55-4588-8eef-d90fc7e9a67a" name="Test script - Confirmation"/>
+    <Entity entityId="5b5d1729-f5b7-48fb-b03c-0475d36dbc05" name="Set File Name_C_FREEATTR_ITEM1"/>
+    <Entity entityId="4bcd112f-9ede-4f45-943d-e9399dbb6c76" name="ProductGroup Source Init"/>
+    <Entity entityId="f05f6435-ac32-4aec-85e8-16eb83abe9ed" name="ProductGroup Source Load"/>
+    <Entity entityId="949b761d-5f1a-422f-9d41-6439dcb40bf0" name="Set File Name_C_FREEATTR_ITEM2"/>
+    <Entity entityId="a78756e5-3355-4441-823a-18a8e6bdf3c5" name="Free Attr Item Unique Keys Init"/>
+    <Entity entityId="1664c628-41cc-40ab-8d52-7a5ae8c1fe2e" name="Set File Name_C_FREEATTR_ITEM4"/>
+    <Entity entityId="7a64df5d-0dd8-474a-bae1-2072be4d57b2" name="Set File Name_C_FREEATTR_ITEM5"/>
+    <Entity entityId="f32ceccc-5064-42f9-a25d-53e157cb87a5" name="Set File Name_C_FREEATTR_ITEM6"/>
+    <Entity entityId="97e2b233-d99e-4df4-8a96-052e41d3690c" name="Set File Name_C_FREEATTR_ITEM3"/>
+    <Entity entityId="36320653-582a-4e1e-9658-746600ebbc17" name="C_FREEATTR_ITEM3_PR_GROUP_INIT_DICTIONARY"/>
+    <Entity entityId="e545fe04-1252-4a9c-8a81-54853c957171" name="C_Masterfile: Calculating unitCost"/>
+    <Entity entityId="0afb65ec-3864-41f3-854b-934d00bf81fa" name="2.1 Product Source: Dictionary Creation"/>
+    <Entity entityId="00762ad9-3a82-4459-91ae-5d460ba87c62" name="1.0 C_MASTERFILE:Common_Run"/>
+    <Entity entityId="8abb7954-da28-4897-82c2-0d08f53686d0" name="1.1 SiteCode: CompletionFlag"/>
+    <Entity entityId="fcfbfb43-65e8-41e2-b7e2-b5fd7da827c4" name="3.0 C_ITEMLOCATION:Common Run"/>
+    <Entity entityId="e144533d-916e-4e53-aa66-8af4e7100e1f" name="1.1 Site Code: Dictionary Creation"/>
+    <Entity entityId="e194fffb-cd98-40a4-a181-7bb60ec22513" name="Set File Name_C_FREEATTR_AREA1"/>
+    <Entity entityId="405c3aec-7fa4-49dc-9e54-1f2937ff9d05" name="Set File Name_C_FREEATTR_AREA4"/>
+    <Entity entityId="53ff2460-d7aa-42dd-a2f0-42a2a88a640b" name="Set File Name_C_MICROAREAS"/>
+    <Entity entityId="8033727f-2acb-44e4-be48-182f7da90e65" name="C_MICROAREAS Unique"/>
+    <Entity entityId="0bad0c18-f44f-48a8-915b-545408788ce3" name="6.0 C_CurrentSTK: Common Runpoint"/>
+    <Entity entityId="983d6cbd-a371-47b8-bacf-ec04f1e8f6e8" name="8.0 C_ORNORDER_DET(PO): Common Runpoint"/>
+    <Entity entityId="94932dad-31ae-4029-bfec-449b1a957559" name="6.0 C_OUTORDERS: common runpoint"/>
+    <Entity entityId="d1d65b84-3bad-4e4a-9a5a-2eae5de9acef" name="Copy of Set File Name C_MICROAREAS"/>
+    <Entity entityId="6afcd744-4428-410e-84e7-11f9ac2298a9" name="2. Create C_PRODFAMS"/>
+    <Entity entityId="8d9f262b-218c-4d60-a347-6d5c0d44e05a" name="2.0 C_PRODFAMS: common runpoint"/>
+    <Entity entityId="8117c9ff-df20-4f48-9871-f8f98abc4c9c" name="5b.0 LINESORDERMIA(INV): Common Runpoint"/>
+    <Entity entityId="3aaa1f88-4b87-4192-bccc-56c13be5cfcc" name="12.0 C_ONORDER_DET(GIT): Common Runpoint"/>
+    <Entity entityId="d904d0f5-91e3-4cba-8560-3e8ea4689244" name="14.1 Set FileName C_AREAS"/>
+    <Entity entityId="e90f3831-612e-44e9-b9aa-bba55647e44d" name="15. C_MACROAREAS: dictionary"/>
+    <Entity entityId="0777c4cf-ec52-42ef-bac0-39c85d2e8521" name="13. C_MICROAREAS sql execute: sql query"/>
+    <Entity entityId="a56aed14-2b62-47ff-a52d-3cb6c66bc39e" name="3. C_ITEMLOCATION:SQL Query"/>
+    <Entity entityId="c1193099-27ed-4401-92a3-8c4c674ed281" name="9.0 c_itemarea:common runpoint"/>
+    <Entity entityId="419c1bbd-fc70-49a3-972a-9de604bae77b" name="9. Create c_itemarea:sql execute"/>
+    <Entity entityId="f6341152-7b36-4e67-add3-3fb449f02144" name="6. C_CurrentSTK: VIRTSTK calculation"/>
+    <Entity entityId="7fdec71b-1770-4585-877a-403c097a2581" name="1.0 Create C_MACROFAMS"/>
+    <Entity entityId="4a3047eb-72a9-4b22-a90f-26d47a7961e9" name="Set FileName C_MACROFAMS"/>
+    <Entity entityId="b7c590f1-be5c-4040-a03b-cb68bbd835b6" name="14.1 create C_AREAS: getting the unique area using dictionary"/>
+    <Entity entityId="511beb0b-5b8c-4d18-a237-f925224f6484" name="14. C_AREAS: Common Runpoint"/>
+    <Entity entityId="d8a27224-40e4-4cce-8ed5-aa1ff11c5c43" name="13. C_Microareas: Common Runpoint"/>
+    <Entity entityId="91d475db-fd6d-4cfc-ac38-ee62f53db8c3" name="6.0 C_CurrentSTK: DataDictionary creation"/>
+    <Entity entityId="cda95af0-63ce-40ee-8f40-09c39e3d8291" name="13.1 C_Microareas:Duplication Dicitonary creation"/>
+    <Entity entityId="1b964cf7-342d-4668-adfb-bc043630d2e6" name="24.0 C_FREEATTR_ITEM_3: common runpoint"/>
+    <Entity entityId="72aaceed-8516-426b-ae86-c3cd6b7406b4" name="9.1 C_ITEMAREA: create dictionary for area name redundancy"/>
+    <Entity entityId="80307f4c-fa0f-4068-9b6b-c8453b00455c" name="3.1 PreScript: StateLookup Dictionary creation"/>
+    <Entity entityId="64f2123a-9b6b-4e4d-bc5b-9c9f4f3aec2c" name="3.1 Post Script: StateLookup Success variable"/>
+    <Entity entityId="a5c7de93-0d8d-4021-9a34-cd2e89afa866" name="15.0 C_MACROAREAS:Common Runpoint"/>
+    <Entity entityId="a8a290df-c05e-4abd-b5c9-6851ffb5f06c" name="14.0 C_FREEATTR_AREA1: Common Runpoint"/>
+    <Entity entityId="a68356a8-dee7-44b6-b72c-489d4110e1b7" name="14. C_FREEATTR_ITEM1: Dictionary creation to avaoid redundancy"/>
+    <Entity entityId="a0c76e2d-2082-4d69-8f48-b637a2f151ed" name="23. Create C_FREEATTR_ITEM2"/>
+    <Entity entityId="5d22c938-1c28-4c82-9887-e09af764e392" name="27 C_FREEATTR_ITEM6: Create File"/>
+    <Entity entityId="1b32b35a-9012-486f-987a-08e851f51759" name="4.1 Post Script: EntityLookup SuccessVariable"/>
+    <Entity entityId="9f114959-5df8-4f52-b249-74a405eb4d51" name="test script - randon"/>
+    <Entity entityId="f3f4ed24-a0b5-426d-b0d5-0e58a1b32bbe" name="Daily Extract"/>
+    <Entity entityId="ec26d511-e02a-47a2-ba10-30287abcde55" name="Weekly Extract"/>
+    <Entity entityId="d2ac303a-048e-4cc5-bf4e-e936c16a230e" name="Monthly Extract"/>
+    <Entity entityId="e0cc9ef2-2067-472d-8aac-078b7da33bab" name="Manual Extract: Linesordermia"/>
+    <Entity entityId="a0172217-4aa8-409a-8b17-f104699da572" name="Test Manual Extract"/>
+    <Entity entityId="1187c66d-5ac3-43e3-98fa-bc9adc70680b" name="Manual Extract: Linesordermia - one off"/>
+    <Entity entityId="9f030bb4-d0de-4380-b139-6132766c842d" name="15. Create C_FREEATTR_AREA2: Pre Requisistes"/>
+    <Entity entityId="06473af2-56d9-454f-bd86-d8f5c736513e" name="0.0 Common Script: Create Lookup Dictionaries"/>
+    <Entity entityId="71222ddb-8e7d-47a6-be97-13c31bebe378" name="5.1 Post script: Duplicate Item Warehouse"/>
+  </EntityType>
+  <EntityType name="ProjectVariable">
+    <Entity entityId="b74b3759-05f6-4be8-ad01-d5a14d522b21" name="filename"/>
+    <Entity entityId="b7542e0d-ebd6-4e91-9b49-b444e6a95bfa" name="Debug"/>
+  </EntityType>
+  <EntityType name="Target">
+    <Folder entityId="7f84fba4-a62a-4751-9405-3a5d71c3dc89" name="Duplicate Item Warehouse">
+      <Entity entityId="ce9677f8-def1-4b4c-b376-dbe19cd3907b" name="LocalFile - Duplicate Item Warehouse"/>
+    </Folder>
+    <Folder entityId="7df877e8-b662-4cb9-910c-93a024417863" name="Vinidex FTP Site">
+      <Entity entityId="ca58e57b-e04c-4eb0-bc12-3916e4885ea5" name="Vinidex SO99 FTP Dev Location"/>
+    </Folder>
+    <Folder entityId="f61b18c3-0357-4889-abe1-aa640e4d2a47" name="State lookup">
+      <Entity entityId="f5f8f963-cb57-4ad1-aef7-b20555056a45" name="LocalFile - State Lookup"/>
+    </Folder>
+    <Folder entityId="d2c03e21-b8de-4e7d-bc44-1e499887877f" name="EntityLookup">
+      <Entity entityId="18599465-fcce-421b-b0ae-8bf1f9414721" name="LocalFile - Entity Lookup"/>
+    </Folder>
+    <Folder entityId="0f06d4a6-bd07-4ea9-836e-206994b4a34b" name="Global variables">
+      <Entity entityId="e67506e9-3010-4290-afb5-8cb40d9dde6d" name="Item"/>
+      <Entity entityId="70e16591-718e-4d89-97f6-c1a05bf6cd91" name="onorder_det_po"/>
+    </Folder>
+    <Folder entityId="87e605c5-2bb3-4d8f-8851-244aa7c5e6d2" name="Product Group Source">
+      <Entity entityId="dcb36de0-63f8-4575-940a-26d77017979a" name="LocalFile - ProductGroupSource"/>
+    </Folder>
+    <Folder entityId="0a93b97f-65a4-43f4-9785-8beee12b3356" name="Temp Storage">
+      <Entity entityId="cc3ebb88-de05-41bc-8421-ab46e20ab4f2" name="Temp_Item_Master"/>
+      <Entity entityId="51d4914c-99cd-413b-9b9b-ab6d9d13dcc1" name="temp_C_Prod_Fam"/>
+      <Entity entityId="2410536b-eb3d-4c1f-8fb6-642dc32abd6a" name="Temp_c_item_location"/>
+      <Entity entityId="92fd5c14-3c9b-421b-a716-e53a9ea82c6e" name="Temp_Line_ordersmia"/>
+      <Entity entityId="d6d3ab38-5dc4-44f8-9c7a-49d1bfecc45f" name="Temp_outstorders"/>
+      <Entity entityId="71db5674-7eea-4587-9338-c4e08f7648c0" name="Temp_currentstk"/>
+      <Entity entityId="ffa47ff5-9bcb-412d-959d-b5706295e216" name="Temp_freeattr_area_1_"/>
+      <Entity entityId="3a453cca-2f05-42ca-a48c-8414c4049e02" name="Temp_c_itemarea"/>
+      <Entity entityId="28aa32e7-9a09-48db-a5e3-837ffdd8e52f" name="Temp_LINEORDERSMIA(INV)"/>
+      <Entity entityId="b7e9f66c-cfb1-4ce4-aa17-8afde4ad0b0b" name="Temp_C_ONORDER_DET (GIT)"/>
+      <Entity entityId="c6aa2ae9-2632-4454-afc7-78579c216281" name="Temp_C_MICROAREAS"/>
+      <Entity entityId="ff7282d9-9e19-4ed8-9465-3f8f88d372a0" name="Temp_C_FREEATTR_AREA_4"/>
+      <Entity entityId="cb0619e3-8211-41be-96f0-b7b899396cb1" name="Temp_C_MACROAREAS"/>
+      <Entity entityId="db154aae-f4f6-4fbf-af53-753404c9e449" name="Temp_LineOrderMIA_SQL"/>
+      <Entity entityId="eab42376-3c77-4e7e-aead-b5f2673d9449" name="Temp_Excel_ProductGroup_Source"/>
+      <Entity entityId="e7ed8612-008c-4610-a6c9-dc2bd9d3637b" name="Temp_C_FREEATTR_ITEM1"/>
+      <Entity entityId="e499b03b-97cf-41f7-8ed9-b65ddef85d4b" name="Temp_C_FREEATTR_ITEM2"/>
+      <Entity entityId="8c02282c-9f44-4fa8-9095-dc694d338a03" name="Temp_C_FREEATTR_ITEM4"/>
+      <Entity entityId="33b2d800-bbf4-4f80-acb1-eb81f1fbf0b6" name="Temp_C_FREEATTR_ITEM5"/>
+      <Entity entityId="da0ee59a-13e5-4314-ac54-2f44f3478c37" name="Temp_C_FREEATTR_ITEM6"/>
+      <Entity entityId="aa07bfe0-fe04-4f8b-b2ba-bbc8466a6abc" name="Temp_C_FREEATTR_ITEM3"/>
+      <Entity entityId="67da0a9d-82a6-42fe-9e24-f5f607ca6d2f" name="Temp_FREEATTR_AREA_1"/>
+      <Entity entityId="692418b0-0f4a-4f71-8111-fd0aae5b021d" name="Temp_FREEATTR_AREA_4"/>
+      <Entity entityId="0e9fe3c6-27d1-4952-bc06-dfca33676105" name="Temp_C_MICROAREAS (2)"/>
+      <Entity entityId="15d0223c-4499-48bc-99e4-786c5a13ba88" name="_TEST_ C_MICROAREAS"/>
+      <Entity entityId="03b66f85-20d5-48ac-baa9-efafaf2d081b" name="Copy of Temp_C_MICROAREAS"/>
+      <Entity entityId="c23b21b6-8558-48dd-81ea-a429d42de42c" name="Temp_C_Areas"/>
+      <Entity entityId="8b4203dd-378c-42e5-a8aa-d3965b13e4b4" name="Temp_C_Macrofam"/>
+    </Folder>
+    <Folder entityId="9ed96356-b052-49bd-88ff-c0549fa76884" name="Local file">
+      <Entity entityId="5cd60f02-4019-401c-bda2-95b2569838a9" name="LocalFile - LINEORDERSMIA"/>
+      <Entity entityId="06b4e8da-5ffa-4eab-bf24-f8dc3346e8cd" name="Test:LocalFile - LINEORDERSMIA"/>
+      <Entity entityId="90c8fb88-c0ed-416a-88af-0f9150832803" name="LocalFile - LINEORDERSMIA:combined"/>
+      <Entity entityId="739e95a9-3686-4f4b-8c2a-3e3658ed3960" name="LocalFile: DB extract"/>
+      <Entity entityId="d403e755-c3ea-4e1e-b2e5-0841b6a716eb" name="LocalFile: DB extract_c_microareas"/>
+      <Entity entityId="354b9595-c199-447b-90ce-71fdf677d53f" name="LocalFile: DB extract_c_currentstk_virtstk"/>
+      <Entity entityId="6e70a25a-1fdb-445c-b6c8-48b4be6e6280" name="LocalFile - c_itemlocation"/>
+      <Entity entityId="756b5d44-18ed-4e27-8d8f-da79213aee65" name="LocalFile_test:test Extracts"/>
+      <Entity entityId="9c042687-323f-40ed-817a-162377a33f31" name="LocalFile: DB extract_c_itemarea"/>
+      <Entity entityId="072ce6a7-ee69-4c45-b41c-cff243715e1a" name="LocalFile: DB extract_c_lineordersmia ( inv)"/>
+    </Folder>
+    <Folder entityId="abacfd8f-5001-4ba6-b244-03ddf9e618e8" name="Site Source">
+      <Entity entityId="d12db04d-8a14-4a9e-b020-b0c842566121" name="LocalFile - SiteSource"/>
+    </Folder>
+  </EntityType>
+  <EntityType name="Operation">
+    <Folder entityId="37569a08-c0e4-4140-8b91-48d3a532dc14" name="Extracts - Frequency">
+      <Entity entityId="bd628269-d6c1-4fb4-9523-9b99a156a50b" name="Daily Extract"/>
+      <Entity entityId="72a3d02c-af98-4893-b64d-a4eebf67c4bd" name="Weekly Extract"/>
+      <Entity entityId="3422830c-abd1-49a8-bec3-4440c6c1b038" name="Monthly Extract"/>
+      <Entity entityId="dd5726b6-ee6e-4b3f-8151-215f180f24ea" name="Manual Extract - Linesordermia: one off"/>
+    </Folder>
+    <Folder entityId="a360cf9f-1028-4247-804c-5ae6f98dc116" name="Test">
+      <Entity entityId="a9df06c8-8ef2-4d9d-b861-cd84567c9bf4" name="Test Script operation for LineOrdersMIA"/>
+      <Entity entityId="97e185d2-dc69-4aeb-af32-e916c7cda014" name="Test script - confirmation"/>
+      <Entity entityId="38ad7199-2261-439e-ae0a-604b83693d5b" name="Test Script"/>
+      <Entity entityId="19e42417-8e95-4d8e-8733-b3feac6afcd6" name="Manual Extract"/>
+      <Entity entityId="5bfe7c1e-0a0c-4685-b825-8f812ca05439" name="Test: Archive files to FTP"/>
+    </Folder>
+    <Folder entityId="e369379c-9dea-4b52-bcba-9a79222e323b" name="Files">
+      <Folder entityId="8ae770b8-e988-4445-ab2e-75d4b7affe85" name="6. C_OUTSTORDERS">
+        <Entity entityId="b598f062-93b2-45f0-a5ef-75bc6eae8537" name="6.1 Create C_OUTSTORDERS"/>
+        <Entity entityId="6244d124-a3b3-4117-9bb8-d2d0a3f9ace8" name="6.2 Send C_OUTSTORDERS"/>
+        <Entity entityId="df8931db-312e-4c98-80a4-8a3d9c26f9c9" name="6.0 C_OUTSTORDERS: common runpoint"/>
+      </Folder>
+      <Folder entityId="77e1a8b2-150b-476e-9792-a768afc1c46a" name="2. C_PRODFAMS">
+        <Entity entityId="bf4b6400-a9a3-4e90-a8f1-66eeed848dd6" name="2.1 Send C_PRODFAMS"/>
+        <Entity entityId="8f901716-8831-4e49-a7a5-163b9902ec20" name="2.0 C_PRODFAMS: Common run"/>
+        <Entity entityId="caeb60d9-7227-45ad-a729-fe49f26de505" name="2. Create C_PRODFAMS"/>
+      </Folder>
+      <Folder entityId="7b401c46-a52f-4814-963e-abc86fa25dee" name="C_FREEATTR">
+        <Folder entityId="463e5c74-45ac-4b1f-9acf-22050719f140" name="C_FREEATTR_ITEM4">
+          <Entity entityId="c10842e4-9404-4169-8c93-88494d501ee2" name="Create C_FREEATTR_ITEM4"/>
+          <Entity entityId="ee534ccf-9f66-4740-bb09-471f0d8b07b5" name="Send C_FREEATTR_ITEM4"/>
+        </Folder>
+        <Folder entityId="ef6ff68d-33a4-4b33-b315-2b7d6535f6ed" name="13. C_FREEATTR_AREA_4">
+          <Entity entityId="a0792357-6174-44ad-91f6-25ae16ab1f04" name="Create C_FREEATTR_AREA_4"/>
+          <Entity entityId="81ab421d-2df0-4388-ab4d-58bfd25bd05f" name="Send C_FREEATTR_AREA_4"/>
+        </Folder>
+        <Folder entityId="fdd71db8-8183-4a24-8b10-f51e56767adf" name="23. C_FREEATTR_ITEM2">
+          <Entity entityId="0d78e98a-69b9-4acc-a41e-e1d0eb937cda" name="23.1 Send C_FREEATTR_ITEM2"/>
+          <Entity entityId="1e8db033-bc81-4125-b7d8-b5a8bcc55ecd" name="23. Create C_FREEATTR_ITEM2"/>
+        </Folder>
+        <Folder entityId="8c1bb3d7-9482-4649-ade3-0329395d9373" name="15. C_FREEATTR_AREA2"/>
+        <Folder entityId="87d2ae71-bfd1-4178-b550-ff502f193238" name="24 C_FREEATTR_ITEM3">
+          <Entity entityId="8af9f75c-d7d1-4b61-ba3a-2defdbaaebca" name="24.1 Create C_FREEATTR_ITEM3"/>
+          <Entity entityId="af02e005-ec43-435a-8caf-969ff0d9fc5b" name="24.1 Send C_FREEATTR_ITEM3"/>
+          <Entity entityId="2dece7f9-1b16-401e-8f3d-0b479815a7f4" name="24.0 Create C_FREEATTTR_ITEM3(SET_GROUP_MAP)"/>
+          <Entity entityId="edcb768c-1df2-45f7-8156-c3d4d3a4c1bc" name="24.0 C_FREEATTR_ITEM_3: common runpoint"/>
+        </Folder>
+        <Folder entityId="6e904ddc-b5e5-4528-bf6b-5b9e30154e8f" name="C_FREEATTR_ITEM1">
+          <Entity entityId="0c8cd693-28dc-4eef-a9dd-510ed848ce01" name="Create C_FREEATTR_ITEM1"/>
+          <Entity entityId="e7bd71d6-edab-43a2-86ea-c8868993e954" name="Send C_FREEATTR_ITEM1"/>
+        </Folder>
+        <Folder entityId="8065694e-ede7-45a0-b6e8-7593b653ef40" name="C_FREEATTR_ITEM5">
+          <Entity entityId="c00fd98f-7eae-44f5-950c-41dec47a3571" name="Send C_FREEATTR_ITEM5"/>
+          <Entity entityId="69aaefb0-45fc-467f-b96b-a5844e362a5a" name="Create C_FREEATTR_ITEM5"/>
+        </Folder>
+        <Folder entityId="a5e4dcf7-8ce9-4404-8471-f8a97683569d" name="14. C_FREEATTR_AREA1">
+          <Entity entityId="941784a4-7f48-44e3-9947-4f728f219001" name="14. Create C_FREEATTR_AREA_1"/>
+          <Entity entityId="e25f5377-0304-418d-b34d-c6ed1b407d54" name="14.1 Send FREEATTR_AREA_1"/>
+          <Entity entityId="46af37cb-34ba-4749-908d-e066120d4f72" name="14.0 C_FREEATTR_AREA1: Common Runpoint"/>
+        </Folder>
+        <Folder entityId="373160c1-3e64-44dc-8cd5-5f8955d5252d" name="27 C_FREEATTR_ITEM6">
+          <Entity entityId="316d4eb0-6cd5-495b-b0d3-5f39f5073fdd" name="27 Send C_FREEATTR_ITEM6"/>
+          <Entity entityId="1de790d3-b0fd-4d6f-b4e8-8481217e1366" name="27 C_FREEATTR_ITEM6: Create File"/>
+        </Folder>
+      </Folder>
+      <Folder entityId="faf52e9f-099c-45fd-b44d-4ad9cc88147c" name="3. C_ITEMLOCATION">
+        <Entity entityId="ca9c7b57-8ea9-4b85-a638-f8925120f0b2" name="3.2 Send C_ITEMLOCATION"/>
+        <Entity entityId="7a2638da-6dbb-47d3-854e-442823fe5809" name="3. C_ITEMLOCATION:Common Run"/>
+        <Entity entityId="3d794e31-73c6-47d9-ba97-01e5478e52ff" name="3.0 C_ITEMLOCATION: SQL Query"/>
+        <Entity entityId="615a25f0-d216-45c0-8cba-9a456b0d71be" name="3.1 Create C_ITEMLOCATIOn"/>
+      </Folder>
+      <Folder entityId="cc1350c4-8fa1-4ae6-b406-a9ae7b944223" name="9. C_ITEMAREA">
+        <Folder entityId="b98bf9be-791f-484d-a7c0-f57cbcc967cc" name="WORKING">
+          <Entity entityId="65b820e0-51a6-4a9a-a63e-183c1bfd41a2" name="9.2 Send C_ITEMAREA"/>
+          <Entity entityId="cc7f519f-6cfb-4b81-82a0-72d41e41add5" name="9. C_itemarea: Common Runpoint"/>
+          <Entity entityId="121e9797-f09b-4650-b76e-6ef328b9e6c0" name="9.1 Create c_itemarea"/>
+          <Entity entityId="07b5f797-9ead-473e-b4f7-0586f07eee99" name="9.0 C_ItemArea: Sql Query"/>
+        </Folder>
+      </Folder>
+      <Folder entityId="b5b3794e-ea42-4764-9ce7-6c9e21a94c07" name="6. C_CURRENTSTK">
+        <Entity entityId="7f31e309-641c-4690-88b5-9c365cd27728" name="6.0  Create C_CURRENTSTK"/>
+        <Entity entityId="fd43bb6f-96a4-4437-a30d-c5f21116cb28" name="6.1 Send C_CURRENTSTK"/>
+        <Entity entityId="338aa24e-3a76-4953-bea6-17f0b592b4c6" name="6. C_CURRENTSTK: Common runpoint"/>
+      </Folder>
+      <Folder entityId="9534abe9-89cb-4a66-b654-a61fb6fe7d22" name="15. C_MACROAREAS">
+        <Entity entityId="afc8070f-792e-4ec1-bc0f-0235ffc00d15" name="15.1 Send C_MACROAREAS"/>
+        <Entity entityId="a22b20ac-820b-49a6-970c-754cb8a29ffa" name="15. Create C_MACROAREAS"/>
+        <Entity entityId="0cead8d2-de94-40ac-9078-65cfe3aa9c17" name="15.0 C_MACROAREAS: Common Runpoint"/>
+      </Folder>
+      <Folder entityId="fc332508-8da3-42c5-8db8-98a5174672f7" name="8. C_ONORDER_DET (PO)">
+        <Entity entityId="355438d5-a180-44ee-9842-98df2c477453" name="8.1 Send C_ONORDER_DET(PO)"/>
+        <Entity entityId="c4e77cb4-366b-4956-9176-7e67401453d3" name="8.0 Create C_ONORDER_DET(PO)"/>
+        <Entity entityId="4d239b7c-551d-423f-a668-f88af2076e82" name="8. C_ONORDER_DET(PO): Common Runpoint"/>
+      </Folder>
+      <Folder entityId="fef01693-6a4b-4917-821b-af9ece4e31ec" name="11. LINEORDERSMIA">
+        <Entity entityId="6eed55aa-4707-42bd-9b34-25f5be187555" name="11.0 Create LineOrdersMia sql execute"/>
+        <Entity entityId="aad2b108-80c0-4284-9295-4a413b13b67f" name="11.1 Create LineOrdersMia csv"/>
+        <Entity entityId="9e2ce132-65cf-43c6-8d75-0de349a78b03" name="11.2 Archive LineOrdersMIA to FTP"/>
+        <Entity entityId="d65613da-39cd-4ca0-94b2-2169a2b5cd9f" name="11. LINEORDERMIA: Common Runpoint"/>
+        <Entity entityId="19b1fab3-3666-426a-841f-01599f9912a9" name="11.2 LINESORDERMIA: Combine all csv to one"/>
+      </Folder>
+      <Folder entityId="c2e68fa3-9b32-431e-84df-9f9a6da4d9e4" name="13. C_MICROAREAS">
+        <Entity entityId="d6832756-6256-4ed6-9dda-d17e7f3e1a32" name="13.2 Send C_MICROAREAS"/>
+        <Entity entityId="5956cbaf-3a49-4fc5-9ac6-c8b0b2054728" name="13.0 Create C_MICROAREAS: SQL run"/>
+        <Entity entityId="66ed7fde-c59b-4df7-a5b6-b41cbdf700bd" name="13.1 Create C_Microareas"/>
+        <Entity entityId="2938c004-a6fa-4784-b2fa-857a697e81a1" name="13. C_Microareas: CommonRun"/>
+      </Folder>
+      <Folder entityId="da007e11-b3c0-4920-8f87-1c4971f2cad7" name="Common: Excel File manipulation">
+        <Folder entityId="d7563374-3433-4e8a-9bc6-067d084cddac" name="State Lookup">
+          <Entity entityId="c90bd81a-b986-4dc8-8c5a-de10fb349fde" name="3.0 StateLookup: Get updated file from sharepoint to LocalFile"/>
+          <Entity entityId="bfd4ad00-e2cf-4953-be5d-a2cc0bcbbaac" name="3.1 StateLookup: Excel Transformation"/>
+        </Folder>
+        <Folder entityId="6403e1d8-d1da-47d0-a6b3-100048ea785b" name="Entity Lookup">
+          <Entity entityId="beb84236-9880-4b1a-acf5-2a42ba5e4197" name="4.0 EntityLookup: Get update file from sharepoint to LocalFile"/>
+          <Entity entityId="b20c64c1-9bf4-4a10-9ae2-3b81582ab088" name="4.1 EntityLookup: Excel Transformation"/>
+        </Folder>
+        <Folder entityId="f8f85a5c-73af-4bf8-b9a9-aa7b58e0673d" name="Site Source">
+          <Entity entityId="8a8e5970-82b3-47bf-a064-389c2ea58475" name="1.1 SiteCode&gt;SiteName: Excel Transformation"/>
+          <Entity entityId="d2c93e1e-13fa-4b32-9314-841258a90274" name="1.0 SiteCode&gt;SiteName: Get updated File from Sharepoint to Local Excel_"/>
+        </Folder>
+        <Folder entityId="860f1eea-f415-42fa-baa0-fb4e50bbdf2f" name="Duplicate Warehouse Lookup">
+          <Entity entityId="5610358e-0bea-4f8a-bb76-091f205db306" name="5.0 Duplicate Item Warehouse: Get updated file from sharepoint"/>
+          <Entity entityId="aaad5179-26b6-42fd-a90a-f7f2f51c94da" name="5.1 Duplicate item warehouse: Excel transformation"/>
+        </Folder>
+        <Folder entityId="df4ef395-0e27-4684-a439-7c76c5b580a2" name="Product Source">
+          <Entity entityId="ad4ffb9f-ee83-4c4d-b9fd-ebde448f6c1c" name="2.0 ProductSource - Get updated File from Sharepoint to Local Excel"/>
+          <Entity entityId="e0612b0e-89d8-4a02-9f62-7354e65809e3" name="2.1 ProductSource: Excel Transformation"/>
+        </Folder>
+      </Folder>
+      <Folder entityId="003a5531-a4bd-401b-93bf-2f449cef1595" name="14. C_AREAS">
+        <Entity entityId="5d5533c8-df9d-48ca-b85e-d35aa6d0003c" name="14.2 Send C_AREAS"/>
+        <Entity entityId="c4bddfdf-a5a6-4dca-9c5a-d45e6ae34ff0" name="14.1 Create C_AREAS"/>
+        <Entity entityId="d161e637-fc1d-4e80-aaf6-03ef5927e741" name="14. C_AREAS: Common Runpoint"/>
+      </Folder>
+      <Folder entityId="ae63714c-ac47-4bd4-90a3-90b6b3d69559" name="7b. C_ONORDER_DET (GIT)">
+        <Entity entityId="16db1024-1777-4eb5-8c94-f1d7df811e57" name="7b.0 Create C_ONORDER_DET (GIT)"/>
+        <Entity entityId="36bd501b-60a3-418f-a097-0f6099a7e76c" name="7b.1 Send C_ONORDER_DET (GIT)"/>
+        <Entity entityId="ebd3810c-7b2a-49d9-866d-1927de0b3c27" name="7b. C_ONORDER_DET(GIT):Common Runpoint"/>
+      </Folder>
+      <Folder entityId="66b1c1dc-c700-4bad-8e60-af41cc0118a9" name="1. C_MACROFAMS">
+        <Entity entityId="8085f214-c653-4b1b-9cbb-0f2e769bad1d" name="1.1 Send C_MACROFAMS"/>
+        <Entity entityId="ee35e2a2-00fc-40dc-a9c2-c177dbee3e77" name="1.0 Create C_MACROFAMS"/>
+      </Folder>
+      <Folder entityId="b3f34f9f-41d1-45f1-97b8-8f638d0d9e1d" name="5b. LINEORDERSMIA (INV)">
+        <Entity entityId="2e64c3a1-fdbb-4a4e-998b-352c12e8a86b" name="5b.2 Send LINEORDERSMIA(INV)"/>
+        <Entity entityId="9eed60ec-4f4c-4f27-93db-a2fcd423fa1d" name="5b.0 LINESORDERMIA(INV): Common Runpoint"/>
+        <Entity entityId="cc78e37e-d34e-4fbb-8133-1b7127e46513" name="5b.1 Create LINEORDERSMIA(INV)"/>
+      </Folder>
+      <Folder entityId="c631346e-4944-47fb-b1a8-457624ea9f21" name="0. C_MASTERFILE">
+        <Entity entityId="3add8bc2-0766-4e6d-a47d-fca7de4d555c" name="0.1 Create C_MASTERFILE"/>
+        <Entity entityId="c554a459-8093-41e3-a253-6e561035fb49" name="0.2 Send C_MASTERFILE to FTP"/>
+        <Entity entityId="018d12c3-2a0d-40bc-8d50-a38cc0b31864" name="0.0 C_MASTERFILE:Common_Run"/>
+      </Folder>
+    </Folder>
+  </EntityType>
+  <EntityType name="EmailMessage">
+    <Entity entityId="e9b4e4ce-b495-4b3c-93bc-d10d1bc25b46" name="Error Notification"/>
+  </EntityType>
+  <EntityType name="Document">
+    <Entity entityId="9fb491bc-ee54-4483-8a47-f719ceadfbf3" name="C_Microareas_DBExtract"/>
+    <Entity entityId="a20437b5-e0fc-4df5-af92-36f22af43690" name="c_itemarea: dbExtract"/>
+    <Entity entityId="f453732a-71e8-4eaf-891e-0ceb450e286a" name="C_itemlocatio:dbextract"/>
+    <Entity entityId="238112b2-3be8-437d-85fe-644df5484892" name="Copy of C_MICROAREAS"/>
+    <Entity entityId="4949266b-b3b7-4200-be87-e5d60022fa77" name="C_AREAS"/>
+    <Entity entityId="cdb2580c-9506-4634-8e2d-166c17723d89" name="C_FREEATTR_ITEM3_PR_GROUP"/>
+    <Entity entityId="c4f6925e-3fa7-4d97-91b3-bafc468ff48b" name="Attribute Format"/>
+    <Entity entityId="ff58227e-cdb1-4f3b-aa35-19ec93acf74e" name="ProductSource - Mapping"/>
+    <Entity entityId="b7692898-b95c-4d7e-b186-a0a213ac7650" name="C_LINEORDERSMIA (INV)"/>
+    <Entity entityId="c8e845bd-41ed-4443-b578-2530e39eee34" name="C_MACROAREAS"/>
+    <Entity entityId="70111ab9-ec3f-4511-91e4-7836cb012f7e" name="Customer Warehouse Code"/>
+    <Entity entityId="b1951daa-4bbb-4586-9820-4dadc53ab0f6" name="C_MASTERFILE Updated"/>
+    <Entity entityId="4273c30e-8d96-4281-b518-ca4cf7f5e505" name="C_MICROAREAS"/>
+    <Entity entityId="2c2a96ec-089f-46bb-8a61-363014c9069f" name="SiteName  from SiteCode"/>
+    <Entity entityId="6c422b43-7806-498f-bd84-59d7ead026a0" name="C_ONORDER_DET_GIT"/>
+    <Entity entityId="645f264b-c3c2-48d1-a320-00ff498d04fa" name="LINEORDERSMIA_GV"/>
+    <Entity entityId="836ee80b-6ead-46aa-a221-756e635184ca" name="LINEORDERSMIA(INV)"/>
+    <Entity entityId="c8a7ace9-de67-46c1-8121-4ac7c7564026" name="C_ITEMAREA"/>
+    <Entity entityId="a2ca1eaf-fd2a-4671-8111-6e37a74713b5" name="C_ONORDER_DET (PO)"/>
+    <Entity entityId="5e3ec180-a24f-45af-a8f7-6c6b845fe591" name="C_FREEATTR_AREA_1"/>
+    <Entity entityId="7d2da2ea-3913-49e3-b1ac-1e24530affc3" name="C_CURRENTSTK"/>
+    <Entity entityId="282b677c-295d-4309-96c9-8752ec8d81bf" name="LINEORDERSMIA"/>
+    <Entity entityId="de59a67a-4308-41ac-9b75-6b88623b74fb" name="C_OUTSTORDERS"/>
+    <Entity entityId="25b4982a-aee2-4400-af72-736ddc848b0d" name="C_ITEMLOCATION"/>
+    <Entity entityId="bd26549e-34d3-4608-a411-6a366468adfe" name="C_PRODFAMS"/>
+    <Entity entityId="89d09d99-e7a4-4b67-be54-8b17ab6ace9d" name="C_MASTERFILE"/>
+    <Entity entityId="b47870e6-d3ee-4d5e-a071-058e674f21e5" name="Lookup Duplicate Item Warehouse"/>
+    <Entity entityId="6eef6730-5dd0-4b30-9233-731c776e1b01" name="Excel: State Lookup"/>
+    <Entity entityId="5718841b-2f37-442e-9fc3-d65beeb5ec62" name="EntityLookup - Dictionary mapping"/>
+    <Entity entityId="c83c6abe-ef15-4c0c-a8e1-6e285c028987" name="C_ONORDER_DET (GIT)"/>
+  </EntityType>
+  <EntityType name="Transformation">
+    <Folder entityId="1250490f-4dfa-470c-b785-e668f2b50cb4" name="C_ItemLocation">
+      <Folder entityId="95533e38-57de-4db4-9b14-8f793b1efc0d" name="working">
+        <Entity entityId="b65b052e-448e-4514-ac46-3f14c270ebf5" name="3.1 Create C_ITEMLOCATION"/>
+      </Folder>
+      <Folder entityId="c7c83c83-d9a4-42a4-b119-2b8a77629134" name="backup">
+        <Entity entityId="5fb5f20f-2a79-4851-8dd0-277856d31a1e" name="C_ITEMLOCATION_Trans"/>
+        <Entity entityId="c248c6ac-2e69-4709-b03f-af279819bd84" name="C_ITEMLOCATION_Trans V1"/>
+        <Entity entityId="6d837c0d-b9e7-46b4-b7ec-895e5155f2a1" name="Copy of C_ITEMLOCATION_Trans V1 (2)"/>
+        <Entity entityId="3dee6f2e-fa67-440a-b511-7a767f8bd833" name="Copy of C_ITEMLOCATION_Trans V1 (3)"/>
+      </Folder>
+    </Folder>
+    <Folder entityId="af4cf4ac-fa5f-4bfd-871c-c25c95f0e916" name="C_Prodfams">
+      <Entity entityId="a4da12cb-214b-41b0-bbc9-7aa3b62b0860" name="C_PRODFAMS Trans"/>
+    </Folder>
+    <Folder entityId="b2341e23-e183-4ecd-820b-c35d0df7b41f" name="LineordersMIA (INV)">
+      <Entity entityId="d88a2801-bc79-4b8b-8b29-263ae74bc9b9" name="10. LINEORDERSMIA(INV) Trans"/>
+      <Entity entityId="2a9067ec-8f1b-4081-86f7-e3f345f756de" name="5b. Lineordersmia (inv): dbextract to txt"/>
+    </Folder>
+    <Folder entityId="1313b0f3-652b-4905-bc24-fdd44a5c0876" name="C_ONORDER_DET (GIT)">
+      <Folder entityId="03303518-132b-4ec0-8ed2-444bfbeafcf3" name="backup">
+        <Entity entityId="03ef9fc1-aa57-45d3-b330-37bb1af347b2" name="Trans ONORDER_DET_GIT"/>
+      </Folder>
+      <Folder entityId="a17da9fb-9e03-4ec3-8aa4-3b5d3ed76c24" name="Working">
+        <Entity entityId="8c86cf54-a50b-4830-a483-d3750b900816" name="7b. Create C_ONORDER_DET (GIT)"/>
+      </Folder>
+    </Folder>
+    <Folder entityId="bb8d9ac3-ac91-4c63-8282-98c17a1881f2" name="C_AREAS">
+      <Entity entityId="88d36989-65ed-49f9-acd5-ccddc497ac34" name="14. C_AREAS"/>
+    </Folder>
+    <Folder entityId="28575ff6-689c-41c3-a6f1-af6e6fde9e8c" name="C_MACROAREAS">
+      <Entity entityId="64cf05e9-2ab9-47d1-b11b-21880c83ec4d" name="15. C_MACROAREAS"/>
+    </Folder>
+    <Folder entityId="f360a0a4-c555-4648-9626-9b4a19761bb0" name="Common: Excel">
+      <Folder entityId="c4e42103-16ed-467e-bde7-ff242cf71257" name="backup">
+        <Entity entityId="0cd763ab-d93b-4e5d-b816-80b89ce9358e" name="Copy of DB to text"/>
+        <Entity entityId="3d2c3d9f-0733-4562-aa3a-8b966c540bdf" name="Site Location Dictionary"/>
+        <Entity entityId="33c58357-8716-48d0-bac2-28b2c6f8e267" name="Copy of DB to text (2)"/>
+      </Folder>
+      <Entity entityId="9dd5f76e-407f-4931-a4a0-513180039d73" name="DB to text"/>
+      <Entity entityId="3068394f-c565-4398-9e06-120d1237ec7d" name="ProductSource - DB to Text"/>
+      <Entity entityId="e25bd627-753e-421b-a179-a0715f8d9dc5" name="Excel: State Lookup"/>
+      <Entity entityId="fe6105bb-913e-4704-a63b-8efdbe14b07d" name="EntityLookup - Excel Transformation: DB to text"/>
+    </Folder>
+    <Folder entityId="fac991f7-6d13-40b1-bd88-103a84573704" name="C_Masterfile">
+      <Folder entityId="bbe2ffe6-9014-4ff8-a167-c011eaae0ea6" name="Backup">
+        <Entity entityId="c686a0d1-c5d0-445a-b46e-ce0e6627ff1d" name="C_MASTERFILE_Trans"/>
+        <Entity entityId="c0190477-9973-458b-b4ca-35d3b3d77a04" name="C_MASTERFILE_Trans V1"/>
+        <Entity entityId="e16e8d78-6455-44a4-91b5-e7fd03a84499" name="Copy of C_MASTERFILE_Trans V1"/>
+        <Entity entityId="8a81ac24-b8c7-4cf6-ba53-3920b77212c6" name="C_MASTERFILE_Trans V2"/>
+        <Entity entityId="9b623d5c-4003-4f9e-9440-c3671ee90e5d" name="Copy of C_MASTERFILE_Trans V2"/>
+      </Folder>
+      <Folder entityId="567dce1c-788d-4301-844b-8e65aefacbb2" name="Working">
+        <Entity entityId="61293654-1518-486c-b7cc-be10ade1fff6" name="1.0 C_MASTERFILE: DB to TXT"/>
+      </Folder>
+    </Folder>
+    <Folder entityId="3d8eb777-9ee7-4880-a9f2-e91285126d64" name="C_OutOrders">
+      <Entity entityId="afba1ef1-7d38-4d28-b5de-92eeb98f92b6" name="6. C_OUTSTORDERS"/>
+      <Entity entityId="51da0ef8-da8b-43c4-a970-3ad7abc25666" name="Copy of C_OUTSTORDERS"/>
+    </Folder>
+    <Folder entityId="13f5e620-c9c1-402b-8bf8-f4488d52d66d" name="C_OnOrder_det (PO)">
+      <Entity entityId="de1ab7cf-ff48-4b30-949f-4706bb5a22f2" name="Trans ONORDER_DET_PO_old"/>
+      <Entity entityId="dfa07b81-0d45-4ab9-a9f1-9fd11951c062" name="8. ONORDER_DET_PO"/>
+      <Entity entityId="78097446-e112-4229-aa17-aad6ba358284" name="Copy of Trans ONORDER_DET_PO"/>
+    </Folder>
+    <Folder entityId="acfee450-b004-4b6c-ba03-e82906cbf36d" name="LineordersMIA">
+      <Folder entityId="bb1237df-6d9a-48f3-a084-b0ec09797a26" name="backup">
+        <Entity entityId="a42918b3-7760-4cf3-af7e-52ddea7ca7e5" name="C_LINEORDERSMIA"/>
+        <Entity entityId="4a0c57ae-8959-4725-a915-46e3f7f4981e" name="C_LINEORDERSMIA V1"/>
+        <Entity entityId="fe9d9254-2544-4a43-83c6-046eb271eb54" name="C_LINEORDERSMIA V2"/>
+        <Entity entityId="aa9df93d-d1ba-4d18-ade9-f221f5f76342" name="Test LineOrdersMia trans"/>
+        <Entity entityId="344ed933-131c-4c20-923a-0bf55ab7a752" name="C_LINEORDERSMIA V3"/>
+        <Entity entityId="58918dcb-81b5-4f82-a21c-9bd5e777f777" name="C_LINEORDERSMIA V4"/>
+      </Folder>
+      <Folder entityId="fd215a6d-fa90-49d7-bd24-6e33a1c2d665" name="working">
+        <Entity entityId="b8c453b5-1901-4656-90fd-784f7598b9c2" name="11.1 LineOrdersMIA"/>
+        <Entity entityId="2dfdda56-64c9-4ba7-a750-5b057e72bc65" name="11.2 LineORDERSMIA: combine local files to FTP"/>
+      </Folder>
+    </Folder>
+    <Folder entityId="86d38307-e450-4f7b-ac65-8fe32d75d85a" name="C_MICROAREAS">
+      <Folder entityId="fd525705-1b24-480c-8012-5ede0657d098" name="WORKING">
+        <Entity entityId="88bf7547-26dd-4f64-9bc9-20b88f18e88f" name="13 C_MICROAREAS: txt to txt"/>
+      </Folder>
+      <Folder entityId="8ac8a66a-d9f8-4cb1-be9f-7a3759a2a5ad" name="BACKUP">
+        <Entity entityId="6da2e6db-470d-4634-a5da-0d34ef60498d" name="13. Create C_MICROAREAS v1.0"/>
+        <Entity entityId="e070ee0c-249a-47a4-bb59-d182667396cf" name="_TEST_ Trans C_MICROAREAS"/>
+        <Entity entityId="ec3fe981-4c80-4424-97ce-c221099fe63e" name="13. C_Microareas v2.0"/>
+      </Folder>
+    </Folder>
+    <Folder entityId="e5f36997-b265-4709-bd4a-29d4f030cdc1" name="C_ITEMAREA">
+      <Entity entityId="4a4ebd44-d74c-44d0-b260-a4e689687076" name="C_ITEMAREA Trans"/>
+      <Entity entityId="8d7f4ae6-7fee-49e5-b349-dc74d5b6ed9c" name="9. create c_itemarea"/>
+    </Folder>
+    <Folder entityId="7988808f-89d8-442d-a28b-c3ad94e75195" name="C_FREEATTR">
+      <Entity entityId="55b4c9b5-95cb-4717-8812-44016df26b36" name="14. Trans FREEATTR_AREA_1"/>
+      <Entity entityId="37bcaeb7-a1cf-4ed5-b3e4-ad5103e6d542" name="Trans_C_FREEATTR_AREA_2"/>
+      <Entity entityId="c2644a2c-1a84-4eb9-b345-9e2e1ef907fc" name="Trans C_FREEATTR_ITEM1"/>
+      <Entity entityId="b4e5e300-5ec0-4c4e-94b6-d28ae573ccbb" name="Trans C_FREEATTR_ITEM2"/>
+      <Entity entityId="26054b98-f01a-4676-9b63-6d14e289351f" name="Trans C_FREEATTR_ITEM4"/>
+      <Entity entityId="9d19edf9-df2d-4ee7-adcc-3039036bfa22" name="Trans C_FREEATTR_ITEM5"/>
+      <Entity entityId="c33ccc16-e85c-4796-b4a7-6d3db85b4639" name="Trans C_FREEATTR_ITEM6"/>
+      <Entity entityId="6c211327-fbe5-42a7-97e0-7bf2b3076a0c" name="Trans C_FREEATTR_ITEM3"/>
+      <Entity entityId="2b8037ba-5a5e-49cd-a4d3-179da6d316a1" name="Trans PR-Group_C_FREEATTR_ITEM3"/>
+      <Entity entityId="881d02ee-974c-404e-89e8-7dad824e1a56" name="Trans_C_FREEATTR_AREA1"/>
+      <Entity entityId="ba952b90-b267-4546-a493-721eb2f437d9" name="Trans C_FREEATTR_AREA_4"/>
+    </Folder>
+    <Folder entityId="d915c436-2d7e-4115-937e-f61aa8d73db7" name="C_CURRENTSTK">
+      <Entity entityId="270851eb-eaf2-4bf9-84ee-0bda2f86dbe9" name="6.0 C_CURRENTSTK"/>
+    </Folder>
+    <Entity entityId="2b0ec908-afe1-490e-a022-5d1596d00065" name="5.1 Duplicate Item Warehouse"/>
+  </EntityType>
+  <EntityType name="Source">
+    <Folder entityId="c1faa23d-701b-4990-b21b-6b008850508a" name="JB Internal">
+      <Entity entityId="7746eb00-6f3d-4129-82a6-c47aaa077290" name="JB Internal FTP - Site Source"/>
+      <Entity entityId="5ded463a-17ec-4ab7-a73c-0c32775402af" name="JB Internal FTP - Product Group Source"/>
+      <Entity entityId="1d5522e6-d1ac-4cc8-9928-bb59e463973a" name="JB Internal FTP - StateLookup"/>
+      <Entity entityId="2be75d08-0d41-44b6-8e36-5fea274aa40f" name="JB Internal FTP - EntityLookup"/>
+    </Folder>
+    <Folder entityId="d7175f24-eadc-4b69-81d0-77b15b68f4fa" name="Global variables">
+      <Entity entityId="6e2c6736-6cbe-4262-aeda-3b78112240f2" name="Item"/>
+      <Entity entityId="43fa8db3-700a-410a-bc39-ff99a9cfbb61" name="onorder_det_po"/>
+      <Entity entityId="bbdd8039-a71d-4a1d-83e9-b88068c0e1b0" name="Line_OrdersMia_GV"/>
+    </Folder>
+    <Folder entityId="6199b339-e03f-4dde-b6b0-5480f50b22e2" name="ProductGroup Source">
+      <Entity entityId="a84b5dc1-7e58-4298-819f-ada036a786d1" name="Excel - ProductGroup Source"/>
+      <Entity entityId="88673a5a-c001-4352-bd21-9c6725971ee5" name="LocalFile - ProductGroupSource"/>
+    </Folder>
+    <Folder entityId="25167250-4a5c-49da-b091-353ce3168885" name="State Lookup">
+      <Entity entityId="3a96b7df-69ad-408a-806e-0e139efce350" name="Excel - State Lookup"/>
+    </Folder>
+    <Folder entityId="9b0ae959-f138-43a2-9698-0d3202116b6b" name="Entity Lookup">
+      <Entity entityId="0fe37bea-b880-4016-b655-d002f49fe909" name="Excel - Entity Lookup"/>
+    </Folder>
+    <Folder entityId="dcaf3c7c-d571-4b1e-9d7b-0c00ff29806c" name="Site Source">
+      <Entity entityId="9f051ffa-7743-4cb6-96ff-95319c94f830" name="LocalFile - SiteSource"/>
+      <Entity entityId="9aa11e8a-5e23-4301-b406-d88fb8817b20" name="Excel - Site Source"/>
+    </Folder>
+    <Folder entityId="36b59b49-e58f-4a49-8b99-37cd1e25e320" name="Database">
+      <Entity entityId="d5b24428-e147-4b50-8bcf-3a7d16b43762" name="MXP Progress DB"/>
+    </Folder>
+    <Folder entityId="140b8ab9-b90d-4431-bffe-77e649782a31" name="SFTP Lookup">
+      <Entity entityId="c5311fb5-4864-440d-8c25-7f413ffb69f9" name="SFTP - Lookup - Site Source"/>
+      <Entity entityId="630728c4-af29-4007-837c-e4cd893e84dc" name="SFTP - Lookup - EntityLookup"/>
+      <Entity entityId="3a5fee2b-acf2-4b08-bf07-548929009b4f" name="SFTP - Lookup - Product Group Source"/>
+      <Entity entityId="082a22d2-aad5-42d1-b254-1530092e5f0e" name="SFTP - Lookup - State Look up"/>
+      <Entity entityId="3ff3d220-7b60-4f12-98e0-6c977c482ff1" name="SFTP - Lookup - Duplicate Item Warehouse"/>
+    </Folder>
+    <Folder entityId="23370eb7-ef40-47e9-8624-50a5223e73f0" name="Temp Storage">
+      <Entity entityId="352b8223-e8a0-42ea-892d-e93775b38fa9" name="Temp_Item_Master"/>
+      <Entity entityId="445b3fe6-2537-4d41-b081-7f415bc50408" name="temp_C_Prod_Fam"/>
+      <Entity entityId="65896e06-7afd-4e6f-8767-d396e7cd7779" name="Temp_item_location"/>
+      <Entity entityId="8bfa1ced-e005-4d46-ba37-94e5054c344f" name="Temp_Line_ordersmia"/>
+      <Entity entityId="bc6709ef-762f-4d23-a61e-7bcef000f1e8" name="Temp_Outstorders"/>
+      <Entity entityId="279969d2-7022-4fee-b459-581f5220ffe9" name="Temp_c_currentstk"/>
+      <Entity entityId="91446a2f-92ae-4662-b1b5-c6f5014902ed" name="Temp_freeattr_area_1_"/>
+      <Entity entityId="5a1e3e34-6daf-482c-a274-9df3745fac51" name="Temp_c_itemarea"/>
+      <Entity entityId="e39158b1-8701-42df-9da7-33808e5166c5" name="Temp_LINEORDERSMIA(INV)"/>
+      <Entity entityId="e202ac0b-3bc2-4247-b71d-f1ce23fa0397" name="Temp_C_ONORDER_DET (GIT)"/>
+      <Entity entityId="d6eeac2a-2df4-4529-8fc8-7bfc0f6dc89a" name="Temp_C_MICROAREAS"/>
+      <Entity entityId="473d5f9a-9028-4124-8e11-3a1e02fd87fd" name="Temp_C_FREEATTR_AREA_4"/>
+      <Entity entityId="80b2377f-dcfe-472c-b4c7-c171e3e06b16" name="Temp_C_MACROAREAS"/>
+      <Entity entityId="f95c0d16-cde9-484c-8511-9d2518433c16" name="Temp_LineOrderMIA_SQL"/>
+      <Entity entityId="65d767cf-791a-4baf-805a-0ed231cff38c" name="Temp_C_FREEATTR_ITEM1"/>
+      <Entity entityId="5a2737e1-2959-4af9-b35e-81adcf09fbbd" name="Temp_C_FREEATTR_ITEM2"/>
+      <Entity entityId="33e6dc4d-2edd-4827-9453-5ee621e9c466" name="Temp_C_FREEATTR_ITEM4"/>
+      <Entity entityId="5d06c760-65da-4f18-ae84-4f8e09f0c936" name="Temp_C_FREEATTR_ITEM5"/>
+      <Entity entityId="d6ea588f-59ff-4b51-a5c9-523518543813" name="Temp_C_FREEATTR_ITEM6"/>
+      <Entity entityId="0048302e-9e92-4d3c-9d03-c3d02f3c8028" name="Temp_C_FREEATTR_ITEM3"/>
+      <Entity entityId="9d8fa90f-519f-4ca8-ad93-90a30600dab1" name="Temp_FREEATTR_AREA_1"/>
+      <Entity entityId="e6a6e72a-1248-49b0-b3d2-ac72c44ad1a5" name="Temp_FREEATTR_AREA_4"/>
+      <Entity entityId="e515be9f-1353-4e14-9b4a-f2810a6885c9" name="_TEST_ C_MICROAREAS"/>
+      <Entity entityId="eb5bf1ca-44ed-450c-b99d-0f81506eabcb" name="Copy of Temp_C_MICROAREAS"/>
+      <Entity entityId="7067e1ee-2a8e-4b5a-89f1-8532b56a612d" name="Temp_C_Areas"/>
+      <Entity entityId="31a04cc8-8df1-4bb8-9559-ef65c4866f46" name="Temp_C_Macrofam"/>
+    </Folder>
+    <Folder entityId="c776abd5-b506-4b33-8eae-be0f8215c193" name="Local File">
+      <Entity entityId="d8ab139b-8100-491c-9358-2e1e2dff8b9f" name="LocalFile - LINEORDERSMIA"/>
+      <Entity entityId="bb5076aa-08f8-4a03-af37-b757a9deba4f" name="LocalFile - LINEORDERSMIA:combined"/>
+      <Entity entityId="9f367659-5083-4cc1-8bfb-b24d77fa7535" name="LocalFile: DB extract"/>
+      <Entity entityId="13b67d0b-1e59-41ca-a47e-7c80878aff48" name="LocalFile: DB extract_c_microareas"/>
+      <Entity entityId="b423ec62-8c42-4eb5-acc3-7469ce0afa11" name="LocalFile: DB extract_c_currentstk_virtstk"/>
+      <Entity entityId="d751e088-3a67-42de-956e-ec24dcc7bed1" name="LocalFile - c_itemlocation"/>
+      <Entity entityId="a6c81629-8826-495a-9fd4-1603ca75b77c" name="LocalFile: DB extract_c_itemarea"/>
+      <Entity entityId="ed5e0fc7-8ec5-412d-8035-0f5475fb344f" name="LocalFile_test:test Extracts"/>
+      <Entity entityId="fb09c207-9abc-4c50-b5c9-007a0811cd38" name="LocalFile: DB extract_c_lineordersmia ( inv)"/>
+    </Folder>
+    <Folder entityId="7eb6297a-9381-4e49-96e2-96aedc42af13" name="Duplicate Item Warehouse">
+      <Entity entityId="81d27ee9-900c-4c44-b00f-f6c7d991c2fe" name="Excel - Duplicate item warehouse"/>
+    </Folder>
+  </EntityType>
+  <EntityType name="Schedule">
+    <Entity entityId="39676232-61af-473f-add3-c54ee16b9ed9" name="Daily Extract - at 8:30 PM"/>
+    <Entity entityId="7d5d40b2-5812-4b8c-9d86-9ff969c5535d" name="Weekly Extract - On Sunday at 3PM"/>
+    <Entity entityId="2e8d3ed7-aacc-437c-a4ae-23792b2939d2" name="Monthly Extract - First Day of the month"/>
+  </EntityType>
+</Project>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="9dd5f76e-407f-4931-a4a0-513180039d73" Name="DB to text">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Flat"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="9aa11e8a-5e23-4301-b406-d88fb8817b20"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="target_text_doc" value="2c2a96ec-089f-46bb-8a61-363014c9069f"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="9dd5f76e-407f-4931-a4a0-513180039d73"/>
+  </Properties>
+  <InputStructure sourceId="9aa11e8a-5e23-4301-b406-d88fb8817b20">
+    <Properties>
+      <Item key="includeSchemaName" value="0"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">['Site Source$'],</konga.string>
+    <DbFields/>
+    <Relations/>
+    <SqlScript>
+      <Entry entryId="-1580684541615" type="1">
+        <konga.string name="script">SELECT * FROM ['Site Source$']</konga.string>
+      </Entry>
+    </SqlScript>
+    <Filters/>
+  </InputStructure>
+  <OutputStructure docId="2c2a96ec-089f-46bb-8a61-363014c9069f"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[?Site?Source??]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">/PRECONDITION/	&lt;trans&gt;
+key=Wh;
+
+if(Length(key)&gt;0,
+		//if key is not empty
+		siteName=Site?Name;
+		a=Wh;
+		c=MXP?Match?Code;
+		
+		KeySourceLocation=ToUpper(a+c);//SourceInstanceCount();
+		//Dictionary for $Dic.c_itemLocation.SourceLocationFile
+		if(!HasKey($Dic.c_itemLocation.SourceLocationFile, KeySourceLocation ),
+			//AddToDict($Dic.C_itemLocation.Location,key, siteName);
+			a=Wh;
+			b=Site?Name;
+			c=MXP?Match?Code;
+			d=SO99?Vendor;
+			e=SO99?SRLOC;
+			f=MINLEADTIME;
+			g=AVEDELAY;
+			h=MAX_CYCLEDELAY;
+			i=QATIME;
+			j=SERVICETIME;
+			k=TRANSIT_TIME;
+			l=Customer?PS?SITE;
+			arrayValues=Array();
+			arrayValues[0]={a,b,c,d,e,f,g,h,i,j,k,l};
+		
+			AddToDict($Dic.c_itemLocation.SourceLocationFile, KeySourceLocation, arrayValues[0]);
+		);
+		
+		
+		//Dictionary for C_ItemLocation.location
+		if(!HasKey($Dic.C_itemLocation.Location,ToUpper(key)),
+			AddToDict($Dic.C_itemLocation.Location,ToUpper(key), siteName);
+		
+		);
+		
+		//Dictionary for LINESORDERMIA_INV
+		if(!HasKey($Dic.LINESORDERMIA_INV.Location, key),
+			AddToDict($Dic.LINESORDERMIA_INV.Location,key, siteName);
+		
+		);
+		
+		//Dictionary for Dic.C_ONORDER_DET.Location
+		if(!HasKey($Dic.C_ONORDER_DET.Location,ToUpper(key)),
+			AddToDict($Dic.C_ONORDER_DET.Location,ToUpper(key), siteName);
+		
+		);
+		
+		//Dictionary for C_CurrentSTK.location
+		if(!HasKey($Dic.C_CurrentSTK.Location, ToUpper(key)),
+			AddToDict($Dic.C_CurrentSTK.Location,ToUpper(key), siteName);
+		
+		);
+		
+		C_OUTORDERS_key=ToUpper(Customer?PS?SITE);
+		//Dictionary for C_OutOrders.Location
+		if(!HasKey($Dic.C_OutOrders.Location, C_OUTORDERS_key),
+			AddToDict($Dic.C_OutOrders.Location,C_OUTORDERS_key, siteName);
+		
+		);
+		
+		//c_itemarea
+		itemarea_key=ToUpper(Customer?PS?SITE);
+		itemarea_value=Site?Name;
+		
+		//Dictionary for C_itemarea.srclocation
+		if(!HasKey($Dic.c_itemArea.SRCLocation, itemarea_key),
+			AddToDict($Dic.c_itemArea.SRCLocation,itemarea_key, itemarea_value);
+		
+		);
+
+
+		siteCode=ToUpper(Wh);
+		if(Length(siteCode)&gt;0,
+			//create and/or add to dictionary
+			if(!HasKey($Dict.SiteCodeSiteName, siteCode),
+				AddToDict($Dict.SiteCodeSiteName,siteCode,Site?Name);
+			);
+
+			//C_area.srclocation
+		c_area_key=ToUpper(Customer?PS?SITE);
+		c_area_value=Site?Name;
+		
+		//Dictionary for C_area.srclocation
+		if(!HasKey($Dic.C_area.srclocation, c_area_key),
+			AddToDict($Dic.C_area.srclocation,c_area_key, c_area_value);
+		
+		);
+		
+		//C_microareas
+		c_area_key=ToUpper(Customer?PS?SITE);
+		c_area_value=Site?Name;
+		
+		//Dictionary for C_area.srclocation
+		if(!HasKey($Dic.C_Microareas.srclocation, c_area_key),
+			AddToDict($Dic.C_Microareas.srclocation,c_area_key, c_area_value);
+		
+		);
+		
+		//lineordersmia - microarea
+		key_l=ToUpper(Customer?PS?SITE);
+		value_B=Site?Name;
+		
+		//Dictionary for lineordermia - microarea
+		if(!HasKey($Dic.Lineordersmia.Microarea_PS_Site_Loc, key_l),
+			AddToDict($Dic.Lineordersmia.Microarea_PS_Site_Loc, key_l, value_B);
+		);
+);
+);
+
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SiteName	&lt;trans&gt;
+
+
+//$Site.name=Site?Name
+//Length($Dict.SiteCodeSiteName)
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">Supplier	&lt;trans&gt;
+SO99?Vendor
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SrcLocation	&lt;trans&gt;
+SO99?SRLOC
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

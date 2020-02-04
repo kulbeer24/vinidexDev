@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Document">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="cdb2580c-9506-4634-8e2d-166c17723d89" Name="C_FREEATTR_ITEM3_PR_GROUP">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="document_id" value="cdb2580c-9506-4634-8e2d-166c17723d89"/>
+    <Item key="edifact" value="0"/>
+    <Item key="escape_sequences" value="1"/>
+    <Item key="format_type_id" value="2"/>
+    <Item key="qualifier_mode" value="WHEN_NEEDED"/>
+    <Item key="text_qualifier" value="&quot;"/>
+    <Item key="use_end_of_line" value="1"/>
+  </Properties>
+  <Delimiter value=","/>
+  <Structure>
+    <Properties>
+      <Item key="fixedField" value="0"/>
+    </Properties>
+    <Segment name="" occurenceType="Only Once" parent="_Root" segmentId="0">
+      <Fields>
+        <Field default="" fieldId="1" fixWidth="false" format="" name="PR_GROUP_SUM" required="0" type="String"/>
+        <Field default="" fieldId="2" fixWidth="false" format="" name="SUM_TOTAL" required="0" type="String"/>
+      </Fields>
+    </Segment>
+  </Structure>
+</Entity>

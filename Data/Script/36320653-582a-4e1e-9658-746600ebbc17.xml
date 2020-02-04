@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="36320653-582a-4e1e-9658-746600ebbc17" Name="C_FREEATTR_ITEM3_PR_GROUP_INIT_DICTIONARY">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="36320653-582a-4e1e-9658-746600ebbc17"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$C_FREEATTR_ITEM_PR_GROUP_DICT = Dict();
+&lt;/trans&gt;</konga.string>
+</Entity>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="2b0ec908-afe1-490e-a022-5d1596d00065" Name="5.1 Duplicate Item Warehouse">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Flat"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="81d27ee9-900c-4c44-b00f-f6c7d991c2fe"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="target_text_doc" value="b47870e6-d3ee-4d5e-a071-058e674f21e5"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="2b0ec908-afe1-490e-a022-5d1596d00065"/>
+  </Properties>
+  <InputStructure sourceId="81d27ee9-900c-4c44-b00f-f6c7d991c2fe">
+    <Properties>
+      <Item key="includeSchemaName" value="0"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">Sheet2$,</konga.string>
+    <DbFields/>
+    <Relations/>
+    <SqlScript>
+      <Entry entryId="-1580684541640" type="1">
+        <konga.string name="script">SELECT * FROM [Sheet2$]</konga.string>
+      </Entry>
+    </SqlScript>
+    <Filters/>
+  </InputStructure>
+  <OutputStructure docId="b47870e6-d3ee-4d5e-a071-058e674f21e5"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">//PRESCRIPT/	&lt;trans&gt;
+$Dic.DuplicateItemWarehouse=Dict();
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">[]	[Sheet2?]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">Duplicate_Item_warehouse	&lt;trans&gt;
+key=ToUpper(Wh+""+Item);
+
+//add key value pair to the dictionary for confirmation in item_location
+if(!HasKey($Dic.DuplicateItemWarehouse,key),
+	AddToDict($Dic.DuplicateItemWarehouse, key, key);
+);
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

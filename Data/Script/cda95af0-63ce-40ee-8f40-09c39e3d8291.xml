@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="cda95af0-63ce-40ee-8f40-09c39e3d8291" Name="13.1 C_Microareas:Duplication Dicitonary creation">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="cda95af0-63ce-40ee-8f40-09c39e3d8291"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$Dic.C_Microarea.DataDictionary=Dict();
+&lt;/trans&gt;</konga.string>
+</Entity>

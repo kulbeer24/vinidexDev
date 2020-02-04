@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="b4e5e300-5ec0-4c4e-94b6-d28ae573ccbb" Name="Trans C_FREEATTR_ITEM2">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Flat"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_text_doc" value="ff58227e-cdb1-4f3b-aa35-19ec93acf74e"/>
+    <Item key="source_type_id" value="1"/>
+    <Item key="target_text_doc" value="c4f6925e-3fa7-4d97-91b3-bafc468ff48b"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="b4e5e300-5ec0-4c4e-94b6-d28ae573ccbb"/>
+  </Properties>
+  <InputStructure docId="ff58227e-cdb1-4f3b-aa35-19ec93acf74e"/>
+  <OutputStructure docId="c4f6925e-3fa7-4d97-91b3-bafc468ff48b"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">/PRECONDITION/	&lt;trans&gt;
+
+IF(!HasKey($FreeAttrItemUniqueKeys, Prod_Group_Level_2_Code_COL_G),
+
+AddToDict($FreeAttrItemUniqueKeys, Prod_Group_Level_2_Code_COL_G,true);
+true,false
+)
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ATTRIB	&lt;trans&gt;
+Prod_Group_Level_2_Code_COL_G
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">DESCR	&lt;trans&gt;
+Prod_Group_Level_2_Desc_COL_H
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

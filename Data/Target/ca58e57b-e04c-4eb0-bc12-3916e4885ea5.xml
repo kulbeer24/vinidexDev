@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Target">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="ca58e57b-e04c-4eb0-bc12-3916e4885ea5" Name="Vinidex SO99 FTP Dev Location">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties/>
+  <Location type="FTP">
+    <Data>
+      <Properties>
+        <Item key="append_file" value="0"/>
+        <Item key="archive_encryption_mode" value=""/>
+        <Item key="archive_mode" value=""/>
+        <Item key="character_encoding" value="UTF-8"/>
+        <Item key="compress_format" value=""/>
+        <Item key="encrypt_choice" value="0"/>
+        <Item key="endoflinetype" value="0"/>
+        <Item key="error_folder" value=""/>
+        <Item key="file_name" value="[filename].csv"/>
+        <Item key="file_share_create_directories" value="1"/>
+        <Item key="filenames_in_archive" value=""/>
+        <Item enc="true" key="locator" value="$00mcJ4obHU1Kbfej7lH72b7jKTrjNv5RFusssOS46ZPJkudlKtr6zD3/xVWgZP0tK5"/>
+        <Item enc="true" key="login" value="$00KEcu4kN+naVM/xgnZjlR7mxynfVrROzUa/lbel7tH7I="/>
+        <Item key="passive_mode" value="1"/>
+        <Item enc="true" key="password" value="$00n+JHS5q+WZ1fWrmEEomYUb18iuQtxXPOEpOTWXEogTo9oTVOwYQCnSlC4N4GOYtu"/>
+        <Item key="path" value=""/>
+        <Item key="port" value="-1"/>
+        <Item key="proxy_tunnel" value="1"/>
+        <Item key="secured" value="1"/>
+        <Item key="skip_empty_files" value="0"/>
+        <Item key="success_folder" value=""/>
+        <Item key="transfer_timeout" value="14400"/>
+        <Item key="transfer_type" value="2"/>
+        <Item key="writeHeaders" value="1"/>
+      </Properties>
+    </Data>
+  </Location>
+</Entity>

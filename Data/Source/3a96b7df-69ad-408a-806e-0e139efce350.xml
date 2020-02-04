@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Source">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="3a96b7df-69ad-408a-806e-0e139efce350" Name="Excel - State Lookup">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties/>
+  <Location type="Database">
+    <Data>
+      <Properties>
+        <Item enc="true" key="connectstring" value="$00npEVBwPoeNi2JTIlmvQFzbtBIS8xt5nQNtwXAZqwXo4RKfNGWS9DBrDvd+HEGE5m+nySooxjwi4Lk1A09Q2AZ5pgwB5N1ukGBkCKybXpIyFn99lS+OK7XCINh1EuviNKzw79QeW0k7vYCmHd5/K92RQ+3LL31QCwwAi1vs4BWAfPX69a+i4hyO52oimFCHBw"/>
+        <Item key="db_begin_quote" value="`"/>
+        <Item key="db_end_quote" value="`"/>
+        <Item key="dbname" value=""/>
+        <Item key="driver" value="Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)"/>
+        <Item key="driver_begin_quote" value="["/>
+        <Item key="driver_end_quote" value="]"/>
+        <Item key="drivertype" value="1"/>
+        <Item key="fetch_size" value="0"/>
+        <Item key="manual_mode" value="1"/>
+        <Item key="optional_connectstring" value=""/>
+        <Item key="timeout" value="300"/>
+        <Item key="transactionIsolationLevel" value="0"/>
+      </Properties>
+    </Data>
+  </Location>
+</Entity>

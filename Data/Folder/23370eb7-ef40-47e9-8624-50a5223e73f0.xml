@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Folder">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="23370eb7-ef40-47e9-8624-50a5223e73f0" Name="Temp Storage">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="folder_id" value="23370eb7-ef40-47e9-8624-50a5223e73f0"/>
+    <Item key="protected" value="false"/>
+  </Properties>
+</Entity>

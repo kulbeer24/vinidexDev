@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="94932dad-31ae-4029-bfec-449b1a957559" Name="6.0 C_OUTORDERS: common runpoint">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="94932dad-31ae-4029-bfec-449b1a957559"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+//$LoadedSiteGroup=false;
+//$LoadedStateLookup=false;
+//
+////get data out of the excel file and create dictionaries requried
+//operationsExcelSiteSourceandDictionaryCreation=RunOperation("op.d2c93e1e-13fa-4b32-9314-841258a90274");
+//
+//RunOperation("op.c90bd81a-b986-4dc8-8c5a-de10fb349fde");
+//
+//if($LoadedSiteGroup &amp;&amp; $LoadedStateLookup,
+//		//Create C_OUTORDERS
+//		RunOperation("op.b598f062-93b2-45f0-a5ef-75bc6eae8537");
+//	,
+//		//else
+//		RaiseError("Error occured while creating dictionary from Site Source external file and state lookup file");
+//);
+
+//Create C_OUTORDERS
+RunOperation("op.b598f062-93b2-45f0-a5ef-75bc6eae8537");
+&lt;/trans&gt;</konga.string>
+</Entity>

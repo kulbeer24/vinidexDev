@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="72aaceed-8516-426b-ae86-c3cd6b7406b4" Name="9.1 C_ITEMAREA: create dictionary for area name redundancy">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="72aaceed-8516-426b-ae86-c3cd6b7406b4"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$Dic.C_itemarea.RedundantArea=Dict();
+&lt;/trans&gt;</konga.string>
+</Entity>

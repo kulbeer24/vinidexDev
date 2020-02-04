@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Target">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="e67506e9-3010-4290-afb5-8cb40d9dde6d" Name="Item">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties/>
+  <Location type="GlobalData">
+    <Data>
+      <Properties>
+        <Item key="append_file" value="0"/>
+        <Item key="archive_encryption_mode" value=""/>
+        <Item key="archive_mode" value=""/>
+        <Item key="archive_password" value=""/>
+        <Item key="compress_format" value=""/>
+        <Item key="encrypt_choice" value="0"/>
+        <Item key="endoflinetype" value="0"/>
+        <Item key="file_name" value=""/>
+        <Item key="filenames_in_archive" value=""/>
+        <Item key="locator" value="item"/>
+        <Item key="login" value=""/>
+        <Item key="password" value=""/>
+      </Properties>
+    </Data>
+  </Location>
+</Entity>

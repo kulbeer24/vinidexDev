@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Folder">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="b2341e23-e183-4ecd-820b-c35d0df7b41f" Name="LineordersMIA (INV)">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="folder_id" value="b2341e23-e183-4ecd-820b-c35d0df7b41f"/>
+    <Item key="protected" value="false"/>
+  </Properties>
+</Entity>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Document">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="b7692898-b95c-4d7e-b186-a0a213ac7650" Name="C_LINEORDERSMIA (INV)">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="document_id" value="b7692898-b95c-4d7e-b186-a0a213ac7650"/>
+    <Item key="edifact" value="0"/>
+    <Item key="escape_sequences" value="1"/>
+    <Item key="format_type_id" value="2"/>
+    <Item key="qualifier_mode" value="WHEN_NEEDED"/>
+    <Item key="text_qualifier" value="&quot;"/>
+    <Item key="use_end_of_line" value="1"/>
+  </Properties>
+  <Delimiter value=","/>
+  <Structure>
+    <Properties>
+      <Item key="fixedField" value="0"/>
+    </Properties>
+    <Segment name="" occurenceType="Only Once" parent="_Root" segmentId="0">
+      <Fields>
+        <Field default="" fieldId="1" fixWidth="false" format="" name="Invoice_line_item_no" required="0" type="String"/>
+        <Field default="" fieldId="2" fixWidth="false" format="" name="cust_no" required="0" type="String"/>
+        <Field default="" fieldId="3" fixWidth="false" format="" name="cust_st" required="0" type="String"/>
+        <Field default="" fieldId="4" fixWidth="false" format="" name="cust_bu_entity" required="0" type="String"/>
+        <Field default="" fieldId="5" fixWidth="false" format="" name="cust_ps_site_loc" required="0" type="String"/>
+        <Field default="" fieldId="6" fixWidth="false" format="" name="invoice_document" required="0" type="String"/>
+        <Field default="" fieldId="7" fixWidth="false" format="" name="invoice_line_line_no" required="0" type="String"/>
+        <Field default="" fieldId="8" fixWidth="false" format="" name="invoice_line_qty_shipped" required="0" type="String"/>
+        <Field default="" fieldId="9" fixWidth="false" format="" name="invoice_line_taxable_amt" required="0" type="String"/>
+      </Fields>
+    </Segment>
+  </Structure>
+</Entity>

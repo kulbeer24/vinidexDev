@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Operation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="a22b20ac-820b-49a6-970c-754cb8a29ffa" Name="15. Create C_MACROAREAS">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="chunk_size" value="0"/>
+    <Item key="debug_mode_until" value=""/>
+    <Item key="description" value=""/>
+    <Item key="failure_message_id" value="e9b4e4ce-b495-4b3c-93bc-d10d1bc25b46"/>
+    <Item key="ignore_history" value="1"/>
+    <Item key="LogLevel" value="Everything"/>
+    <Item key="max_number_of_threads" value="1"/>
+    <Item key="operation_id" value="a22b20ac-820b-49a6-970c-754cb8a29ffa"/>
+    <Item key="operation_type_id" value="3"/>
+    <Item key="run_success_op_if_no_source_files" value="0"/>
+    <Item key="schedule_policy" value="skip_if_running"/>
+    <Item key="source_chunk_node" value=""/>
+    <Item key="source_id" value="d5b24428-e147-4b50-8bcf-3a7d16b43762"/>
+    <Item key="success_operation_id" value="afc8070f-792e-4ec1-bc0f-0235ffc00d15"/>
+    <Item key="target_chunk_node" value="-flat-"/>
+    <Item key="target_chunk_size" value="0"/>
+    <Item key="target_id" value="cb0619e3-8211-41be-96f0-b7b899396cb1"/>
+    <Item key="timeoutseconds" value="7200"/>
+    <Item key="timeoutuiunit" value="HOURS"/>
+    <Item key="trace" value="1"/>
+    <Item key="validate_source_text_file" value="0"/>
+  </Properties>
+  <Pipeline opType="Transformation">
+    <Activities>
+      <SCRIPT activityId="a2928ef7-7a9f-4951-8313-5f5f36a7fc82" contentId="e90f3831-612e-44e9-b9aa-bba55647e44d" role="Script" type="23"/>
+      <SOURCE activityId="5d57482e-e609-415c-8712-f1d46bc74cd7" contentId="d5b24428-e147-4b50-8bcf-3a7d16b43762" role="Source" type="2"/>
+      <TRANSFORMATION activityId="c38d68ec-7b25-498a-a90b-9d4fdf504ffc" contentId="64cf05e9-2ab9-47d1-b11b-21880c83ec4d" role="Transformation" type="4"/>
+      <TARGET activityId="3f7539b7-240c-40c3-99a5-3b1d0db77de2" contentId="cb0619e3-8211-41be-96f0-b7b899396cb1" role="Target" type="3"/>
+    </Activities>
+  </Pipeline>
+  <Siblings/>
+</Entity>

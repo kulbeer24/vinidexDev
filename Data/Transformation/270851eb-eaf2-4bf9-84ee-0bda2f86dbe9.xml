@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="270851eb-eaf2-4bf9-84ee-0bda2f86dbe9" Name="6.0 C_CURRENTSTK">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Tree"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="d5b24428-e147-4b50-8bcf-3a7d16b43762"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="target_text_doc" value="7d2da2ea-3913-49e3-b1ac-1e24530affc3"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="270851eb-eaf2-4bf9-84ee-0bda2f86dbe9"/>
+  </Properties>
+  <InputStructure sourceId="d5b24428-e147-4b50-8bcf-3a7d16b43762">
+    <Properties>
+      <Item key="includeSchemaName" value="1"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">"PUB"."item-whs-d","PUB"."item",</konga.string>
+    <DbFields/>
+    <Relations>
+      <Relation childField="Item-no" childTable="&quot;PUB&quot;.&quot;item-whs-d&quot;" isSource="true" onetoOne="false" outerJoin="false" parentField="Item-no" parentTable="&quot;PUB&quot;.&quot;item&quot;" relationId="-1580684541650"/>
+      <Relation childField="In-entity" childTable="&quot;PUB&quot;.&quot;item-whs-d&quot;" isSource="true" onetoOne="false" outerJoin="false" parentField="In-entity" parentTable="&quot;PUB&quot;.&quot;item&quot;" relationId="-1580684541649"/>
+    </Relations>
+    <SqlScript>
+      <Entry entryId="-1580684541603" type="1">
+        <konga.string name="script">SELECT * FROM "PUB"."item-whs-d" WHERE "On-hand-date"='2018-12-13'</konga.string>
+        <konga.string name="where">"On-hand-date"='2018-12-13'</konga.string>
+      </Entry>
+      <Entry entryId="-1580684541604" type="2">
+        <konga.string name="script">"PUB"."item-whs-d".In-entity,"PUB"."item-whs-d".Item-no,"PUB"."item-whs-d".Whs-code,</konga.string>
+      </Entry>
+    </SqlScript>
+    <Filters>
+      <Entry column="Active" condition="=1" sortOrder="NONE" table="&quot;PUB&quot;.&quot;item&quot;"/>
+      <Entry column="Whs-code" condition="LIKE '%7' OR &quot;PUB&quot;.&quot;item-whs-d&quot;.&quot;Whs-code&quot; LIKE '%6' OR &quot;PUB&quot;.&quot;item-whs-d&quot;.&quot;Whs-code&quot; LIKE '%5'" sortOrder="NONE" table="&quot;PUB&quot;.&quot;item-whs-d&quot;"/>
+      <Entry column="SO99" condition="=1" sortOrder="NONE" table="&quot;PUB&quot;.&quot;item&quot;"/>
+    </Filters>
+  </InputStructure>
+  <OutputStructure docId="7d2da2ea-3913-49e3-b1ac-1e24530affc3"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[PUB:item.PUB:item?whs?d.]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ITEM	&lt;trans&gt;
+PUB:item.PUB:item?whs?d.Item?no
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">LOCATION	&lt;trans&gt;
+
+
+code=ToUpper(PUB:item.PUB:item?whs?d.Whs?code);//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs#.Vendor?code);
+location="";
+
+
+/*----------TESTING----------------*/
+
+//code="k7";
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+
+
+/*----------------------------------*/
+//this dictionary is created from site source file(xls)
+if(HasKey($Dic.C_CurrentSTK.Location, code),
+	location=$Dic.C_CurrentSTK.Location[code];
+);
+
+location
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">YER_VSTK	&lt;trans&gt;
+
+CVTDate(Now(),'GeneralDate','yyyy')
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">MON_VSTK	&lt;trans&gt;
+CVTDate(Now(),'GeneralDate','mm')
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">DAY_VSTK	&lt;trans&gt;
+CVTDate(Now(),'GeneralDate','dd')
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">VIRTSTK	&lt;trans&gt;
+/*-------------SWQL Query, already replaced by a common script before this transformation----*/
+/*	sql = 'select 
+							"PUB"."item-whs-lot"."hold-qty"
+			                  from "PUB"."item-whs-lot"
+							inner join "PUB"."item-whs-d" on 
+											"PUB"."item-whs-lot"."item-no"="PUB"."item-whs-d"."item-no" 
+															and 
+											"PUB"."item-whs-lot"."whs-code"="PUB"."item-whs-d"."whs-code"
+							where "PUB"."item-whs-lot"."in-entity"='+Quote('VX')+' 
+										AND "PUB"."item-whs-d"."item-no"='+Quote(item_no)+' 
+										AND "PUB"."item-whs-d"."whs-code"='+Quote(whs_code)
+							;
+			
+			$numArray= DbExecute("s.d5b24428-e147-4b50-8bcf-3a7d16b43762",sql);
+
+/*--------------END---------------*/
+
+//data
+/*{{*fitt,A7},{*fitt,b7},
+{*fitt,f7},{*fitt,G5},{*fitt,p7},{*fitt,PF},{*fitt,s7},{*fitt,t7},{*fitt,U4},
+{*fitt,U7},{*pepi,A5},{*pepi,b5},{*pepi,O6},{*pepi,p5},{*pepi,p6},{*pepi,PF},{*pepi,s5},{*pepi,t5},{*pepi,t6},{*pepi,u5}}*/
+
+item_no=PUB:item.PUB:item?whs?d.Item?no;
+whs_code=PUB:item.PUB:item?whs?d.Whs?code;
+qtyAllocation=0;
+
+/*--------Test-------*/
+//		RunScript("sc.91d475db-fd6d-4cfc-ac38-ee62f53db8c3");
+
+/*---------End-----*/
+			
+			
+			if(Length($Dic.C_CurrentSTK.virstk)&gt;0,
+					//if data retrieved
+				qtyAllocation= Int($Dic.C_CurrentSTK.virstk[item_no+whs_code]);
+					,
+					//else
+				qtyAllocation=0;
+			);
+
+
+qtyOnHand=Int(PUB:item.PUB:item?whs?d.Qty?on?hand);
+qttyalloc=Int(PUB:item.PUB:item?whs?d.Qty?alloc);
+qtyonPPS=Int(PUB:item.PUB:item?whs?d.Qty?on?pps);
+qty_wo_mat=Int(PUB:item.PUB:item?whs?d.Qty?wo?mat);
+
+Int(qtyOnHand-qttyalloc- Int(qtyAllocation))-qtyonPPS-qty_wo_mat
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

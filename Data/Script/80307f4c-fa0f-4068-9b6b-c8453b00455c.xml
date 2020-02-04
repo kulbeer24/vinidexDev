@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="80307f4c-fa0f-4068-9b6b-c8453b00455c" Name="3.1 PreScript: StateLookup Dictionary creation">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="80307f4c-fa0f-4068-9b6b-c8453b00455c"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$Dic.C_MACROAREAS.AreaDescription=Dict();
+$Dic.C_FREEATTR_AREA1.AreaDescription=Dict();
+$Dic.C_AREAS.StateLookup=Dict();
+$Dic.C_MICROAREAS.StateLookup=Dict();
+$Dic.lineordersmia.Statelookup=Dict();
+$DIc.Itemarea.Statelookup=Dict();
+$Dic.C_OutOrders.Statelookup=Dict();
+&lt;/trans&gt;</konga.string>
+</Entity>

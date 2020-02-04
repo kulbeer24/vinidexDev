@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="b8c453b5-1901-4656-90fd-784f7598b9c2" Name="11.1 LineOrdersMIA">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Flat"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_text_doc" value="645f264b-c3c2-48d1-a320-00ff498d04fa"/>
+    <Item key="source_type_id" value="1"/>
+    <Item key="target_text_doc" value="282b677c-295d-4309-96c9-8752ec8d81bf"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="b8c453b5-1901-4656-90fd-784f7598b9c2"/>
+  </Properties>
+  <InputStructure docId="645f264b-c3c2-48d1-a320-00ff498d04fa"/>
+  <OutputStructure docId="282b677c-295d-4309-96c9-8752ec8d81bf"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ITEM	&lt;trans&gt;
+ITEM
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">MICROAREA	&lt;trans&gt;
+
+/*------Start test----*/
+
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+//RunOperation("op.c90bd81a-b986-4dc8-8c5a-de10fb349fde");
+
+/*-------End Test-----*/
+
+key_st=ToUpper(CUST_ST);
+value_st='';
+
+if(HasKey($Dic.lineordersmia.Statelookup, key_st),
+	value_st=$Dic.lineordersmia.Statelookup[key_st];
+);
+
+key_ps_site_loc=ToUpper(PS_SITE_LOC);
+
+//default
+value_ps_Site_loc=PS_SITE_LOC;
+
+if(HasKey($Dic.Lineordersmia.Microarea_PS_Site_Loc, key_ps_site_loc),
+	value_ps_Site_loc=$Dic.Lineordersmia.Microarea_PS_Site_Loc[key_ps_site_loc];
+);
+
+
+microarea=CUST_NO + "_" + value_st + "_" +BU_ENTITY+"_"+value_ps_Site_loc;
+
+microarea
+
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ORDERID	&lt;trans&gt;
+ORDERNO + LINE_NO + PPS_NO
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">LINE_N	&lt;trans&gt;
+LINE_NO
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">REQYEAR	&lt;trans&gt;
+date = Date(REQEUSTDATE);
+CVTDate(date,'GeneralDate','yyyy')
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">REQMONTH	&lt;trans&gt;
+date = Date(REQEUSTDATE);
+CVTDate(date,'GeneralDate','mm')
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">REQDAY	&lt;trans&gt;
+date = Date(REQEUSTDATE);
+CVTDate(date,'GeneralDate','dd')
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">PICKEDQUANTITY	&lt;trans&gt;
+QUANTITY_PICKED
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ONTIMEQTY	&lt;trans&gt;
+//default
+value=0;
+
+//logic- compare the Requested ORder date from line item to the Ship date from 
+//line item and if the Shipdate is less than or equal to the request date then show picked qty 
+//else show 0 For the calculation 
+//use the same date fields used in the existing extract for the Ship date and the requested ship date
+
+requestDate= Date(REQEUSTDATE);
+shipDate=Date(SHIPDATE);
+
+$intRequestDate=int(requestDate);
+$inteShipDate=int(shipDate);
+
+/*---TestData---*/
+//{{2016-03-23,2016-03-23},{2016-03-22,2016-03-21},{2016-03-21,2016-03-18},
+//{2016-03-17,2016-03-17},{2016-03-14,2016-03-15},{2018-04-10,2018-04-09},{2016-03-03,2016-03-03},
+//{2016-02-26,2016-02-25},{2018-03-05,2018-03-02},{2016-02-22,2016-02-22}}
+
+/*-------------*/
+
+if($inteShipDate&lt;=$intRequestDate,
+	value=QUANTITY_PICKED;
+);
+
+value
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SHIPYEAR	&lt;trans&gt;
+
+date = Date(SHIPDATE);
+CVTDate(date,'GeneralDate','yyyy')
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SHIPMONTH	&lt;trans&gt;
+date = Date(SHIPDATE);
+CVTDate(date,'GeneralDate','mm')
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SHIPDAY	&lt;trans&gt;
+date = Date(SHIPDATE);
+CVTDate(date,'GeneralDate','dd')
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">UNITPRICE	&lt;trans&gt;
+GROSS_PRICE
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ORDERTYPE	&lt;trans&gt;
+ORDERTYPE
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SHIPFROM	&lt;trans&gt;
+//$Site.code=Null();
+//$Site.code=WHS_ORDER;
+//$Site.name=Null();
+//
+////run common operation to get data out of the excel file and run it
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+//$Site.name;
+
+site_code=ToUpper(WHS_ORDER);
+//site_name="";
+//if(HasKey($Dict.SiteCodeSiteName, site_code)
+//		, 
+//		site_name=$Dict.SiteCodeSiteName[site_code]
+//	);
+
+//WriteToOperationLog("Code received:"+site_code);
+//WriteToOperationLog("Length of dictionary within:"+Length($Dict.SiteCodeSiteName));
+site_name="";
+if(HasKey($Dict.SiteCodeSiteName, site_code)
+		, 
+		site_name=$Dict.SiteCodeSiteName[site_code];
+		);
+
+site_name;
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ORDERQUANTITY	&lt;trans&gt;
+//IF ORDER-LINE.ORD-QTY = 0 then use PPS-LINE.QTY-PICKED otherwise use ORDER-LINE.ORD-QTY
+//default
+value=ORDERQUANTITY;
+
+if(value==0,
+	value=QUANTITY_PICKED);
+
+value
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">REBATEPRICE	&lt;trans&gt;
+
+//{{VX,1370035,1},{VX,1370035,2},{VX,1370035,3},{VX,1370042,1},{VX,1370042,2},{VX,1370042,3},
+//{VX,1370047,1},{VX,1370092,1},{VX,1370092,2},{VX,1370092,3},{VX,1370139,1},{VX,1370139,2},{VX,1370139,3},
+//{VX,1370139,4},{VX,1370139,5},{VX,1370139,6},{VX,1370139,7},{VX,1370139,8},{VX,1370143,1},{VX,1370143,2}}
+
+$jitterbit.scripting.db.max_rows=1;
+
+sql = 'Select "PUB"."invoice-line"."reb-per-uom"
+                  from "PUB"."invoice-line" where "PUB"."invoice-line"."ar-entity"='+Quote(OrderLine_ArEntity)+' and 
+					"PUB"."invoice-line"."order-no"='+ORDERNO+' and 	"PUB"."invoice-line"."line-no"='+LINE_NO;
+
+
+lf_rebate=0;
+
+valueExtracted=Array();
+
+valueExtracted=DbExecute("s.d5b24428-e147-4b50-8bcf-3a7d16b43762",sql);
+
+//extract the first value
+if(Length(valueExtracted)&gt;0,
+	lf_rebate=valueExtracted[0][0];
+);
+
+lf_rebate
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="983d6cbd-a371-47b8-bacf-ec04f1e8f6e8" Name="8.0 C_ORNORDER_DET(PO): Common Runpoint">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="983d6cbd-a371-47b8-bacf-ec04f1e8f6e8"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+
+//IF($LoadedSiteGroup=true,
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876", true);
+//true);
+
+//
+//$LoadedSiteGroup=false;
+//
+////get data out of the excel file and create dictionaries requried
+//operationsExcelSiteSourceandDictionaryCreation=RunOperation("op.d2c93e1e-13fa-4b32-9314-841258a90274");
+//
+//if($LoadedSiteGroup,
+//		//Create C_ONORDER_DET(PO)
+//	RunOperation("op.c4e77cb4-366b-4956-9176-7e67401453d3");
+//		,
+//		//else
+//		RaiseError("Error occured while creating dictionary from Site Source external file");
+//);
+
+//Create C_ONORDER_DET(PO)
+	RunOperation("op.c4e77cb4-366b-4956-9176-7e67401453d3");
+&lt;/trans&gt;</konga.string>
+</Entity>

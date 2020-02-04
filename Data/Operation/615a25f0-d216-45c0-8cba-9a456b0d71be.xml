@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Operation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="615a25f0-d216-45c0-8cba-9a456b0d71be" Name="3.1 Create C_ITEMLOCATIOn">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="chunk_size" value="0"/>
+    <Item key="debug_mode_until" value=""/>
+    <Item key="description" value=""/>
+    <Item key="failure_message_id" value="e9b4e4ce-b495-4b3c-93bc-d10d1bc25b46"/>
+    <Item key="ignore_history" value="1"/>
+    <Item key="LogLevel" value="Everything"/>
+    <Item key="max_number_of_threads" value="1"/>
+    <Item key="operation_id" value="615a25f0-d216-45c0-8cba-9a456b0d71be"/>
+    <Item key="operation_type_id" value="3"/>
+    <Item key="run_success_op_if_no_source_files" value="0"/>
+    <Item key="schedule_policy" value="skip_if_running"/>
+    <Item key="source_chunk_node" value="-flat-"/>
+    <Item key="source_id" value="d751e088-3a67-42de-956e-ec24dcc7bed1"/>
+    <Item key="success_operation_id" value="ca9c7b57-8ea9-4b85-a638-f8925120f0b2"/>
+    <Item key="target_chunk_node" value="-flat-"/>
+    <Item key="target_chunk_size" value="0"/>
+    <Item key="target_id" value="2410536b-eb3d-4c1f-8fb6-642dc32abd6a"/>
+    <Item key="timeoutseconds" value="7200"/>
+    <Item key="timeoutuiunit" value="HOURS"/>
+    <Item key="trace" value="1"/>
+    <Item key="validate_source_text_file" value="0"/>
+  </Properties>
+  <Pipeline opType="Transformation">
+    <Activities>
+      <SOURCE activityId="925dad70-8f9f-44e0-acc7-de1762bdd46b" contentId="d751e088-3a67-42de-956e-ec24dcc7bed1" role="Source" type="2"/>
+      <TRANSFORMATION activityId="50a4087b-6d9c-48c5-ae4d-1bc9893ef1b6" contentId="b65b052e-448e-4514-ac46-3f14c270ebf5" role="Transformation" type="4"/>
+      <TARGET activityId="e57a24b1-b844-49e9-b995-dbc928fcc715" contentId="2410536b-eb3d-4c1f-8fb6-642dc32abd6a" role="Target" type="3"/>
+    </Activities>
+  </Pipeline>
+  <Siblings/>
+</Entity>

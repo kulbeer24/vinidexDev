@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="03ef9fc1-aa57-45d3-b330-37bb1af347b2" Name="Trans ONORDER_DET_GIT">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Tree"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="d5b24428-e147-4b50-8bcf-3a7d16b43762"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="target_text_doc" value="6c422b43-7806-498f-bd84-59d7ead026a0"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="03ef9fc1-aa57-45d3-b330-37bb1af347b2"/>
+  </Properties>
+  <InputStructure sourceId="d5b24428-e147-4b50-8bcf-3a7d16b43762">
+    <Properties>
+      <Item key="includeSchemaName" value="1"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">"PUB"."order","PUB"."order-line",</konga.string>
+    <DbFields/>
+    <Relations>
+      <Relation childField="Order-no" childTable="&quot;PUB&quot;.&quot;order&quot;" isSource="true" onetoOne="true" outerJoin="false" parentField="Order-no" parentTable="&quot;PUB&quot;.&quot;order-line&quot;" relationId="-1580684541700"/>
+      <Relation childField="Ar-entity" childTable="&quot;PUB&quot;.&quot;order&quot;" isSource="true" onetoOne="true" outerJoin="false" parentField="Ar-entity" parentTable="&quot;PUB&quot;.&quot;order-line&quot;" relationId="-1580684541701"/>
+    </Relations>
+    <SqlScript/>
+    <Filters>
+      <Entry column="Qty-open-ord" condition="&gt;0" sortOrder="NONE" table="&quot;PUB&quot;.&quot;order-line&quot;"/>
+      <Entry column="In-entity" condition="='vx'" sortOrder="NONE" table="&quot;PUB&quot;.&quot;order-line&quot;"/>
+      <Entry column="Internal-ind" condition="=1" sortOrder="NONE" table="&quot;PUB&quot;.&quot;order&quot;"/>
+    </Filters>
+  </InputStructure>
+  <OutputStructure docId="6c422b43-7806-498f-bd84-59d7ead026a0"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[PUB:order?line.]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ITEM	&lt;trans&gt;
+PUB:order?line.Order?no
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">LOCATION	&lt;trans&gt;
+PUB:order?line.Whs?order
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">DELIVYEAR	&lt;trans&gt;
+CVTDate(PUB:order?line.Request?date,'GeneralDate','yyyy')
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">DELIVMONTH	&lt;trans&gt;
+
+CVTDate(PUB:order?line.Request?date,'GeneralDate','mm')
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">DELIVDAY	&lt;trans&gt;
+CVTDate(PUB:order?line.Request?date,'GeneralDate','dd')
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">LOT_CODE	&lt;trans&gt;
+PUB:order?line.Order?no+PUB:order?line.Line?no
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ONORDQTY	&lt;trans&gt;
+PUB:order?line.Qty?open?ord
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">REQYEAR	&lt;trans&gt;
+CVTDate(PUB:order?line.Request?date,'GeneralDate','yyyy')
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">REQMONTH	&lt;trans&gt;
+CVTDate(PUB:order?line.Request?date,'GeneralDate','mm')
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">REQDAY	&lt;trans&gt;
+CVTDate(PUB:order?line.Request?date,'GeneralDate','dd')
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">STATUS	&lt;trans&gt;
+1
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

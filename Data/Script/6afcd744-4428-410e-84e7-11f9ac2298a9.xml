@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="6afcd744-4428-410e-84e7-11f9ac2298a9" Name="2. Create C_PRODFAMS">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="6afcd744-4428-410e-84e7-11f9ac2298a9"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+/*---------Start TEST -------------*/
+
+//RunOperation("op.ad4ffb9f-ee83-4c4d-b9fd-ebde448f6c1c");
+
+/*----------End Test-----------*/
+
+
+dictionaryLength=Length($Dic.C_prodfams);
+
+if(dictionaryLength&gt;0
+	,
+	//take value from Dictionary and create C_PRODFAM file
+	
+	text="";
+	lineHeader='PRODFAM	DESCR	MACROFAM';
+	text+=lineHeader+"\n";
+
+	//get all the keys from Dictionary
+	keysFromDictionary=GetKeys($Dic.C_prodfams);
+	
+	//counter
+	i=0;
+	
+	//loop through the dictionary
+	While(i&lt;dictionaryLength,
+		
+		key=keysFromDictionary[i];
+		
+		//get value array from the dictionary peratining to the key
+		if(HasKey($Dic.C_prodfams, key)
+		,
+			arrValue=$Dic.C_prodfams[key];
+			text+=arrValue[0]+"\t"+arrValue[1]+"\t"+arrValue[2]+"\n";
+		);
+		
+		//increase counter
+		i++;
+
+	//All text created
+	
+	//post the text in the file(temporary)
+	WriteFile("t.51d4914c-99cd-413b-9b9b-ab6d9d13dcc1",text);
+	FlushAllFiles("t.51d4914c-99cd-413b-9b9b-ab6d9d13dcc1");
+	)
+	,
+	//if no item in the dictionary
+	RaiseError("No value retrieved from the product group file(External source)");
+);
+
+/*-----------Start Test------------*/
+
+//ReadFile("s.445b3fe6-2537-4d41-b081-7f415bc50408");
+
+/*-----------End Test--------------*/
+&lt;/trans&gt;</konga.string>
+</Entity>

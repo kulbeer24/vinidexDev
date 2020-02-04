@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="4a4ebd44-d74c-44d0-b260-a4e689687076" Name="C_ITEMAREA Trans">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Tree"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="d5b24428-e147-4b50-8bcf-3a7d16b43762"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="target_text_doc" value="c8a7ace9-de67-46c1-8121-4ac7c7564026"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="4a4ebd44-d74c-44d0-b260-a4e689687076"/>
+  </Properties>
+  <InputStructure sourceId="d5b24428-e147-4b50-8bcf-3a7d16b43762">
+    <Properties>
+      <Item key="includeSchemaName" value="1"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">"PUB"."customer","PUB"."Sales-prd",</konga.string>
+    <DbFields/>
+    <Relations>
+      <Relation childField="Cust-no" childTable="&quot;PUB&quot;.&quot;customer&quot;" isSource="true" onetoOne="true" outerJoin="false" parentField="Cust-no" parentTable="&quot;PUB&quot;.&quot;Sales-prd&quot;" relationId="-1580684541670"/>
+    </Relations>
+    <SqlScript/>
+    <Filters>
+      <Entry column="Yr" condition="='2019'" sortOrder="NONE" table="&quot;PUB&quot;.&quot;Sales-prd&quot;"/>
+      <Entry column="Ar-entity" condition="='VX'" sortOrder="NONE" table="&quot;PUB&quot;.&quot;Sales-prd&quot;"/>
+      <Entry column="In-entity" condition="='VX'" sortOrder="NONE" table="&quot;PUB&quot;.&quot;Sales-prd&quot;"/>
+    </Filters>
+  </InputStructure>
+  <OutputStructure docId="c8a7ace9-de67-46c1-8121-4ac7c7564026"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[PUB:Sales?prd.]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ITEM	&lt;trans&gt;
+PUB:Sales?prd.Item?no
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">AREA	&lt;trans&gt;
+PUB:Sales?prd.PUB:customer$St + "_" + PUB:Sales?prd.Entity?code
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SRCLOCATION	&lt;trans&gt;
+
+/*----------Test------------*/
+
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+//srclocation=
+
+/*--------End Test-----------*/
+
+
+srclocation="";
+
+site=PUB:Sales?prd.PUB:customer$Ps?site?loc;
+
+if(HasKey($Dic.c_itemArea.SRCLocation, site),
+	srclocation=$Dic.c_itemArea.SRCLocation[site];	
+);
+
+srclocation
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

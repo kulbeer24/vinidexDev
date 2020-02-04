@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="91d475db-fd6d-4cfc-ac38-ee62f53db8c3" Name="6.0 C_CurrentSTK: DataDictionary creation">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="91d475db-fd6d-4cfc-ac38-ee62f53db8c3"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$jitterbit.scripting.db.max_rows=-1;
+
+sql = 'select 
+				"PUB"."item-whs-d"."item-no",
+				"PUB"."item-whs-d"."whs-code",
+				"PUB"."item-whs-lot"."hold-qty"
+                  from "PUB"."item-whs-lot"
+				inner join "PUB"."item-whs-d" on 
+								"PUB"."item-whs-lot"."item-no"="PUB"."item-whs-d"."item-no" 
+												and 
+								"PUB"."item-whs-lot"."whs-code"="PUB"."item-whs-d"."whs-code"
+				where "PUB"."item-whs-lot"."in-entity"='+Quote('VX')
+				;
+arrayData=DbExecute("s.d5b24428-e147-4b50-8bcf-3a7d16b43762",sql);
+$Dic.C_CurrentSTK.virstk=Dict();
+counter=0;
+
+While(counter&lt;Length(arrayData),
+	key=arrayData[counter][0]+arrayData[counter][1];
+	if(!HasKey($Dic.C_CurrentSTK.virstk, key), 
+		AddToDict($Dic.C_CurrentSTK.virstk,key,arrayData[counter][2])
+	);
+counter++;
+);
+
+&lt;/trans&gt;</konga.string>
+</Entity>

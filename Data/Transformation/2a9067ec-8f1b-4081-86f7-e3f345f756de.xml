@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="2a9067ec-8f1b-4081-86f7-e3f345f756de" Name="5b. Lineordersmia (inv): dbextract to txt">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Flat"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_text_doc" value="b7692898-b95c-4d7e-b186-a0a213ac7650"/>
+    <Item key="source_type_id" value="1"/>
+    <Item key="target_text_doc" value="836ee80b-6ead-46aa-a221-756e635184ca"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="2a9067ec-8f1b-4081-86f7-e3f345f756de"/>
+  </Properties>
+  <InputStructure docId="b7692898-b95c-4d7e-b186-a0a213ac7650"/>
+  <OutputStructure docId="836ee80b-6ead-46aa-a221-756e635184ca"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ITEM	&lt;trans&gt;
+//PUB:invoice.PUB:invoice?line.Item?no
+Invoice_line_item_no
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">MICROAREA	&lt;trans&gt;
+//cust_no=Invoice_cust_no;//PUB:invoice.Cust?no;
+//cust_st=customer_st;//PUB:invoice.PUB:customer$St;
+//cust_bu_entity=customer_bu_entity;//PUB:invoice.PUB:customer$Bu?entity;
+////site_code=PUB:invoice.PUB:invoice?line.Whs?code;
+//site_loc=customer_ps_site_loc;//PUB:invoice.PUB:customer$Ps?site?loc;
+//
+//
+//data= cust_no +"_" + cust_st + "_" + cust_bu_entity + "_" + site_loc;
+//
+//data
+
+/*------Start test----*/
+
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+//RunOperation("op.c90bd81a-b986-4dc8-8c5a-de10fb349fde");
+
+/*-------End Test-----*/
+
+key_st=ToUpper(cust_st);
+value_st='';
+
+if(HasKey($Dic.lineordersmia.Statelookup, key_st),
+	value_st=$Dic.lineordersmia.Statelookup[key_st];
+);
+
+key_ps_site_loc=ToUpper(cust_ps_site_loc);
+
+//default
+value_ps_Site_loc=cust_ps_site_loc;
+
+if(HasKey($Dic.Lineordersmia.Microarea_PS_Site_Loc, key_ps_site_loc),
+	value_ps_Site_loc=$Dic.Lineordersmia.Microarea_PS_Site_Loc[key_ps_site_loc];
+);
+
+
+microarea=cust_no + "_" + value_st + "_" +cust_bu_entity+"_"+value_ps_Site_loc;
+
+microarea
+
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ORDERID	&lt;trans&gt;
+//PUB:invoice.Document
+//Invoice_document
+invoice_document
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">LINE_N	&lt;trans&gt;
+//PUB:invoice.PUB:invoice?line.Line?no
+invoice_line_line_no
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">QUANTITY	&lt;trans&gt;
+//PUB:invoice.PUB:invoice?line.Qty?shipped
+invoice_line_qty_shipped
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">UNITPRICE	&lt;trans&gt;
+//PUB:invoice.PUB:invoice?line.Taxable?amt
+invoice_line_taxable_amt
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

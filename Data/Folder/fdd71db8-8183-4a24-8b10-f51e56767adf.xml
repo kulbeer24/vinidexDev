@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Folder">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="fdd71db8-8183-4a24-8b10-f51e56767adf" Name="23. C_FREEATTR_ITEM2">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="folder_id" value="fdd71db8-8183-4a24-8b10-f51e56767adf"/>
+    <Item key="protected" value="false"/>
+  </Properties>
+</Entity>

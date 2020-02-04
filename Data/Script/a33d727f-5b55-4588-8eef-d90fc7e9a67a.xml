@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="a33d727f-5b55-4588-8eef-d90fc7e9a67a" Name="Test script - Confirmation">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="a33d727f-5b55-4588-8eef-d90fc7e9a67a"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+//sql='select "PUB"."order-line"."Item-no", "PUB"."customer"."Cust-no", "PUB"."customer"."St", "PUB"."customer"."Bu-entity", 
+//"PUB"."customer"."ps-site-loc", "PUB"."order"."Order-no", "PUB"."pps-header"."Pps-no", "PUB"."order-line"."Line-no" ,
+// "PUB"."order-line"."Request-date" , "PUB"."pps-line"."Qty-picked", "PUB"."pps-header"."Ship-date", "PUB"."order-line"."gross-price",
+// "PUB"."order"."ord-type", "PUB"."order-line"."whs-order" , "PUB"."order-line"."qty-ord" from "PUB"."order" inner join "PUB"."customer" 
+//ON "PUB"."customer"."Cust-no" = "PUB"."order"."Cust-no" inner join "PUB"."order-line" ON "PUB"."order"."Ar-entity" = "PUB"."order-line"."Ar-entity" 
+//and "PUB"."order"."Order-no" = "PUB"."order-line"."Order-no" join "PUB"."pps-header" ON "PUB"."order"."Ar-entity" = "PUB"."pps-header"."Ar-entity" 
+//and "PUB"."order"."Order-no" = "PUB"."pps-header"."Order-no" join "PUB"."pps-line" ON "PUB"."order-line"."Ar-entity" = "PUB"."pps-line"."Ar-entity" 
+//and "PUB"."order"."Order-no" = "PUB"."pps-line"."order-no" and "PUB"."order-line"."line-no" = "PUB"."pps-line"."line-no" and 
+//"PUB"."pps-header"."pps-no" = "PUB"."pps-line"."pps-no" 
+//where "PUB"."order"."Ar-entity" ='VX' and "PUB"."order"."Order-date"&gt;="2018-06-14" and "PUB"."order"."Order-date"&lt;"2018-07-14" and "PUB"."order"."Internal-ind"=0';
+
+
+//$jitterbit.scripting.db.max_rows=-1;
+//sql='select "PUB"."order"."Order-no" ,
+//				"PUB"."order-line"."Item-no",			
+//				"PUB"."customer"."Cust-no",
+//				"PUB"."customer"."St",
+//				"PUB"."customer"."Bu-entity",
+//				"PUB"."customer"."ps-site-loc",
+//				"PUB"."order"."Order-no",
+//				"PUB"."pps-header"."Pps-no",	
+//				"PUB"."order-line"."Line-no"	,
+//				"PUB"."order-line"."Request-date"	,
+//				"PUB"."pps-line"."Qty-picked",
+//				"PUB"."pps-header"."Ship-date",
+//				"PUB"."order-line"."gross-price",
+//				"PUB"."order"."ord-type",
+//				"PUB"."order-line"."whs-order"	,
+//				"PUB"."order-line"."qty-ord"
+//	from "PUB"."order"
+//	inner join "PUB"."customer" ON "PUB"."customer"."Cust-no" = "PUB"."order"."Cust-no" 
+//	inner join "PUB"."order-line" ON "PUB"."order"."Ar-entity" = "PUB"."order-line"."Ar-entity" and "PUB"."order"."Order-no"  = "PUB"."order-line"."Order-no" 
+//	inner join "PUB"."pps-header" ON "PUB"."order"."Ar-entity" = "PUB"."pps-header"."Ar-entity" and "PUB"."order"."Order-no" = "PUB"."pps-header"."Order-no"
+//	inner join  "PUB"."pps-line" ON "PUB"."order-line"."Ar-entity"  = "PUB"."pps-line"."Ar-entity" and "PUB"."order"."Order-no" = "PUB"."pps-line"."order-no" and
+//             															"PUB"."order-line"."line-no"  = "PUB"."pps-line"."line-no" and "PUB"."pps-header"."pps-no" = "PUB"."pps-line"."pps-no"
+//	where "PUB"."pps-line"."shipped"=1 
+//		and "PUB"."order"."Order-date"&gt;='+Quote('2018-06-14')+'
+//		 and "PUB"."order"."Order-date"&lt;'+Quote('2018-07-14')+'
+//			and "PUB"."order"."Internal-ind"=0 and "PUB"."order"."Ar-entity" ='+Quote('VX')  ;
+////DbExecute("s.d5b24428-e147-4b50-8bcf-3a7d16b43762",sql)
+//
+//WriteFile("t.739e95a9-3686-4f4b-8c2a-3e3658ed3960", DbExecute("s.d5b24428-e147-4b50-8bcf-3a7d16b43762",sql));
+//FlushAllFiles("t.739e95a9-3686-4f4b-8c2a-3e3658ed3960");
+//
+//WriteFile("t.739e95a9-3686-4f4b-8c2a-3e3658ed3960", Replace(Replace(Replace( ReadFile("s.9f367659-5083-4cc1-8bfb-b24d77fa7535"), '{{',''),'}}', ''),'},{',',\n'));
+//FlushAllFiles("t.739e95a9-3686-4f4b-8c2a-3e3658ed3960");
+$jitterbit.scripting.db.max_rows = -1;
+//sql = 'select 
+//			"PUB"."item-whs"."Item-no",
+//			"PUB"."item-whs"."Whs-code"
+//                  from "PUB"."item-whs" 
+//							inner join "PUB"."item-whs-d" ON "PUB"."item-whs"."In-entity"="PUB"."item-whs-d"."In-entity"
+//                                      AND "PUB"."item-whs"."Item-no"="PUB"."item-whs-d"."Item-no"
+//                                      AND "PUB"."item-whs"."Whs-code"="PUB"."item-whs-d"."Whs-code"
+//
+//								where "PUB"."item-whs"."In-entity"='+Quote('VX')+' AND "PUB"."item-whs"."Item-no"!=0 AND 
+//									("PUB"."item-whs"."Whs-code" LIKE '+Quote('%5')+' OR "PUB"."item-whs"."Whs-code" LIKE '+Quote('%6')+'OR "PUB"."item-whs"."Whs-code" LIKE '+Quote('%7')+')
+//			
+//						';
+
+//sql = 'select 
+//			"PUB"."sales-prd"."entity-code", "PUB"."sales-prd"."item-no",
+//			"PUB"."customer"."st","PUB"."customer"."ps-site-loc"
+//                  from "PUB"."sales-prd" join "PUB"."customer" on
+//						"PUB"."sales-prd"."cust-no" = "PUB"."customer"."cust-no"
+//				where "PUB"."sales-prd"."ar-entity"='+Quote('VX')+' AND "PUB"."sales-prd"."In-entity"='+Quote('VX')+'AND "PUB"."sales-prd"."yr"='+Quote(2019);
+
+
+//WriteFile("t.756b5d44-18ed-4e27-8d8f-da79213aee65",DbExecute("s.d5b24428-e147-4b50-8bcf-3a7d16b43762",sql));
+
+//DbExecute("s.d5b24428-e147-4b50-8bcf-3a7d16b43762",sql)
+
+//$jitterbit.scripting.db.max_rows = -1;
+//sql = 'select 
+//			"PUB"."sales-prd"."entity-code", "PUB"."sales-prd"."item-no",
+//			"PUB"."customer"."st","PUB"."customer"."ps-site-loc"
+//                  from "PUB"."sales-prd" join "PUB"."customer" on
+//						"PUB"."sales-prd"."cust-no" = "PUB"."customer"."cust-no"
+//				where "PUB"."sales-prd"."ar-entity"='+Quote('VX')+' AND "PUB"."sales-prd"."In-entity"='+Quote('VX')+'AND "PUB"."sales-prd"."yr"='+Quote(2019);
+//
+//
+//WriteFile("t.9c042687-323f-40ed-817a-162377a33f31", DbExecute("s.d5b24428-e147-4b50-8bcf-3a7d16b43762",sql));
+//FlushAllFiles("t.9c042687-323f-40ed-817a-162377a33f31");
+//
+//WriteFile("t.9c042687-323f-40ed-817a-162377a33f31", Replace(Replace(Replace( ReadFile("s.a6c81629-8826-495a-9fd4-1603ca75b77c"), '{{',''),'}}', ''),'},{',',\n'));
+//FlushAllFiles("t.9c042687-323f-40ed-817a-162377a33f31");
+
+//RunOperation("op.121e9797-f09b-4650-b76e-6ef328b9e6c0")
+
+
+
+//$jitterbit.scripting.db.max_rows = -1;
+// sql = 'select 
+//				"PUB"."invoice"."document",
+//				"PUB"."invoice"."cust-no",
+//				"PUB"."invoice-line"."Line-no",
+//				"PUB"."invoice-line"."item-no",
+//				"PUB"."invoice-line"."taxable-amt",
+//				"PUB"."invoice-line"."qty-shipped",
+//				"PUB"."customer"."st",
+//				"PUB"."customer"."bu-entity",
+//				"PUB"."customer"."ps-site-loc"
+//                  from "PUB"."invoice" inner join "PUB"."invoice-line" on 
+//									"PUB"."invoice"."Ar-entity"="PUB"."invoice-line"."Ar-entity" AND 
+//									"PUB"."invoice"."Document"="PUB"."invoice-line"."Document"
+//									inner join "PUB"."customer" on
+//																				"PUB"."invoice"."cust-no"="PUB"."customer"."cust-no"
+//				where "PUB"."invoice"."prd"=5 AND "PUB"."invoice"."yr"=2019';
+//
+//WriteFile("t.072ce6a7-ee69-4c45-b41c-cff243715e1a", DbExecute("s.d5b24428-e147-4b50-8bcf-3a7d16b43762",sql));
+//FlushAllFiles("t.072ce6a7-ee69-4c45-b41c-cff243715e1a");
+//
+//WriteFile("t.072ce6a7-ee69-4c45-b41c-cff243715e1a", 
+//	Replace(Replace(Replace( ReadFile("s.fb09c207-9abc-4c50-b5c9-007a0811cd38"), '{{',''),'}}', ''),'},{',',\n'));
+//FlushAllFiles("t.072ce6a7-ee69-4c45-b41c-cff243715e1a");
+//WriteToOperationLog("count:"+DbExecute("s.d5b24428-e147-4b50-8bcf-3a7d16b43762",sql));
+
+$jitterbit.scripting.db.max_rows = 1000;
+sql = sql = 'select 
+				"PUB"."order-line"."order-no",			
+				"PUB"."order-line"."line-no"
+                  from "PUB"."order-line" where "PUB"."order-line"."order-no"=5199949';
+
+WriteToOperationLog(DbExecute("s.d5b24428-e147-4b50-8bcf-3a7d16b43762",sql));
+&lt;/trans&gt;</konga.string>
+</Entity>

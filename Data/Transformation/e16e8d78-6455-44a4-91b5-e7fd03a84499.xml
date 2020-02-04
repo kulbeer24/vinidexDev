@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="e16e8d78-6455-44a4-91b5-e7fd03a84499" Name="Copy of C_MASTERFILE_Trans V1">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Tree"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="d5b24428-e147-4b50-8bcf-3a7d16b43762"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="target_text_doc" value="89d09d99-e7a4-4b67-be54-8b17ab6ace9d"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="e16e8d78-6455-44a4-91b5-e7fd03a84499"/>
+  </Properties>
+  <InputStructure sourceId="d5b24428-e147-4b50-8bcf-3a7d16b43762">
+    <Properties>
+      <Item key="includeSchemaName" value="1"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">"PUB"."item-whs-d","PUB"."item","PUB"."item-uomconv","PUB"."pr-group-sum",</konga.string>
+    <DbFields/>
+    <Relations>
+      <Relation childField="In-entity" childTable="&quot;PUB&quot;.&quot;item-uomconv&quot;" isSource="true" onetoOne="false" outerJoin="true" parentField="In-entity" parentTable="&quot;PUB&quot;.&quot;item&quot;" relationId="-1580684541655"/>
+      <Relation childField="Item-no" childTable="&quot;PUB&quot;.&quot;item-uomconv&quot;" isSource="true" onetoOne="false" outerJoin="true" parentField="Item-no" parentTable="&quot;PUB&quot;.&quot;item&quot;" relationId="-1580684541654"/>
+      <Relation childField="To-pr-group" childTable="&quot;PUB&quot;.&quot;pr-group-sum&quot;" isSource="true" onetoOne="false" outerJoin="true" parentField="Prod-group" parentTable="&quot;PUB&quot;.&quot;item&quot;" relationId="-1580684541657"/>
+      <Relation childField="From-pr-group" childTable="&quot;PUB&quot;.&quot;pr-group-sum&quot;" isSource="true" onetoOne="false" outerJoin="true" parentField="Prod-group" parentTable="&quot;PUB&quot;.&quot;item&quot;" relationId="-1580684541656"/>
+      <Relation childField="Item-no" childTable="&quot;PUB&quot;.&quot;item-whs-d&quot;" isSource="true" onetoOne="false" outerJoin="true" parentField="Item-no" parentTable="&quot;PUB&quot;.&quot;item&quot;" relationId="-1580684541658"/>
+      <Relation childField="In-entity" childTable="&quot;PUB&quot;.&quot;item-whs-d&quot;" isSource="true" onetoOne="false" outerJoin="true" parentField="In-entity" parentTable="&quot;PUB&quot;.&quot;item&quot;" relationId="-1580684541659"/>
+    </Relations>
+    <SqlScript>
+      <Entry entryId="-1580684541607" type="1">
+        <konga.string name="script">SELECT * FROM "PUB"."item" WHERE "Active"=1 and  "Create-date"&gt;'2015-12-31'</konga.string>
+        <konga.string name="where">"Active"=1 and  "Create-date"&gt;'2015-12-31'</konga.string>
+      </Entry>
+      <Entry entryId="-1580684541608" type="2">
+        <konga.string name="script">"PUB"."item".In-entity,"PUB"."item".Item-no,</konga.string>
+      </Entry>
+    </SqlScript>
+    <Filters>
+      <Entry column="Active" condition="=1" sortOrder="NONE" table="&quot;PUB&quot;.&quot;item&quot;"/>
+      <Entry column="so99" condition="=1" sortOrder="NONE" table="&quot;PUB&quot;.&quot;item&quot;"/>
+      <Entry column="sum-total" condition="=0" sortOrder="NONE" table="&quot;PUB&quot;.&quot;pr-group-sum&quot;"/>
+      <Entry column="Create-date" condition="&gt;'2015-12-31'" sortOrder="NONE" table="&quot;PUB&quot;.&quot;item&quot;"/>
+    </Filters>
+  </InputStructure>
+  <OutputStructure docId="89d09d99-e7a4-4b67-be54-8b17ab6ace9d"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[PUB:item.PUB:pr?group?sum.]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ITEM	&lt;trans&gt;
+PUB:item.Item?no
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">DESCR	&lt;trans&gt;
+PUB:item.Description
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ITEM_TYPE	&lt;trans&gt;
+PUB:item.Type
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">DIVIS	&lt;trans&gt;
+'VX'
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">PRODFAM	&lt;trans&gt;
+PUB:item.Prod?group
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SEASGROUP	&lt;trans&gt;
+'DEF'
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">PLANGROUP	&lt;trans&gt;
+PUB:item.Mli
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">MUNIT	&lt;trans&gt;
+PUB:item.Selling?uom
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">UNITCOST	&lt;trans&gt;
+//PUB:item.PUB:item?whs?d$Cost
+
+FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs?d#.Cost)
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">UNITVOL	&lt;trans&gt;
+PUB:item.Weight/1000
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">UNITWEIGHT	&lt;trans&gt;
+PUB:item.Weight
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">UNITCUBE	&lt;trans&gt;
+PUB:item.Volume
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">AGGREG_UNITS	&lt;trans&gt;
+1
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">UNITPRICE	&lt;trans&gt;
+FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs?d#.Cost)
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">PALLETQTY	&lt;trans&gt;
+//PUB:item.PUB:item?uomconv$Ratio
+FindByPos(SourceInstanceCount(),PUB:item.PUB:item?uomconv#.Ratio)
+
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">MINSALSLOT	&lt;trans&gt;
+1
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">FREEATTR1	&lt;trans&gt;
+//PUB:item.PUB:pr?group?sum$Prod?sum?group
+PUB:item.PUB:pr?group?sum.Prod?sum?group
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">FREEATTR4	&lt;trans&gt;
+PUB:item.Prod?group
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">FREEATTR5	&lt;trans&gt;
+PUB:item.Pricing?grp
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">FREEATTR7	&lt;trans&gt;
+PUB:item.Mli
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">Custom_1	&lt;trans&gt;
+PUB:item.length
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">Custom_2	&lt;trans&gt;
+PUB:item.diameter
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">Custom_3	&lt;trans&gt;
+PUB:item.sdr
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

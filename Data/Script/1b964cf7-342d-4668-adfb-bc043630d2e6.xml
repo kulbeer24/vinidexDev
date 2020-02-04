@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="1b964cf7-342d-4668-adfb-bc043630d2e6" Name="24.0 C_FREEATTR_ITEM_3: common runpoint">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="1b964cf7-342d-4668-adfb-bc043630d2e6"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+//$LoadedProductGroup=false;
+//Run DB operation for the excel file and create dictionary
+//DBOperationandDictionaryCreation=RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+
+//RunOperation("op.ad4ffb9f-ee83-4c4d-b9fd-ebde448f6c1c");
+//
+if($LoadedProductGroup,
+				//Create C_FREEATTR_ITEM_3
+				text='';
+				header='ATTRIB\tDESCR';
+				text+=header+"\n";
+				
+				//get all the keys out of the dictionary
+				arrKeys=GetKeys($Dic.C_freeattr_item_3);
+				
+				counter=0;
+				While(counter&lt;Length(arrKeys),
+					key=arrKeys[counter];
+//					textItem=$Dic.C_freeattr_item_3[key][0]+","+$Dic.C_freeattr_item_3[key][1]+"\n";
+					textItem=key+"\t"+$Dic.C_freeattr_item_3[key]+"\n";
+					text+=textItem;
+					counter++;
+				);
+				//write To temporary Storage
+				WriteFile("t.aa07bfe0-fe04-4f8b-b2ba-bbc8466a6abc", text);
+
+,	
+			//else
+			RaiseError("Issue occured when trying to create dictionary from Site Source file")
+);
+
+//text
+
+&lt;/trans&gt;</konga.string>
+</Entity>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Folder">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="da007e11-b3c0-4920-8f87-1c4971f2cad7" Name="Common: Excel File manipulation">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="folder_id" value="da007e11-b3c0-4920-8f87-1c4971f2cad7"/>
+    <Item key="protected" value="false"/>
+  </Properties>
+</Entity>

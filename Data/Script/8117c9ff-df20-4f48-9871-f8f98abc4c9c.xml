@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="8117c9ff-df20-4f48-9871-f8f98abc4c9c" Name="5b.0 LINESORDERMIA(INV): Common Runpoint">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="8117c9ff-df20-4f48-9871-f8f98abc4c9c"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$jitterbit.scripting.db.max_rows = -1;
+$LineordermiaInv_InvoiceYr=CVTDate(ShortDate(Now()),'mm/dd/yy','yyyy');
+ sql = 'select 
+				"PUB"."invoice-line"."item-no",
+				"PUB"."customer"."Cust-no",
+				"PUB"."customer"."st",
+				"PUB"."customer"."bu-entity",
+				"PUB"."customer"."ps-site-loc",
+				"PUB"."invoice"."document",
+				"PUB"."invoice-line"."Line-no",
+				"PUB"."invoice-line"."qty-shipped",
+				"PUB"."invoice-line"."taxable-amt"
+                  from "PUB"."invoice" inner join "PUB"."invoice-line" on 
+									"PUB"."invoice"."Ar-entity"="PUB"."invoice-line"."Ar-entity" AND 
+									"PUB"."invoice"."Document"="PUB"."invoice-line"."Document"
+									inner join "PUB"."customer" on
+																				"PUB"."invoice"."cust-no"="PUB"."customer"."cust-no"
+				where "PUB"."invoice"."prd"=5 AND "PUB"."invoice"."yr"='+$LineordermiaInv_InvoiceYr;
+
+		
+//write DB extract to a local file
+WriteFile("t.072ce6a7-ee69-4c45-b41c-cff243715e1a",
+	 DbExecute("s.d5b24428-e147-4b50-8bcf-3a7d16b43762",sql));
+FlushAllFiles("t.072ce6a7-ee69-4c45-b41c-cff243715e1a");
+
+
+//remove extra characters from the text
+WriteFile("t.072ce6a7-ee69-4c45-b41c-cff243715e1a", 
+	Replace(Replace(Replace( ReadFile("s.fb09c207-9abc-4c50-b5c9-007a0811cd38"), '{{',''),'}}', ''),'},{',',\n'));
+FlushAllFiles("t.072ce6a7-ee69-4c45-b41c-cff243715e1a");
+
+
+//read local file with DB extract and create user accepted format of lineordersmia(inv)
+RunOperation("op.cc78e37e-d34e-4fbb-8133-1b7127e46513");
+&lt;/trans&gt;</konga.string>
+</Entity>

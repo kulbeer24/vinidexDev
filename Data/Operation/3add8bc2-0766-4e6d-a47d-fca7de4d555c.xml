@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Operation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="3add8bc2-0766-4e6d-a47d-fca7de4d555c" Name="0.1 Create C_MASTERFILE">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="chunk_size" value="0"/>
+    <Item key="debug_mode_until" value="2019-12-20T02:01Z"/>
+    <Item key="description" value=""/>
+    <Item key="failure_message_id" value="e9b4e4ce-b495-4b3c-93bc-d10d1bc25b46"/>
+    <Item key="ignore_history" value="1"/>
+    <Item key="LogLevel" value="Everything"/>
+    <Item key="max_number_of_threads" value="1"/>
+    <Item key="operation_id" value="3add8bc2-0766-4e6d-a47d-fca7de4d555c"/>
+    <Item key="operation_type_id" value="3"/>
+    <Item key="run_success_op_if_no_source_files" value="0"/>
+    <Item key="schedule_policy" value="skip_if_running"/>
+    <Item key="source_chunk_node" value="-flat-"/>
+    <Item key="source_id" value="d5b24428-e147-4b50-8bcf-3a7d16b43762"/>
+    <Item key="success_operation_id" value="c554a459-8093-41e3-a253-6e561035fb49"/>
+    <Item key="target_chunk_node" value="-flat-"/>
+    <Item key="target_chunk_size" value="0"/>
+    <Item key="target_id" value="cc3ebb88-de05-41bc-8421-ab46e20ab4f2"/>
+    <Item key="timeoutseconds" value="21600"/>
+    <Item key="timeoutuiunit" value="HOURS"/>
+    <Item key="trace" value="1"/>
+    <Item key="validate_source_text_file" value="0"/>
+  </Properties>
+  <Pipeline opType="Transformation">
+    <Activities>
+      <SOURCE activityId="c2f8cce9-de8a-43d3-a7d2-aec6d2cba3ac" contentId="d5b24428-e147-4b50-8bcf-3a7d16b43762" role="Source" type="2"/>
+      <TRANSFORMATION activityId="b1551fc0-1f2e-4a36-9f21-bd702b491841" contentId="61293654-1518-486c-b7cc-be10ade1fff6" role="Transformation" type="4"/>
+      <TARGET activityId="56d1c500-b72d-40b7-8d63-f9f2befa3c78" contentId="cc3ebb88-de05-41bc-8421-ab46e20ab4f2" role="Target" type="3"/>
+    </Activities>
+  </Pipeline>
+  <Siblings/>
+</Entity>

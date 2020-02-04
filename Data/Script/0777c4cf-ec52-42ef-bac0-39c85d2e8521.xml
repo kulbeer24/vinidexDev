@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="0777c4cf-ec52-42ef-bac0-39c85d2e8521" Name="13. C_MICROAREAS sql execute: sql query">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="0777c4cf-ec52-42ef-bac0-39c85d2e8521"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$Date.C_Microareas.start='06/14/2017';
+
+//$Date.C_Microareas.end='06/28/2019';
+$jitterbit.scripting.db.max_rows = -1;
+sql_microareas = 'select 
+				"PUB"."customer"."Cust-no",
+				"PUB"."customer"."St",
+				"PUB"."customer"."Bu-entity",
+				"PUB"."customer"."ps-site-loc"
+                  from "PUB"."order"
+				inner join "PUB"."customer" ON "PUB"."customer"."Cust-no" = "PUB"."order"."Cust-no" 
+                  where "PUB"."order"."Ar-entity"  ='+Quote('VX')+' and "PUB"."order"."Internal-ind"=0 and "PUB"."order"."Order-date"&gt;='+Quote($Date.C_Microareas.start);
+
+//' and "PUB"."order"."Order-date"&gt;='+Quote($Date.C_Microareas.start)+
+
+WriteFile("t.d403e755-c3ea-4e1e-b2e5-0841b6a716eb", DbExecute("s.d5b24428-e147-4b50-8bcf-3a7d16b43762",sql_microareas));
+FlushAllFiles("t.d403e755-c3ea-4e1e-b2e5-0841b6a716eb");
+
+
+WriteFile("t.d403e755-c3ea-4e1e-b2e5-0841b6a716eb",
+	 Replace(Replace(Replace( ReadFile("s.13b67d0b-1e59-41ca-a47e-7c80878aff48"), '{{',''),'}}', ''),'},{',',\n'));
+FlushAllFiles("t.d403e755-c3ea-4e1e-b2e5-0841b6a716eb");
+
+//(ReadFile("s.13b67d0b-1e59-41ca-a47e-7c80878aff48"))
+&lt;/trans&gt;</konga.string>
+</Entity>

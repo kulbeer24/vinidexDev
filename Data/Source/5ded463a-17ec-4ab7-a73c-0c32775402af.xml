@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Source">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="5ded463a-17ec-4ab7-a73c-0c32775402af" Name="JB Internal FTP - Product Group Source">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties/>
+  <Location type="FTP">
+    <Data>
+      <Properties>
+        <Item key="character_encoding" value=""/>
+        <Item key="encrypt_choice" value="0"/>
+        <Item key="file_name" value="Product Group Source.xlsx"/>
+        <Item key="filterOption.ignoreCase" value="0"/>
+        <Item key="filterOption.regularExpression" value="0"/>
+        <Item key="ftp.nlst" value="0"/>
+        <Item key="ignore_first" value="0"/>
+        <Item key="ignore_last" value="0"/>
+        <Item enc="true" key="locator" value="$00XpzLWHb+Sdm+AgHZyPpbgHCi9W0teWOpAYhGnjqO9R0="/>
+        <Item enc="true" key="login" value="$00cT2Ga7AXLhJKpYKPttpILbXKRjnJ7xvCc7VKOe9zb3xqHRUsVe66D62MVhdJkqvj"/>
+        <Item key="passive_mode" value="1"/>
+        <Item enc="true" key="password" value="$00chehIpGOHS2cPQr0iA3wNIATa4dW0ppA5lKDAMPWS2s="/>
+        <Item key="path" value="/Kulbeer/vinidex"/>
+        <Item key="proxy_tunnel" value="1"/>
+        <Item key="renamefileto" value=""/>
+        <Item key="transfer_type" value="2"/>
+        <Item key="trigger_filename" value=""/>
+        <Item key="uncompress_format" value=""/>
+        <Item key="use_trigger_file" value="0"/>
+      </Properties>
+    </Data>
+  </Location>
+</Entity>

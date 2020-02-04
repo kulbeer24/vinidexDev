@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="2dfdda56-64c9-4ba7-a750-5b057e72bc65" Name="11.2 LineORDERSMIA: combine local files to FTP">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Flat"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_text_doc" value="282b677c-295d-4309-96c9-8752ec8d81bf"/>
+    <Item key="source_type_id" value="1"/>
+    <Item key="target_text_doc" value="282b677c-295d-4309-96c9-8752ec8d81bf"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="2dfdda56-64c9-4ba7-a750-5b057e72bc65"/>
+  </Properties>
+  <InputStructure docId="282b677c-295d-4309-96c9-8752ec8d81bf"/>
+  <OutputStructure docId="282b677c-295d-4309-96c9-8752ec8d81bf"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ITEM	&lt;trans&gt;
+ITEM
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">MICROAREA	&lt;trans&gt;
+MICROAREA
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ORDERID	&lt;trans&gt;
+ORDERID
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">LINE_N	&lt;trans&gt;
+LINE_N
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">REQYEAR	&lt;trans&gt;
+REQYEAR
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">REQMONTH	&lt;trans&gt;
+REQMONTH
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">REQDAY	&lt;trans&gt;
+REQDAY
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">PICKEDQUANTITY	&lt;trans&gt;
+PICKEDQUANTITY
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ONTIMEQTY	&lt;trans&gt;
+ONTIMEQTY
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SHIPYEAR	&lt;trans&gt;
+SHIPYEAR
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SHIPMONTH	&lt;trans&gt;
+SHIPMONTH
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SHIPDAY	&lt;trans&gt;
+SHIPDAY
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">UNITPRICE	&lt;trans&gt;
+UNITPRICE
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ORDERTYPE	&lt;trans&gt;
+ORDERTYPE
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SHIPFROM	&lt;trans&gt;
+SHIPFROM
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ORDERQUANTITY	&lt;trans&gt;
+ORDERQUANTITY
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">REBATEPRICE	&lt;trans&gt;
+REBATEPRICE
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

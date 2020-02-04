@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="a9c3ecc3-58a4-45c8-9c2f-6a89a0163c9f" Name="Set File Name C_ITEMAREA">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="a9c3ecc3-58a4-45c8-9c2f-6a89a0163c9f"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+
+$filename = 'C_ITEMAREA'
+&lt;/trans&gt;</konga.string>
+</Entity>

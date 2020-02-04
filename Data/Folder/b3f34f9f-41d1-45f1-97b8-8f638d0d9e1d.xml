@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Folder">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="b3f34f9f-41d1-45f1-97b8-8f638d0d9e1d" Name="5b. LINEORDERSMIA (INV)">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="folder_id" value="b3f34f9f-41d1-45f1-97b8-8f638d0d9e1d"/>
+    <Item key="protected" value="false"/>
+  </Properties>
+</Entity>

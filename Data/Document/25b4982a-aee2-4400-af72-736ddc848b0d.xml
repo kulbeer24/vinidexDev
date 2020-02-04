@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Document">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="25b4982a-aee2-4400-af72-736ddc848b0d" Name="C_ITEMLOCATION">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="document_id" value="25b4982a-aee2-4400-af72-736ddc848b0d"/>
+    <Item key="edifact" value="0"/>
+    <Item key="escape_sequences" value="1"/>
+    <Item key="format_type_id" value="2"/>
+    <Item key="qualifier_mode" value="WHEN_NEEDED"/>
+    <Item key="text_qualifier" value=""/>
+    <Item key="use_end_of_line" value="1"/>
+  </Properties>
+  <Delimiter value="&#9;"/>
+  <Structure>
+    <Properties>
+      <Item key="fixedField" value="0"/>
+    </Properties>
+    <Segment name="" occurenceType="Only Once" parent="_Root" segmentId="0">
+      <Fields>
+        <Field default="" fieldId="1" fixWidth="false" format="" name="ITEM" required="0" type="String"/>
+        <Field default="" fieldId="2" fixWidth="false" format="" name="LOCATION" required="0" type="String"/>
+        <Field default="" fieldId="3" fixWidth="false" format="" name="SUPPLIER" required="0" type="String"/>
+        <Field default="" fieldId="4" fixWidth="false" format="" name="SRCLOCATION" required="0" type="String"/>
+        <Field default="" fieldId="5" fixWidth="false" format="" name="UNITCOST" required="0" type="String"/>
+        <Field default="" fieldId="6" fixWidth="false" format="" name="REVIEWPER" required="0" type="String"/>
+        <Field default="" fieldId="7" fixWidth="false" format="" name="MINLEADTIME" required="0" type="String"/>
+        <Field default="" fieldId="8" fixWidth="false" format="" name="AVEDELAY" required="0" type="String"/>
+        <Field default="" fieldId="9" fixWidth="false" format="" name="MAX_CYCLEDELAY" required="0" type="String"/>
+        <Field default="" fieldId="10" fixWidth="false" format="" name="QATIME" required="0" type="String"/>
+        <Field default="" fieldId="11" fixWidth="false" format="" name="SERVICETIME" required="0" type="String"/>
+        <Field default="" fieldId="12" fixWidth="false" format="" name="TRANSIT_TIME" required="0" type="String"/>
+        <Field default="" fieldId="13" fixWidth="false" format="" name="MINRESINT" required="0" type="String"/>
+        <Field default="" fieldId="14" fixWidth="false" format="" name="MINRESLOT" required="0" type="String"/>
+        <Field default="" fieldId="15" fixWidth="false" format="" name="INCRESLOT" required="0" type="String"/>
+        <Field default="" fieldId="16" fixWidth="false" format="" name="CTRL_TYPE" required="0" type="String"/>
+        <Field default="" fieldId="17" fixWidth="false" format="" name="FIXED_LEVEL" required="0" type="String"/>
+        <Field default="" fieldId="18" fixWidth="false" format="" name="FIXED_LEVEL_TRG" required="0" type="String"/>
+        <Field default="" fieldId="19" fixWidth="false" format="" name="LOSTSALESCOEFF" required="0" type="String"/>
+        <Field default="" fieldId="20" fixWidth="false" format="" name="BUY_PLANNER" required="0" type="String"/>
+        <Field default="" fieldId="21" fixWidth="false" format="" name="CUSTOM_FIELD" required="0" type="String"/>
+        <Field default="" fieldId="22" fixWidth="false" format="" name="CUSTOM_FIELD1" required="0" type="String"/>
+        <Field default="" fieldId="23" fixWidth="false" format="" name="CUSTOM_FIELD2" required="0" type="String"/>
+      </Fields>
+    </Segment>
+  </Structure>
+</Entity>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="e0cc9ef2-2067-472d-8aac-078b7da33bab" Name="Manual Extract: Linesordermia">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="e0cc9ef2-2067-472d-8aac-078b7da33bab"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+
+//use lookup files to create dictionaries required for weekly extracts
+Eval(
+	RunScript("sc.06473af2-56d9-454f-bd86-d8f5c736513e")
+,
+	RaiseError("Issue occured while creating dictionaries from the lookups. Here is the last relevant error:"+GetLastError())
+);
+
+//once all the required dicitonaries are created, create the extracts
+if($LoadedEntityLookup &amp;&amp; $LoadedProductGroup &amp;&amp; $LoadedSiteGroup &amp;&amp; $LoadedStateLookup &amp;&amp; $LoadedDuplicateWarehouse,
+	//Run linesordermia
+	RunOperation("op.d65613da-39cd-4ca0-94b2-2169a2b5cd9f",false);
+	,
+RaiseError("Issue occured while creating dictionaries from the lookups. Here is the last relevant error:"+GetLastError())
+);
+&lt;/trans&gt;</konga.string>
+</Entity>

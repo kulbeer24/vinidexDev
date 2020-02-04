@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Operation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="ad4ffb9f-ee83-4c4d-b9fd-ebde448f6c1c" Name="2.0 ProductSource - Get updated File from Sharepoint to Local Excel">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="chunk_size" value="0"/>
+    <Item key="debug_mode_until" value=""/>
+    <Item key="description" value=""/>
+    <Item key="failure_message_id" value="e9b4e4ce-b495-4b3c-93bc-d10d1bc25b46"/>
+    <Item key="ignore_history" value="1"/>
+    <Item key="LogLevel" value="Everything"/>
+    <Item key="max_number_of_threads" value="1"/>
+    <Item key="operation_id" value="ad4ffb9f-ee83-4c4d-b9fd-ebde448f6c1c"/>
+    <Item key="operation_type_id" value="1"/>
+    <Item key="run_success_op_if_no_source_files" value="0"/>
+    <Item key="schedule_policy" value="skip_if_running"/>
+    <Item key="source_chunk_node" value=""/>
+    <Item key="source_id" value="3a5fee2b-acf2-4b08-bf07-548929009b4f"/>
+    <Item key="success_operation_id" value="e0612b0e-89d8-4a02-9f62-7354e65809e3"/>
+    <Item key="target_chunk_node" value=""/>
+    <Item key="target_chunk_size" value="0"/>
+    <Item key="target_id" value="dcb36de0-63f8-4575-940a-26d77017979a"/>
+    <Item key="timeoutseconds" value="7200"/>
+    <Item key="timeoutuiunit" value="HOURS"/>
+    <Item key="trace" value="1"/>
+    <Item key="validate_source_text_file" value="0"/>
+  </Properties>
+  <Pipeline opType="Archive">
+    <Activities>
+      <SOURCE activityId="f5780f04-c0c7-49c6-8829-651967446da0" contentId="3a5fee2b-acf2-4b08-bf07-548929009b4f" role="Source" type="2"/>
+      <TARGET activityId="5e945286-544a-45f1-b836-29f653a45337" contentId="dcb36de0-63f8-4575-940a-26d77017979a" role="Target" type="3"/>
+    </Activities>
+  </Pipeline>
+  <Siblings/>
+</Entity>

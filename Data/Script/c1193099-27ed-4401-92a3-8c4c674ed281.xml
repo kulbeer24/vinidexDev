@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="c1193099-27ed-4401-92a3-8c4c674ed281" Name="9.0 c_itemarea:common runpoint">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="c1193099-27ed-4401-92a3-8c4c674ed281"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+//$LoadedSiteGroup=false;
+//$LoadedStateLookup=false;
+//
+////get data out of the excel file and create dictionaries requried
+//operationsExcelSiteSourceandDictionaryCreation=RunOperation("op.d2c93e1e-13fa-4b32-9314-841258a90274");
+//
+////get data out of the excel file and create dictionaries required for Statelookup
+//RunOperation("op.c90bd81a-b986-4dc8-8c5a-de10fb349fde");
+//
+//if($LoadedSiteGroup &amp;&amp; $LoadedStateLookup,
+//		//Create C_ITEMarea
+////		RunOperation("op.121e9797-f09b-4650-b76e-6ef328b9e6c0");
+//		RunOperation("op.07b5f797-9ead-473e-b4f7-0586f07eee99");
+//		,
+//		//else
+//		RaiseError("Error occured while creating dictionary from Site Source external file and Site Lookup file");
+//);
+
+	//Create C_ITEMarea
+		RunOperation("op.07b5f797-9ead-473e-b4f7-0586f07eee99");
+&lt;/trans&gt;</konga.string>
+</Entity>

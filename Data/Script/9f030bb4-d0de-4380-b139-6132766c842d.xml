@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="9f030bb4-d0de-4380-b139-6132766c842d" Name="15. Create C_FREEATTR_AREA2: Pre Requisistes">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="9f030bb4-d0de-4380-b139-6132766c842d"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$LoadedEntityLookup=false;
+
+Eval(RunOperation("op.beb84236-9880-4b1a-acf5-2a42ba5e4197");,
+	RaiseError("Error Occured while creating dictionary from Entity Lookup file"));
+
+
+&lt;/trans&gt;</konga.string>
+</Entity>

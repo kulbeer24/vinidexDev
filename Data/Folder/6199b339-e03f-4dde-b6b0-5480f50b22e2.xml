@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Folder">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="6199b339-e03f-4dde-b6b0-5480f50b22e2" Name="ProductGroup Source">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="folder_id" value="6199b339-e03f-4dde-b6b0-5480f50b22e2"/>
+    <Item key="protected" value="false"/>
+  </Properties>
+</Entity>

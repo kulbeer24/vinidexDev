@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Folder">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="c631346e-4944-47fb-b1a8-457624ea9f21" Name="0. C_MASTERFILE">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="folder_id" value="c631346e-4944-47fb-b1a8-457624ea9f21"/>
+    <Item key="protected" value="false"/>
+  </Properties>
+</Entity>

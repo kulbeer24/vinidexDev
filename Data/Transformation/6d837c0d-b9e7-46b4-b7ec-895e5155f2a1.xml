@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="6d837c0d-b9e7-46b4-b7ec-895e5155f2a1" Name="Copy of C_ITEMLOCATION_Trans V1 (2)">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Tree"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="d5b24428-e147-4b50-8bcf-3a7d16b43762"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="target_text_doc" value="25b4982a-aee2-4400-af72-736ddc848b0d"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="6d837c0d-b9e7-46b4-b7ec-895e5155f2a1"/>
+  </Properties>
+  <InputStructure sourceId="d5b24428-e147-4b50-8bcf-3a7d16b43762">
+    <Properties>
+      <Item key="includeSchemaName" value="1"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">"PUB"."item-whs-d","PUB"."item","PUB"."item-whs",</konga.string>
+    <DbFields/>
+    <Relations>
+      <Relation childField="In-entity" childTable="&quot;PUB&quot;.&quot;item-whs&quot;" isSource="true" onetoOne="false" outerJoin="true" parentField="In-entity" parentTable="&quot;PUB&quot;.&quot;item&quot;" relationId="-1580684541713"/>
+      <Relation childField="Item-no" childTable="&quot;PUB&quot;.&quot;item-whs&quot;" isSource="true" onetoOne="false" outerJoin="true" parentField="Item-no" parentTable="&quot;PUB&quot;.&quot;item&quot;" relationId="-1580684541712"/>
+      <Relation childField="Whs-code" childTable="&quot;PUB&quot;.&quot;item-whs-d&quot;" isSource="true" onetoOne="false" outerJoin="true" parentField="Whs-code" parentTable="&quot;PUB&quot;.&quot;item-whs&quot;" relationId="-1580684541714"/>
+      <Relation childField="In-entity" childTable="&quot;PUB&quot;.&quot;item-whs-d&quot;" isSource="true" onetoOne="false" outerJoin="true" parentField="In-entity" parentTable="&quot;PUB&quot;.&quot;item-whs&quot;" relationId="-1580684541716"/>
+      <Relation childField="Item-no" childTable="&quot;PUB&quot;.&quot;item-whs-d&quot;" isSource="true" onetoOne="false" outerJoin="true" parentField="Item-no" parentTable="&quot;PUB&quot;.&quot;item-whs&quot;" relationId="-1580684541715"/>
+    </Relations>
+    <SqlScript>
+      <Entry entryId="-1580684541633" type="1">
+        <konga.string name="script">SELECT * FROM "item-whs"</konga.string>
+      </Entry>
+      <Entry entryId="-1580684541634" type="2">
+        <konga.string name="script">item-whs.In-entity,item-whs.Item-no,item-whs.Whs-code,</konga.string>
+      </Entry>
+    </SqlScript>
+    <Filters>
+      <Entry column="Active" condition="=1" sortOrder="NONE" table="&quot;PUB&quot;.&quot;item&quot;"/>
+    </Filters>
+  </InputStructure>
+  <OutputStructure docId="25b4982a-aee2-4400-af72-736ddc848b0d"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[PUB:item.PUB:item?whs.PUB:item?whs?d.]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ITEM	&lt;trans&gt;
+PUB:item.PUB:item?whs.Item?no
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">LOCATION	&lt;trans&gt;
+//$Site.code=Null();
+code=FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs#.Vendor?code);
+name="";
+
+/*-------------Start Test----*/
+
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+
+/*-------------End Test---*/
+
+//dictionary defined in Excel transformation of Site SOurce file
+if(HasKey($Dic.C_itemLocation.Location,code)
+	,
+	name=$Dic.C_itemLocation.Location[code];
+);
+
+name
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SUPPLIER	&lt;trans&gt;
+//code=FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs#.Vendor?code);
+//location="";
+
+warehouse_code=FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs#.Whs?code);//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Whs?code);
+vendor_code=FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs#.Vendor?code);//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Vendor?code);
+
+/*----------TESTING----------------*/
+
+//warehouse_code="b7";
+//vendor_code='ljwsil';
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+
+
+/*----------------------------------*/
+//this dictionary is created fromPUB:item.PUB:item?whs.Whs?codePUB:item.PUB:item?whs.Vendor?code site source file(xls)
+counter=0;
+supplier="";
+lengthDictionary=Length($Dic.c_itemLocation.SourceLocationFile);
+While(counter&lt;lengthDictionary
+	,
+	arrayData=$Dic.c_itemLocation.SourceLocationFile[counter];
+	a=arrayData[0];
+	c=arrayData[2];
+	d=arrayData[3];
+		if(warehouse_code==a &amp;&amp; vendor_code==c
+			,
+			supplier=d;
+			counter=lengthDictionary+1;
+		);
+	counter++;
+);
+
+supplier
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SRCLOCATION	&lt;trans&gt;
+//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs#.Vendor?code)
+
+warehouse_code=FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs#.Whs?code);//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Whs?code);
+vendor_code=FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs#.Vendor?code);//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Vendor?code);
+
+/*----------TESTING----------------*/
+
+//warehouse_code="A5";
+//vendor_code='vxspvc';
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+
+
+/*----------------------------------*/
+//this dictionary is created fromPUB:item.PUB:item?whs.Whs?codePUB:item.PUB:item?whs.Vendor?code site source file(xls)
+counter=0;
+srcLocation="";
+lengthDictionary=Length($Dic.c_itemLocation.SourceLocationFile);
+While(counter&lt;lengthDictionary
+	,
+	arrayData=$Dic.c_itemLocation.SourceLocationFile[counter];
+	a=arrayData[0];
+	c=arrayData[2];
+	e=arrayData[4];
+		if(warehouse_code==a &amp;&amp; vendor_code==c
+			,
+			srcLocation=e;
+			counter=lengthDictionary+1;
+		);
+	counter++;
+);
+
+srcLocation
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">UNITCOST	&lt;trans&gt;
+FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.PUB:item?whs?d#.Cost)
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">REVIEWPER	&lt;trans&gt;
+1
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">MINLEADTIME	&lt;trans&gt;
+
+warehouse_code=FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs#.Whs?code);//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Whs?code);
+vendor_code=FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs#.Vendor?code);//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Vendor?code);
+
+/*----------TESTING----------------*/
+
+//warehouse_code="b7";
+//vendor_code='c&amp;ebur';
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+
+
+/*----------------------------------*/
+//this dictionary is created fromPUB:item.PUB:item?whs.Whs?codePUB:item.PUB:item?whs.Vendor?code site source file(xls)
+counter=0;
+minLeadTime="";
+lengthDictionary=Length($Dic.c_itemLocation.SourceLocationFile);
+While(counter&lt;lengthDictionary
+	,
+	arrayData=$Dic.c_itemLocation.SourceLocationFile[counter];
+	a=arrayData[0];
+	c=arrayData[2];
+	f=arrayData[5];
+		if(warehouse_code==a &amp;&amp; vendor_code==c
+			,
+			minLeadTime=IfNull(f,"");
+			counter=lengthDictionary+1;
+		);
+	counter++;
+);
+
+minLeadTime
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">AVEDELAY	&lt;trans&gt;
+warehouse_code=FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs#.Whs?code);//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Whs?code);
+vendor_code=FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs#.Vendor?code);//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Vendor?code);
+
+/*----------TESTING----------------*/
+
+//warehouse_code="B7";
+//vendor_code='IPEUSA';
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+
+
+/*----------------------------------*/
+//this dictionary is created fromPUB:item.PUB:item?whs.Whs?codePUB:item.PUB:item?whs.Vendor?code site source file(xls)
+counter=0;
+avedelay="";
+lengthDictionary=Length($Dic.c_itemLocation.SourceLocationFile);
+While(counter&lt;lengthDictionary
+	,
+	arrayData=$Dic.c_itemLocation.SourceLocationFile[counter];
+	a=arrayData[0];
+	c=arrayData[2];
+	g=arrayData[6];
+		if(warehouse_code==a &amp;&amp; vendor_code==c
+			,
+			avedelay=IfNull(g,"");
+//			$Counter=counter;
+			counter=lengthDictionary+1;
+		);
+	counter++;
+);
+
+avedelay
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">MAX_CYCLEDELAY	&lt;trans&gt;
+
+warehouse_code=FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs#.Whs?code);//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Whs?code);
+vendor_code=FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs#.Vendor?code);//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Vendor?code);
+
+/*----------TESTING----------------*/
+
+//warehouse_code="B7";
+//vendor_code='IPEUSA';
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+
+
+/*----------------------------------*/
+//this dictionary is created fromPUB:item.PUB:item?whs.Whs?codePUB:item.PUB:item?whs.Vendor?code site source file(xls)
+counter=0;
+maxCycleDelay="";
+lengthDictionary=Length($Dic.c_itemLocation.SourceLocationFile);
+While(counter&lt;lengthDictionary
+	,
+	arrayData=$Dic.c_itemLocation.SourceLocationFile[counter];
+	a=arrayData[0];
+	c=arrayData[2];
+	h=arrayData[7];
+		if(warehouse_code==a &amp;&amp; vendor_code==c
+			,
+			maxCycleDelay=IfNull(h,"");
+//			$Counter=counter;
+			counter=lengthDictionary+1;
+		);
+	counter++;
+);
+
+maxCycleDelay
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">QATIME	&lt;trans&gt;
+
+warehouse_code=FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs#.Whs?code);//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Whs?code);
+vendor_code=FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs#.Vendor?code);//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Vendor?code);
+
+/*----------TESTING----------------*/
+
+//warehouse_code="b7";
+//vendor_code='vinper';
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+
+
+/*----------------------------------*/
+//this dictionary is created fromPUB:item.PUB:item?whs.Whs?codePUB:item.PUB:item?whs.Vendor?code site source file(xls)
+counter=1;
+qaTime="";
+lengthDictionary=Length($Dic.c_itemLocation.SourceLocationFile);
+While(counter&lt;lengthDictionary
+	,
+	arrayData=$Dic.c_itemLocation.SourceLocationFile[counter];
+	a=arrayData[0];
+	c=arrayData[2];
+	i=arrayData[8];
+		if(warehouse_code==a &amp;&amp; vendor_code==c
+			,
+			qaTime=IfNull(i,"");
+			$Counter=counter;
+			counter=lengthDictionary+1;
+		);
+	counter++;
+);
+
+qaTime
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SERVICETIME	&lt;trans&gt;
+
+warehouse_code=FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs#.Whs?code);//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Whs?code);
+vendor_code=FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs#.Vendor?code);//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Vendor?code);
+
+/*----------TESTING----------------*/
+
+//warehouse_code="b7";
+//vendor_code='vinper';
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+
+
+/*----------------------------------*/
+//this dictionary is created fromPUB:item.PUB:item?whs.Whs?codePUB:item.PUB:item?whs.Vendor?code site source file(xls)
+counter=1;
+serviceTime="";
+lengthDictionary=Length($Dic.c_itemLocation.SourceLocationFile);
+While(counter&lt;lengthDictionary
+	,
+	arrayData=$Dic.c_itemLocation.SourceLocationFile[counter];
+	a=arrayData[0];
+	c=arrayData[2];
+	j=arrayData[9];
+		if(warehouse_code==a &amp;&amp; vendor_code==c
+			,
+//			$Counter=counter;
+//			$value=a+","+arrayData[1]+","+c+","+arrayData[3]+","+arrayData[4]+","+arrayData[5]+","+arrayData[6]+","+arrayData[7]+","+
+//					arrayData[8]+","+arrayData[9]+","+arrayData[10];
+			serviceTime=IfNull(j,"");
+			
+			counter=lengthDictionary+1;
+		);
+	counter++;
+);
+
+//$value+"\n"+ 
+serviceTime
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">TRANSIT_TIME	&lt;trans&gt;
+
+warehouse_code=FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs#.Whs?code);//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Whs?code);
+vendor_code=FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs#.Vendor?code);//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Vendor?code);
+
+/*----------TESTING----------------*/
+
+//warehouse_code="b7";
+//vendor_code='vinper';
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+
+
+/*----------------------------------*/
+//this dictionary is created fromPUB:item.PUB:item?whs.Whs?codePUB:item.PUB:item?whs.Vendor?code site source file(xls)
+counter=1;
+transitTime="";
+lengthDictionary=Length($Dic.c_itemLocation.SourceLocationFile);
+While(counter&lt;lengthDictionary
+	,
+	arrayData=$Dic.c_itemLocation.SourceLocationFile[counter];
+	a=arrayData[0];
+	c=arrayData[2];
+	k=arrayData[10];
+		if(warehouse_code==a &amp;&amp; vendor_code==c
+			,
+//			$Counter=counter;
+//			$value=a+","+arrayData[1]+","+c+","+arrayData[3]+","+arrayData[4]+","+arrayData[5]+","+arrayData[6]+","+arrayData[7]+","+
+//					arrayData[8]+","+arrayData[9]+","+arrayData[10];
+			transitTime=IfNull(k,"");
+			
+			counter=lengthDictionary+1;
+		);
+	counter++;
+);
+
+transitTime
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">MINRESINT	&lt;trans&gt;
+""
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">MINRESLOT	&lt;trans&gt;
+PUB:item.PUB:item?whs.Econ?Ord?Qty
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">INCRESLOT	&lt;trans&gt;
+PUB:item.PUB:item?whs.Econ?Ord?Qty
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">CTRL_TYPE	&lt;trans&gt;
+class = PUB:item.PUB:item?whs.PUB:item?whs?d.Class;
+
+If(class == 'A' || class == 'B' || class == 'T',0,6)
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">FIXED_LEVEL	&lt;trans&gt;
+""
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">FIXED_LEVEL_TRG	&lt;trans&gt;
+""
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">LOSTSALESCOEFF	&lt;trans&gt;
+""
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

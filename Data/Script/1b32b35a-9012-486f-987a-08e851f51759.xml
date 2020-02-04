@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="1b32b35a-9012-486f-987a-08e851f51759" Name="4.1 Post Script: EntityLookup SuccessVariable">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="1b32b35a-9012-486f-987a-08e851f51759"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$LoadedEntityLookup=true;
+&lt;/trans&gt;</konga.string>
+</Entity>

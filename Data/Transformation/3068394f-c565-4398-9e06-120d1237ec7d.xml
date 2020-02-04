@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="3068394f-c565-4398-9e06-120d1237ec7d" Name="ProductSource - DB to Text">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Flat"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="a84b5dc1-7e58-4298-819f-ada036a786d1"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="target_text_doc" value="ff58227e-cdb1-4f3b-aa35-19ec93acf74e"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="3068394f-c565-4398-9e06-120d1237ec7d"/>
+  </Properties>
+  <InputStructure sourceId="a84b5dc1-7e58-4298-819f-ada036a786d1">
+    <Properties>
+      <Item key="includeSchemaName" value="0"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">['Prod Group Source File$'_xlnm#_FilterDatabase],</konga.string>
+    <DbFields/>
+    <Relations/>
+    <SqlScript>
+      <Entry entryId="-1580684541623" type="1">
+        <konga.string name="script">SELECT * FROM ['Prod Group Source File$'_xlnm#_FilterDatabase]</konga.string>
+      </Entry>
+    </SqlScript>
+    <Filters/>
+  </InputStructure>
+  <OutputStructure docId="ff58227e-cdb1-4f3b-aa35-19ec93acf74e"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[?Prod?Group?Source?File??_xlnm?_FilterDatabase]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">/PRECONDITION/	&lt;trans&gt;
+
+key=Stats??prod?gp??Code;
+
+//if(length($Dic.productgroup.level1code)==0,
+//$Dic.productgroup.level1code=Dict();
+//);
+//$Dic.C_masterfile.FreeAttr1=Dict();
+//
+//$Dic.C_masterfile.FreeAttr2=Dict();
+//
+//$Dic.C_masterfile.FreeAttr3=Dict();
+//
+//$Dic.C_masterfile.FreeAttr5=Dict();
+//
+//$Dic.C_masterfile.FreeAttr6=Dict();
+
+
+if(!HasKey($Dic.C_masterfile.FreeAttr1, key),
+		value=Product?Group?Level?1?Code;
+		AddToDict($Dic.C_masterfile.FreeAttr1,key, value);
+);
+
+if(!HasKey($Dic.C_masterfile.FreeAttr2, key),
+		
+		//value to be taken from G and not F as per email from gavin: 12/07
+		value=Product?Group?Level?2?Code;//Product?Group?Level?1?Description;
+		AddToDict($Dic.C_masterfile.FreeAttr2,key, value);
+);
+
+if(!HasKey($Dic.C_masterfile.FreeAttr3, key),
+		value=Product?Group?Level?3?Code;
+		AddToDict($Dic.C_masterfile.FreeAttr3,key, value);
+);
+
+if(!HasKey($Dic.C_masterfile.FreeAttr5, key),
+		value=Price?Group;
+		AddToDict($Dic.C_masterfile.FreeAttr5,key, value);
+);
+
+if(!HasKey($Dic.C_masterfile.FreeAttr6, key),
+		value=Product?Manager;
+		AddToDict($Dic.C_masterfile.FreeAttr6,key, value);
+);
+
+//if(length($Dic.productgroup.level3desc)==0,
+//$Dic.productgroup.level3desc=Dict();
+//);
+if(!HasKey($Dic.productgroup.level3desc, key),
+		value=Product?Group?Level?3?Description;
+		AddToDict($Dic.productgroup.level3desc,key, value);
+);
+
+
+if(!HasKey($Dic.C_prodfams, key),
+		value1=Stats??prod?gp??Code;
+		value2=Stats??prod?gp??Descriptiobn;
+		value3=Product?Group?Level?2?Code;
+		arrValue=Array();
+		arrValue[0]=value1;
+		arrValue[1]=value2;
+		arrValue[2]=value3;
+		AddToDict($Dic.C_prodfams,key, arrValue);
+);
+
+g=Product?Group?Level?2?Code;
+h=Product?Group?Level?2?Description;
+
+if(!HasKey($Dic.C_macrofams, g),
+		value=h;
+		AddToDict($Dic.C_macrofams,g, h);
+);
+
+if(!HasKey($Dic.C_Freeattr_item2, g),
+		value=h;
+		AddToDict($Dic.C_Freeattr_item2,g, h);
+);
+
+	
+		k=Product?Manager;
+		//get column K values for $Dic.c_freeattr_item6
+		if(!HasKey($Dic.c_freeattr_item6, k),
+			AddToDict($Dic.c_freeattr_item6, k,k);
+		);
+
+		i=Product?Group?Level?3?Code;
+		//add couln I and J as data items in this dictionary with key as sourcecount
+		if(!HasKey($Dic.C_freeattr_item_3,i),
+//			arr=Array();
+//			arr[0]=;//Product?Group?Level?3?Code;
+//			arr[1]=Product?Group?Level?3?Description;
+			j=Product?Group?Level?3?Description;
+			AddToDict($Dic.C_freeattr_item_3, i, j);
+		);
+
+true
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">Stats_Code_Descr_COL_A	&lt;trans&gt;
+Stats??prod?gp??Code
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">Stats_Description_COL_B	&lt;trans&gt;
+Stats??prod?gp??Descriptiobn
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">Price_Group_COL_C	&lt;trans&gt;
+Price?Group
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">Product_Group_Desc_COL_D	&lt;trans&gt;
+Price?Group?Description
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">Prod_Group_Level_1_Code_COL_E	&lt;trans&gt;
+Product?Group?Level?1?Code
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">Prod_Group_Level_1_Desc_COL_F	&lt;trans&gt;
+Product?Group?Level?1?Description
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">Prod_Group_Level_2_Code_COL_G	&lt;trans&gt;
+Product?Group?Level?2?Code
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">Prod_Group_Level_2_Desc_COL_H	&lt;trans&gt;
+Product?Group?Level?2?Description
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">Prod_Group_Level_3_Code_COL_I	&lt;trans&gt;
+Product?Group?Level?3?Code
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">Prod_Group_Level_3_Desc_COL_J	&lt;trans&gt;
+Product?Group?Level?3?Description
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">Product_Manager_COL_K	&lt;trans&gt;
+Product?Manager
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

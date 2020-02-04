@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="0cd763ab-d93b-4e5d-b816-80b89ce9358e" Name="Copy of DB to text">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Flat"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="9aa11e8a-5e23-4301-b406-d88fb8817b20"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="target_text_doc" value="2c2a96ec-089f-46bb-8a61-363014c9069f"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="0cd763ab-d93b-4e5d-b816-80b89ce9358e"/>
+  </Properties>
+  <InputStructure sourceId="9aa11e8a-5e23-4301-b406-d88fb8817b20">
+    <Properties>
+      <Item key="includeSchemaName" value="0"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">Sheet2$_xlnm#_FilterDatabase,</konga.string>
+    <DbFields/>
+    <Relations/>
+    <SqlScript>
+      <Entry entryId="-1580684541616" type="1">
+        <konga.string name="script">SELECT * FROM [Sheet2$_xlnm#_FilterDatabase]</konga.string>
+      </Entry>
+    </SqlScript>
+    <Filters/>
+  </InputStructure>
+  <OutputStructure docId="2c2a96ec-089f-46bb-8a61-363014c9069f"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[Sheet2?_xlnm?_FilterDatabase]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">/PRECONDITION/	&lt;trans&gt;
+condition=false;
+//$Site.code='A7';
+if(Wh==$Site.code,
+condition=true;
+);
+
+condition
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SiteName	&lt;trans&gt;
+$Site.name=Site?Name
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

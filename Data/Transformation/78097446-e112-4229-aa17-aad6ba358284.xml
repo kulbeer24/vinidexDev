@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="78097446-e112-4229-aa17-aad6ba358284" Name="Copy of Trans ONORDER_DET_PO">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Tree"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="d5b24428-e147-4b50-8bcf-3a7d16b43762"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="target_text_doc" value="a2ca1eaf-fd2a-4671-8111-6e37a74713b5"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="78097446-e112-4229-aa17-aad6ba358284"/>
+  </Properties>
+  <InputStructure sourceId="d5b24428-e147-4b50-8bcf-3a7d16b43762">
+    <Properties>
+      <Item key="includeSchemaName" value="1"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">"PUB"."po-line","PUB"."po",</konga.string>
+    <DbFields/>
+    <Relations>
+      <Relation childField="Po-no" childTable="&quot;PUB&quot;.&quot;po&quot;" isSource="true" onetoOne="true" outerJoin="false" parentField="Po-no" parentTable="&quot;PUB&quot;.&quot;po-line&quot;" relationId="-1580684541721"/>
+      <Relation childField="Release-no" childTable="&quot;PUB&quot;.&quot;po&quot;" isSource="true" onetoOne="true" outerJoin="false" parentField="Release-no" parentTable="&quot;PUB&quot;.&quot;po-line&quot;" relationId="-1580684541722"/>
+      <Relation childField="Ap-entity" childTable="&quot;PUB&quot;.&quot;po&quot;" isSource="true" onetoOne="true" outerJoin="false" parentField="Ap-entity" parentTable="&quot;PUB&quot;.&quot;po-line&quot;" relationId="-1580684541720"/>
+    </Relations>
+    <SqlScript/>
+    <Filters>
+      <Entry column="Qty-to-rcve" condition="&gt;0" sortOrder="NONE" table="&quot;PUB&quot;.&quot;po-line&quot;"/>
+      <Entry column="In-entity" condition="='vx'" sortOrder="NONE" table="&quot;PUB&quot;.&quot;po-line&quot;"/>
+    </Filters>
+  </InputStructure>
+  <OutputStructure docId="a2ca1eaf-fd2a-4671-8111-6e37a74713b5"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[PUB:po?line.]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ITEM	&lt;trans&gt;
+PUB:po?line.Item?no
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">LOCATION	&lt;trans&gt;
+code=PUB:po?line.Whs?code;
+location="";
+
+
+/*----------Start Test----*/
+
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+
+/*----------End Test----*/
+
+if(HasKey($Dic.C_ONORDER_DET.Location,code)
+	,
+	location=$Dic.C_ONORDER_DET.Location[code];
+);
+location
+//$Dic.C_itemLocation.Location[PUB:po?line.Whs?code];
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">DELIVEYEAR	&lt;trans&gt;
+CVTDate(PUB:po?line.PUB:po$Promise?date,'GeneralDdate','yyyy')
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">DELIVEMONTH	&lt;trans&gt;
+CVTDate(PUB:po?line.PUB:po$Promise?date,'GeneralDdate','mm')
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">DELIVEDAY	&lt;trans&gt;
+CVTDate(PUB:po?line.PUB:po$Promise?date,'GeneralDdate','dd')
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">LOT_CODE	&lt;trans&gt;
+PUB:po?line.Po?no + PUB:po?line.Line?no
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ONORDQTY	&lt;trans&gt;
+PUB:po?line.Qty?to?rcve
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">REQYEAR	&lt;trans&gt;
+
+CVTDate(PUB:po?line.PUB:po$Request?date,'GeneralDdate','yyyy')
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">REQMONTH	&lt;trans&gt;
+
+CVTDate(PUB:po?line.PUB:po$Request?date,'GeneralDdate','mm')
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">REQDAY	&lt;trans&gt;
+
+CVTDate(PUB:po?line.PUB:po$Request?date,'GeneralDdate','dd')
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">STATUS	&lt;trans&gt;
+1
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

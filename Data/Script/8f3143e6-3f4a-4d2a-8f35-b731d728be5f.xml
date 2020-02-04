@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="8f3143e6-3f4a-4d2a-8f35-b731d728be5f" Name="Set File Name_C_PRODFAMS">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="8f3143e6-3f4a-4d2a-8f35-b731d728be5f"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+
+$filename = 'C_PRODFAMS'
+&lt;/trans&gt;</konga.string>
+</Entity>

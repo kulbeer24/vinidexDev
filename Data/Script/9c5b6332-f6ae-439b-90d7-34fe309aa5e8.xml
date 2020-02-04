@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="9c5b6332-f6ae-439b-90d7-34fe309aa5e8" Name="11.0 LINESORDERMIA: date selection: common run">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="9c5b6332-f6ae-439b-90d7-34fe309aa5e8"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$dict.ddedupelineordermia = Dict();
+$Date.start="";
+$Date.end="";
+
+//baseline as today
+date=ShortDate(Now());
+$Date.today=CVTDate(date,  "mm/dd/yyyy","yyyy-mm-dd");
+//$Date.OrderDate_StartDate='2018-05-24';
+
+//Added below by Kapila on 06/01/2020/07/01/2020 as per to the requst from Louise
+date730daysago = DateAdd('dd',-730,Now());//2018-02-03 10:26:38
+$Date.OrderDate_StartDate=	CVTDate(date730daysago,"yyyy-mm-dd HH:MM:SS","yyyy-mm-dd");
+
+// go back 30 months from todays date.
+//		date=ShortDate(DateAdd('mm','-30',date));
+
+$Linerorermia_NumberOfMonthForDataExtract=-3;
+
+		$SyncEndDate=ShortDate(Now());
+		
+		//Sync start 3 months ago from base date
+		$Date.start=DateAdd('mm',$Linerorermia_NumberOfMonthForDataExtract,date);
+		
+		//for a run - end date will be one month later
+		$Date.end=DateAdd('mm',$Linerorermia_NumberOfMonthForDataExtract+1,date);
+		
+		//counter
+		i=$Linerorermia_NumberOfMonthForDataExtract+1;
+		$Dateline="";
+		$Count.extractLineOrdersMIA=0;
+		While(i&lt;=0,
+			
+			$Dateline+=$Date.start+"   "+$Date.end+"\n";
+			$filename='LINEORDERSMIA';//+counter;
+			RunOperation("op.6eed55aa-4707-42bd-9b34-25f5be187555");
+			WriteToOperationLog("Dateline:"+$Dateline);
+			$Date.start=DateAdd('mm',i,date);
+			$Date.start=DateAdd('dd',1,$Date.start);
+			i=i+1;
+			//$SyncStartDate=
+			$Date.end=DateAdd('mm',i,date);
+		
+		//		$Date.end=CVTDate(DateAdd('mm',1,$Date.start), "yyyy-mm-dd", "mm/dd/yyyy");
+		);
+
+
+WriteToOperationLog("Dateline:"+$Dateline+"Count extracted:"+$Count.extractLineOrdersMIA);
+
+//date=
+$Dateline
+&lt;/trans&gt;</konga.string>
+</Entity>

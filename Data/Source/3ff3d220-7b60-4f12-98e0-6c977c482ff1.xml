@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Source">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="3ff3d220-7b60-4f12-98e0-6c977c482ff1" Name="SFTP - Lookup - Duplicate Item Warehouse">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties/>
+  <Location type="FTP">
+    <Data>
+      <Properties>
+        <Item key="character_encoding" value=""/>
+        <Item key="encrypt_choice" value="4"/>
+        <Item key="error_folder" value=""/>
+        <Item key="file_name" value="Duplice Item Warehouse.xlsx"/>
+        <Item key="filterOption.ignoreCase" value="0"/>
+        <Item key="filterOption.regularExpression" value="0"/>
+        <Item key="ftp.nlst" value="0"/>
+        <Item key="ignore_first" value="0"/>
+        <Item key="ignore_last" value="0"/>
+        <Item enc="true" key="locator" value="$00aOiAbwN4j0nz/GDe5svlBCK+mULCzWTeGh8UE+2ou7158zG3rXiu/1Y219x2lTyx"/>
+        <Item enc="true" key="login" value="$00JF+sSLsTRDwrXUB1xVmAI/X6VMPmISyb3KFEp8/I1Xnw41gLtyA6quppjhqq5s0Y"/>
+        <Item key="passive_mode" value="1"/>
+        <Item enc="true" key="password" value="$000hkKBZ58WpceU8bi29ZZDRD641O6pNEFBcb0oG4vAA4="/>
+        <Item key="path" value="/"/>
+        <Item key="port" value="22"/>
+        <Item key="proxy_tunnel" value="1"/>
+        <Item key="renamefileto" value=""/>
+        <Item key="success_folder" value=""/>
+        <Item key="transfer_type" value="2"/>
+        <Item key="trigger_filename" value=""/>
+        <Item key="uncompress_format" value=""/>
+        <Item key="use_trigger_file" value="0"/>
+      </Properties>
+    </Data>
+  </Location>
+</Entity>

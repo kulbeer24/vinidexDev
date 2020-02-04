@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Folder">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="c2e68fa3-9b32-431e-84df-9f9a6da4d9e4" Name="13. C_MICROAREAS">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="folder_id" value="c2e68fa3-9b32-431e-84df-9f9a6da4d9e4"/>
+    <Item key="protected" value="false"/>
+  </Properties>
+</Entity>

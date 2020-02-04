@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="8d7f4ae6-7fee-49e5-b349-dc74d5b6ed9c" Name="9. create c_itemarea">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Flat"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_text_doc" value="a20437b5-e0fc-4df5-af92-36f22af43690"/>
+    <Item key="source_type_id" value="1"/>
+    <Item key="target_text_doc" value="c8a7ace9-de67-46c1-8121-4ac7c7564026"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="8d7f4ae6-7fee-49e5-b349-dc74d5b6ed9c"/>
+  </Properties>
+  <InputStructure docId="a20437b5-e0fc-4df5-af92-36f22af43690"/>
+  <OutputStructure docId="c8a7ace9-de67-46c1-8121-4ac7c7564026"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">/PRECONDITION/	&lt;trans&gt;
+condition=false;
+
+/**--TEst*/
+
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+/*End test--*/
+srclocation="";
+
+site=ToUpper(Customer_ps_site_loc);
+
+if(HasKey($Dic.c_itemArea.SRCLocation, site),
+	srclocation=$Dic.c_itemArea.SRCLocation[site];	
+);
+
+
+area=Sales_prd_itemNo+"_"+Customer_st+"_"+Sales_prd_entityCode+"_"+srclocation;
+if(!HasKey($Dic.C_itemarea.RedundantArea,area),
+	AddToDict($Dic.C_itemarea.RedundantArea,area,area);
+	condition=true;
+);
+
+//key=Sales_prd_itemNo;
+//
+//if(!HasKey($Dic.C_itemarea.RedundantArea,key),
+//	AddToDict($Dic.C_itemarea.RedundantArea, key, key);
+//	condition=true;
+//);
+condition
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ITEM	&lt;trans&gt;
+Sales_prd_itemNo
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">AREA	&lt;trans&gt;
+/*----------Test------------*/
+
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+//srclocation=
+
+/*--------End Test-----------*/
+srclocation="";
+
+site=ToUpper(Customer_ps_site_loc);
+
+if(HasKey($Dic.c_itemArea.SRCLocation, site),
+	srclocation=$Dic.c_itemArea.SRCLocation[site];	
+);
+
+StateCode=ToUpper(Customer_st);
+StateDisc='';
+
+if(HasKey($DIc.Itemarea.Statelookup, StateCode),
+	StateDisc=$DIc.Itemarea.Statelookup[StateCode];
+);
+
+
+StateDisc+"_"+Sales_prd_entityCode+"_"+srclocation
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SRCLOCATION	&lt;trans&gt;
+
+/*----------Test------------*/
+
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+//srclocation=
+
+/*--------End Test-----------*/
+
+
+srclocation="";
+
+site=ToUpper(Customer_ps_site_loc);
+
+if(HasKey($Dic.c_itemArea.SRCLocation, site),
+	srclocation=$Dic.c_itemArea.SRCLocation[site];	
+);
+
+srclocation
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

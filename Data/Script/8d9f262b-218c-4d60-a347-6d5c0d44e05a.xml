@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="8d9f262b-218c-4d60-a347-6d5c0d44e05a" Name="2.0 C_PRODFAMS: common runpoint">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="8d9f262b-218c-4d60-a347-6d5c0d44e05a"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+//$LoadedProductGroup=false;
+//productfilereadanddictionarycreation=RunOperation("op.ad4ffb9f-ee83-4c4d-b9fd-ebde448f6c1c");
+//
+//if($LoadedProductGroup==true,
+//	//create c_prodfams file
+//	RunOperation("op.caeb60d9-7227-45ad-a729-fe49f26de505");
+//	,
+//	//else
+//		RaiseError("Error occured while creating dictionary from Product Source external file");
+//);
+//create c_prodfams file
+	RunOperation("op.caeb60d9-7227-45ad-a729-fe49f26de505");
+&lt;/trans&gt;</konga.string>
+</Entity>

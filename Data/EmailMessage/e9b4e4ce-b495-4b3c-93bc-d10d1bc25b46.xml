@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="EmailMessage">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="e9b4e4ce-b495-4b3c-93bc-d10d1bc25b46" Name="Error Notification">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="bcc" value=""/>
+    <Item key="cc" value=""/>
+    <Item key="message_id" value="e9b4e4ce-b495-4b3c-93bc-d10d1bc25b46"/>
+    <Item key="message_text" value="Project Name: [jitterbit.operation.project_name]&#10;&#10;Operation Name: [jitterbit.operation.name]&#10;&#10;Error Message:&#10;&#10;[jitterbit.operation.error]&#10;&#10;[jitterbit.operation.last_error]&#10;&#10;Please reach out to support@jitterbit.com.au with logs.&#10;&#10;Regards,&#10;Jitterbit Services"/>
+    <Item key="reply_to" value=""/>
+    <Item key="send_to" value="ksingh@jitterbit.com.au"/>
+    <Item key="sent_from" value="jitterbit_alerts@vinidex.com.au"/>
+    <Item key="smtp_servers" value="vinidex-com-au.mail.protection.outlook.com"/>
+    <Item key="subject" value="JItterbit - Error Notification - Sandbox"/>
+    <Item key="use_ssl" value="0"/>
+  </Properties>
+</Entity>

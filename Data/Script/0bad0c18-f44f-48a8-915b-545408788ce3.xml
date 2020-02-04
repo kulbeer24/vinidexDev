@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="0bad0c18-f44f-48a8-915b-545408788ce3" Name="6.0 C_CurrentSTK: Common Runpoint">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="0bad0c18-f44f-48a8-915b-545408788ce3"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+
+//$LoadedSiteGroup=false;
+////Run DB operation for the excel file and create dictionary
+//DBOperationandDictionaryCreation=RunOperation("op.d2c93e1e-13fa-4b32-9314-841258a90274");
+//if($LoadedSiteGroup,
+//			//Create C_CurrentSTK file
+//			RunOperation("op.7f31e309-641c-4690-88b5-9c365cd27728");
+//,	
+//			//else
+//			RaiseError("Issue occured when trying to create dictionary from Site Source file")
+//);
+//Create C_CurrentSTK file
+RunOperation("op.7f31e309-641c-4690-88b5-9c365cd27728");
+&lt;/trans&gt;</konga.string>
+</Entity>

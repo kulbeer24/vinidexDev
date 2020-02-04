@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="a68356a8-dee7-44b6-b72c-489d4110e1b7" Name="14. C_FREEATTR_ITEM1: Dictionary creation to avaoid redundancy">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="a68356a8-dee7-44b6-b72c-489d4110e1b7"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$Dic.C_FREEATTR_AREA1.UniqueState=Dict();
+&lt;/trans&gt;</konga.string>
+</Entity>

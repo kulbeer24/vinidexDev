@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Operation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="bfd4ad00-e2cf-4953-be5d-a2cc0bcbbaac" Name="3.1 StateLookup: Excel Transformation">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="chunk_size" value="0"/>
+    <Item key="debug_mode_until" value=""/>
+    <Item key="description" value=""/>
+    <Item key="failure_message_id" value="e9b4e4ce-b495-4b3c-93bc-d10d1bc25b46"/>
+    <Item key="ignore_history" value="1"/>
+    <Item key="LogLevel" value="Everything"/>
+    <Item key="max_number_of_threads" value="1"/>
+    <Item key="operation_id" value="bfd4ad00-e2cf-4953-be5d-a2cc0bcbbaac"/>
+    <Item key="operation_type_id" value="3"/>
+    <Item key="run_success_op_if_no_source_files" value="0"/>
+    <Item key="schedule_policy" value="skip_if_running"/>
+    <Item key="source_chunk_node" value="-flat-"/>
+    <Item key="source_id" value="3a96b7df-69ad-408a-806e-0e139efce350"/>
+    <Item key="target_chunk_node" value="-flat-"/>
+    <Item key="target_chunk_size" value="0"/>
+    <Item key="timeoutseconds" value="7200"/>
+    <Item key="timeoutuiunit" value="HOURS"/>
+    <Item key="trace" value="1"/>
+    <Item key="validate_source_text_file" value="0"/>
+  </Properties>
+  <Pipeline opType="Transformation">
+    <Activities>
+      <SCRIPT activityId="2afe82e7-aab7-455c-a750-3218584c8755" contentId="80307f4c-fa0f-4068-9b6b-c8453b00455c" role="Script" type="23"/>
+      <SOURCE activityId="0e5bee24-0653-4a31-8f27-323c4ad0931d" contentId="3a96b7df-69ad-408a-806e-0e139efce350" role="Source" type="2"/>
+      <TRANSFORMATION activityId="cb27008a-ba27-4512-81b3-c7140502e45e" contentId="e25bd627-753e-421b-a179-a0715f8d9dc5" role="Transformation" type="4"/>
+      <SCRIPT activityId="4ae0915f-72b3-471a-b244-6e632216e29d" contentId="64f2123a-9b6b-4e4d-bc5b-9c9f4f3aec2c" role="Script" type="23"/>
+    </Activities>
+  </Pipeline>
+  <Siblings/>
+</Entity>

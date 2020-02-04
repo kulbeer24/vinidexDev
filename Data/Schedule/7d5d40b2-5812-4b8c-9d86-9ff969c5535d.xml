@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Schedule">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="7d5d40b2-5812-4b8c-9d86-9ff969c5535d" Name="Weekly Extract - On Sunday at 3PM">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="daily" value="1"/>
+    <Item key="duration_end_date" value=""/>
+    <Item key="duration_start_date" value="2019-09-11"/>
+    <Item key="duration_yesno_end" value="0"/>
+    <Item key="frequency" value="1"/>
+    <Item key="frequency_end_time" value=""/>
+    <Item key="frequency_every_hm" value="1"/>
+    <Item key="frequency_every_num" value="0"/>
+    <Item key="frequency_once_time" value="15:00:00"/>
+    <Item key="frequency_start_time" value=""/>
+    <Item key="fri" value="-1"/>
+    <Item key="mon" value="-1"/>
+    <Item key="monthly" value="1"/>
+    <Item key="monthly_a_day" value="1"/>
+    <Item key="monthly_a_of_every_x_month" value="1"/>
+    <Item key="monthly_b_day" value="-1"/>
+    <Item key="monthly_b_num" value="1"/>
+    <Item key="monthly_b_of_every_x_month" value="1"/>
+    <Item key="occurs" value="2"/>
+    <Item key="sat" value="-1"/>
+    <Item key="schedule_id" value="7d5d40b2-5812-4b8c-9d86-9ff969c5535d"/>
+    <Item key="sun" value="1"/>
+    <Item key="thu" value="-1"/>
+    <Item key="tue" value="-1"/>
+    <Item key="wed" value="-1"/>
+    <Item key="weekly" value="1"/>
+  </Properties>
+</Entity>

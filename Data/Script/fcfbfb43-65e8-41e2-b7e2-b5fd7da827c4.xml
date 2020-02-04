@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="fcfbfb43-65e8-41e2-b7e2-b5fd7da827c4" Name="3.0 C_ITEMLOCATION:Common Run">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="fcfbfb43-65e8-41e2-b7e2-b5fd7da827c4"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+//$LoadedSiteGroup=false;
+//
+////get data out of the excel file and create dictionaries requried
+//operationsExcelSiteSourceandDictionaryCreation=RunOperation("op.d2c93e1e-13fa-4b32-9314-841258a90274");
+//if($LoadedSiteGroup,
+//		//Create C_ITEMLOCATION
+//	//	RunOperation("op.19f460f7-92bc-4413-b561-19d11cdc1ac0");
+//RunOperation("op.3d794e31-73c6-47d9-ba97-01e5478e52ff");
+//	,
+//		//else
+//		RaiseError("Error occured while creating dictionary from Site Source external file");
+//);
+
+	//	create c_itemlocation
+RunOperation("op.3d794e31-73c6-47d9-ba97-01e5478e52ff");
+&lt;/trans&gt;</konga.string>
+</Entity>

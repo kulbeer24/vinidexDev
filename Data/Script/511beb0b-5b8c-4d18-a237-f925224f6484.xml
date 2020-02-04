@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="511beb0b-5b8c-4d18-a237-f925224f6484" Name="14. C_AREAS: Common Runpoint">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="511beb0b-5b8c-4d18-a237-f925224f6484"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+//$LoadedSiteGroup=false;
+//$LoadedEntityLookup=false;
+//$LoadedStateLookup=false;
+//
+////get data out of the excel file and create dictionaries requried
+//Eval(RunOperation("op.d2c93e1e-13fa-4b32-9314-841258a90274");,
+//		WriteToOperationLog("Site source lookup failed to extract data out of excel file"));
+//
+//Eval(RunOperation("op.beb84236-9880-4b1a-acf5-2a42ba5e4197"),
+//		WriteToOperationLog("Entity lookup failed to extract data out of excel file"));
+//
+//Eval(RunOperation("op.c90bd81a-b986-4dc8-8c5a-de10fb349fde"),
+//		WriteToOperationLog("State lookup failed to extract data out of excel file"));
+//
+//if($LoadedSiteGroup &amp;&amp; $LoadedEntityLookup &amp;&amp; $LoadedStateLookup,
+//		//Create c_areas
+//		RunOperation("op.c4bddfdf-a5a6-4dca-9c5a-d45e6ae34ff0")
+//		,
+//		//else
+//		RaiseError("Error occured while creating dictionary from external files");
+//);
+
+//Create c_areas
+		RunOperation("op.c4bddfdf-a5a6-4dca-9c5a-d45e6ae34ff0")
+&lt;/trans&gt;</konga.string>
+</Entity>

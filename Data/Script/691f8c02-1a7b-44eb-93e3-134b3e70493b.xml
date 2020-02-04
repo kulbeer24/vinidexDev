@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="691f8c02-1a7b-44eb-93e3-134b3e70493b" Name="Test file script">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="691f8c02-1a7b-44eb-93e3-134b3e70493b"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+WriteToOperationLog(FileList("s.9f051ffa-7743-4cb6-96ff-95319c94f830"))
+&lt;/trans&gt;</konga.string>
+</Entity>

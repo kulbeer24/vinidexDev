@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="4a3047eb-72a9-4b22-a90f-26d47a7961e9" Name="Set FileName C_MACROFAMS">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="4a3047eb-72a9-4b22-a90f-26d47a7961e9"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+$filename='C_MACROFAMS'
+&lt;/trans&gt;</konga.string>
+</Entity>

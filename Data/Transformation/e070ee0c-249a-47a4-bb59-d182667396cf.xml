@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="e070ee0c-249a-47a4-bb59-d182667396cf" Name="_TEST_ Trans C_MICROAREAS">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Tree"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_sourceid" value="d5b24428-e147-4b50-8bcf-3a7d16b43762"/>
+    <Item key="source_type_id" value="3"/>
+    <Item key="target_text_doc" value="4273c30e-8d96-4281-b518-ca4cf7f5e505"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="e070ee0c-249a-47a4-bb59-d182667396cf"/>
+  </Properties>
+  <InputStructure sourceId="d5b24428-e147-4b50-8bcf-3a7d16b43762">
+    <Properties>
+      <Item key="includeSchemaName" value="1"/>
+    </Properties>
+    <Objects/>
+    <konga.string name="DbTables">"PUB"."order","PUB"."customer",</konga.string>
+    <DbFields/>
+    <Relations>
+      <Relation childField="Cust-no" childTable="&quot;PUB&quot;.&quot;customer&quot;" isSource="true" onetoOne="true" outerJoin="true" parentField="Cust-no" parentTable="&quot;PUB&quot;.&quot;order&quot;" relationId="-1580684541710"/>
+    </Relations>
+    <SqlScript/>
+    <Filters>
+      <Entry column="Order-date" condition="&gt;'2018-01-01 00:00:00' AND &quot;Order-Date&quot;&lt;'2018-01-08 00:00:00'" sortOrder="NONE" table="&quot;PUB&quot;.&quot;order&quot;"/>
+    </Filters>
+  </InputStructure>
+  <OutputStructure docId="4273c30e-8d96-4281-b518-ca4cf7f5e505"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">/PRECONDITION/	&lt;trans&gt;
+PreferredSite = $Dic.C_itemLocation.Location[PUB:order.PUB:customer$Ps?site?loc];
+
+$C_MICROAREAS_KEY = PUB:order.Cust?no + '_' + PUB:order.PUB:customer$St + '_'+PUB:order.PUB:customer$Bu?entity+'_'+PreferredSite;
+
+IF(!HasKey($Dic.C_Microareas, $C_MICROAREAS_KEY),
+
+AddToDict($Dic.C_Microareas, $C_MICROAREAS_KEY, true);
+
+true,
+
+false);
+
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">[]	[PUB:order.]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">MicroArea	&lt;trans&gt;
+
+$C_MICROAREAS_KEY
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">Descr	&lt;trans&gt;
+PUB:order.PUB:customer$Ps?site?loc
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="b65b052e-448e-4514-ac46-3f14c270ebf5" Name="3.1 Create C_ITEMLOCATION">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Flat"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_text_doc" value="f453732a-71e8-4eaf-891e-0ceb450e286a"/>
+    <Item key="source_type_id" value="1"/>
+    <Item key="target_text_doc" value="25b4982a-aee2-4400-af72-736ddc848b0d"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="b65b052e-448e-4514-ac46-3f14c270ebf5"/>
+  </Properties>
+  <InputStructure docId="f453732a-71e8-4eaf-891e-0ceb450e286a"/>
+  <OutputStructure docId="25b4982a-aee2-4400-af72-736ddc848b0d"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">/PRECONDITION/	&lt;trans&gt;
+condition=false;
+
+key=ToUpper(Whs?code+Item?no);
+//exclude the records with Item not equals 0
+//if(Item?no==0 || Item?no=='0', condition=false, condition=true);
+/*-----------Test -----------*/
+
+//RunOperation("op.5610358e-0bea-4f8a-bb76-091f205db306");
+//$LoadedDuplicateWarehouse;
+
+/*-----------End Test--------*/
+//Obtain the value from ITEM-WHS.ITEM-NO &amp; ITEM-WHS.WHS-CODE, 
+//check combination against Columns A and B of the Duplicate Warehouse file and if a match is found
+// exclude the record associated with the Same combination of Item and warehouse code
+if(HasKey($Dic.DuplicateItemWarehouse, key),
+	condition=false;
+	if($Debug, WriteToOperationLog("key:"+key+" is present in duplicate item warehouse"));	
+,
+	condition=true
+);
+
+condition
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">ITEM	&lt;trans&gt;
+Item?no
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">LOCATION	&lt;trans&gt;
+//$Site.code=Null();
+code=ToUpper(Whs?code);//FindByPos(SourceInstanceCount(),PUB:item?whs#.Vendor?code);
+//warehouse_code=PUB:item?whs#.Whs?code;//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Whs?code);
+//vendor_code=PUB:item?whs#.Vendor?code;//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Vendor?code);
+
+name="";
+
+/*-------------Start Test----*/
+
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+
+/*-------------End Test---*/
+
+//dictionary defined in Excel transformation of Site SOurce file
+if(HasKey($Dic.C_itemLocation.Location,code)
+	,
+	name=$Dic.C_itemLocation.Location[code];
+);
+
+name
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SUPPLIER	&lt;trans&gt;
+//code=FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs#.Vendor?code);
+//location="";
+
+//warehouse_code=FindByPos(SourceInstanceCount(),PUB:item?whs#.Whs?code);//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Whs?code);
+//vendor_code=FindByPos(SourceInstanceCount(),PUB:item?whs#.Vendor?code);//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Vendor?code);
+
+
+//this dictionary is created fromPUB:item.PUB:item?whs.Whs?codePUB:item.PUB:item?whs.Vendor?code site source file(xls)
+//counter=0;
+
+//lengthDictionary=Length($Dic.c_itemLocation.SourceLocationFile);
+//While(counter&lt;lengthDictionary
+//	,
+//	a=arrayData[0];
+//	c=arrayData[2];
+//		if(warehouse_code==a &amp;&amp; vendor_code==c
+//			,
+			
+//			counter=lengthDictionary+1;
+//		);
+//	counter++;
+
+warehouse_code=Whs?code;//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Whs?code);
+vendor_code=Vendor?code;//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Vendor?code);
+
+
+/*----------TESTING----------------*/
+
+//warehouse_code="b7";
+//vendor_code='ljwsil';
+//RunOperation("op.d2c93e1e-13fa-4b32-9314-841258a90274");
+
+
+/*----------------------------------*/
+
+
+supplier="";
+key=ToUpper(warehouse_code+vendor_code);
+if(HasKey($Dic.c_itemLocation.SourceLocationFile, key),
+	arrayData=$Dic.c_itemLocation.SourceLocationFile[key];
+	d=arrayData[3];
+	supplier=d;
+
+);
+
+//Length(supplier)==0
+//if(Item?no=='10800', WriteToOperationLog("for warehouse code:"+warehouse_code+" 
+//and vendor code:"+vendor_code+" the value in dictionary for key:"+key+" is "+
+//$Dic.c_itemLocation.SourceLocationFile[key][3]+"and Item No:"+Item?no+"\n");
+//);
+
+supplier
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SRCLOCATION	&lt;trans&gt;
+//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs#.Vendor?code)
+
+
+
+//this dictionary is created fromPUB:item.PUB:item?whs.Whs?codePUB:item.PUB:item?whs.Vendor?code site source file(xls)
+//counter=0;
+
+//lengthDictionary=Length($Dic.c_itemLocation.SourceLocationFile);
+//While(counter&lt;lengthDictionary
+//	,
+//	arrayData=$Dic.c_itemLocation.SourceLocationFile[counter];
+//	a=arrayData[0];
+//	c=arrayData[2];
+//	e=arrayData[4];
+//		if(warehouse_code==a &amp;&amp; vendor_code==c
+//			,
+//			srcLocation=e;
+//			counter=lengthDictionary+1;
+//		);
+//	counter++;
+//);
+warehouse_code=Whs?code;//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Whs?code);
+vendor_code=Vendor?code;//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Vendor?code);
+
+/*----------TESTING----------------*/
+
+//warehouse_code="a5";
+//vendor_code='vxspvc';
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+
+
+/*----------------------------------*/
+
+srcLocation="";
+key=ToUpper(warehouse_code+vendor_code);
+if(HasKey($Dic.c_itemLocation.SourceLocationFile, key),
+	arrayData=$Dic.c_itemLocation.SourceLocationFile[key];
+	srcLocation=arrayData[4];
+);
+
+srcLocation
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">UNITCOST	&lt;trans&gt;
+Cost
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">REVIEWPER	&lt;trans&gt;
+1
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">MINLEADTIME	&lt;trans&gt;
+warehouse_code=Whs?code;//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Whs?code);
+vendor_code=Vendor?code;//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Vendor?code);
+
+minLeadTime="";
+
+/*----------TESTING----------------*/
+
+//warehouse_code="b7";
+//vendor_code='c&amp;ebur';
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+
+
+/*----------------------------------*/
+key=ToUpper(warehouse_code+vendor_code);
+if(HasKey($Dic.c_itemLocation.SourceLocationFile, key),
+	arrayData=$Dic.c_itemLocation.SourceLocationFile[key];
+	minLeadTime=IfNull(arrayData[5],"");
+);
+
+minLeadTime
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">AVEDELAY	&lt;trans&gt;
+
+
+warehouse_code=Whs?code;//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Whs?code);
+vendor_code=Vendor?code;//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Vendor?code);
+
+
+/*----------TESTING----------------*/
+
+//warehouse_code="b7";
+//vendor_code='IPEUSA';
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+
+
+/*----------------------------------*/
+
+avedelay="";
+key=ToUpper(warehouse_code+vendor_code);
+if(HasKey($Dic.c_itemLocation.SourceLocationFile, key),
+	arrayData=$Dic.c_itemLocation.SourceLocationFile[key];
+	avedelay=IfNull(arrayData[6],"");
+);
+
+avedelay
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">MAX_CYCLEDELAY	&lt;trans&gt;
+
+warehouse_code=Whs?code;//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Whs?code);
+vendor_code=Vendor?code;//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Vendor?code);
+
+Data="";
+
+/*----------TESTING----------------*/
+
+//warehouse_code="B7";
+//vendor_code='IPEUSA';
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+
+
+/*----------------------------------*/
+key=ToUpper(warehouse_code+vendor_code);
+if(HasKey($Dic.c_itemLocation.SourceLocationFile, key),
+	arrayData=$Dic.c_itemLocation.SourceLocationFile[key];
+	Data=IfNull(arrayData[7],"");
+);
+
+Data
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">QATIME	&lt;trans&gt;
+
+
+warehouse_code=Whs?code;//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Whs?code);
+vendor_code=Vendor?code;//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Vendor?code);
+
+Data="";
+
+
+/*----------TESTING----------------*/
+
+//warehouse_code="b7";
+//vendor_code='vinper';
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+
+
+/*----------------------------------*/
+key=ToUpper(warehouse_code+vendor_code);
+if(HasKey($Dic.c_itemLocation.SourceLocationFile, key),
+	arrayData=$Dic.c_itemLocation.SourceLocationFile[key];
+	Data=IfNull(arrayData[8],"");
+);
+
+Data
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">SERVICETIME	&lt;trans&gt;
+
+warehouse_code=Whs?code;//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Whs?code);
+vendor_code=Vendor?code;//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Vendor?code);
+
+Data="";
+
+/*----------TESTING----------------*/
+
+//warehouse_code="b7";
+//vendor_code='vinper';
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+
+
+/*----------------------------------*/
+key=ToUpper(warehouse_code+vendor_code);
+if(HasKey($Dic.c_itemLocation.SourceLocationFile, key),
+	arrayData=$Dic.c_itemLocation.SourceLocationFile[key];
+	Data=IfNull(arrayData[9],"");
+);
+
+Data
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">TRANSIT_TIME	&lt;trans&gt;
+warehouse_code=Whs?code;//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Whs?code);
+vendor_code=Vendor?code;//FindByPos(SourceInstanceCount(),PUB:item.PUB:item?whs.Vendor?code);
+
+Data="";
+
+/*----------TESTING----------------*/
+
+//warehouse_code="b7";
+//vendor_code='vinper';
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+
+
+/*----------------------------------*/
+key=ToUpper(warehouse_code+vendor_code);
+if(HasKey($Dic.c_itemLocation.SourceLocationFile, key),
+	arrayData=$Dic.c_itemLocation.SourceLocationFile[key];
+	Data=IfNull(arrayData[10],"");
+);
+
+Data
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">MINRESINT	&lt;trans&gt;
+""
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">MINRESLOT	&lt;trans&gt;
+Econ?Ord?Qty
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">INCRESLOT	&lt;trans&gt;
+Econ?Ord?Qty
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">CTRL_TYPE	&lt;trans&gt;
+class = Class;
+
+If(class == 'A' || class == 'B' || class == 'T',0,6)
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">FIXED_LEVEL	&lt;trans&gt;
+""
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">FIXED_LEVEL_TRG	&lt;trans&gt;
+""
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">LOSTSALESCOEFF	&lt;trans&gt;
+""
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">BUY_PLANNER	&lt;trans&gt;
+BuyerCode
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

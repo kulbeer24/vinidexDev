@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="00762ad9-3a82-4459-91ae-5d460ba87c62" Name="1.0 C_MASTERFILE:Common_Run">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="00762ad9-3a82-4459-91ae-5d460ba87c62"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+
+//$LoadedProductGroup=false;
+////Run DB operation for the excel file and create dictionary
+//DBOperationandDictionaryCreation=RunOperation("op.ad4ffb9f-ee83-4c4d-b9fd-ebde448f6c1c");
+//
+//if($LoadedProductGroup,
+//			//Create C_MASTERFILE
+//			RunOperation("op.3add8bc2-0766-4e6d-a47d-fca7de4d555c")
+//,	
+//			//else
+//			RaiseError("Issue occured when trying to create dictionary from Product group file")
+//);
+
+//Create C_MASTERFILE
+	RunOperation("op.3add8bc2-0766-4e6d-a47d-fca7de4d555c")
+&lt;/trans&gt;</konga.string>
+</Entity>

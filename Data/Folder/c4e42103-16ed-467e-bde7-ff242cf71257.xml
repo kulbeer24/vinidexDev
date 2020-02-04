@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Folder">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="c4e42103-16ed-467e-bde7-ff242cf71257" Name="backup">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="folder_id" value="c4e42103-16ed-467e-bde7-ff242cf71257"/>
+    <Item key="protected" value="false"/>
+  </Properties>
+</Entity>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="01c3b1a7-f2dc-4dd9-8c29-f0aedfb8a842" Name="print item">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="01c3b1a7-f2dc-4dd9-8c29-f0aedfb8a842"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+//WriteToOperationLog($item);
+&lt;/trans&gt;</konga.string>
+</Entity>

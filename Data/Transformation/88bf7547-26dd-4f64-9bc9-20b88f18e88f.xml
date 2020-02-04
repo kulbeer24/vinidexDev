@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Transformation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="88bf7547-26dd-4f64-9bc9-20b88f18e88f" Name="13 C_MICROAREAS: txt to txt">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="natureofsource" value="Flat"/>
+    <Item key="natureoftarget" value="Flat"/>
+    <Item key="NoSourceDataUsedInMapping" value="0"/>
+    <Item key="sfdc_edgemart_structure_guid" value=""/>
+    <Item key="source_text_doc" value="9fb491bc-ee54-4483-8a47-f719ceadfbf3"/>
+    <Item key="source_type_id" value="1"/>
+    <Item key="target_text_doc" value="4273c30e-8d96-4281-b518-ca4cf7f5e505"/>
+    <Item key="target_type_id" value="1"/>
+    <Item key="transformation_id" value="88bf7547-26dd-4f64-9bc9-20b88f18e88f"/>
+  </Properties>
+  <InputStructure docId="9fb491bc-ee54-4483-8a47-f719ceadfbf3"/>
+  <OutputStructure docId="4273c30e-8d96-4281-b518-ca4cf7f5e505"/>
+  <Mappings>
+    <Mapping>
+      <konga.string name="expr">[]	[]</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">/PRECONDITION/	&lt;trans&gt;
+condition=false;
+
+key=ToUpper(Customer_cust_no+"_"+Customer_St+"_"+Customer_BU_entity+"_"+Customer_ps_site_loc);
+
+//using the combination above to create a key to reduce duplication
+if(!HasKey($Dic.C_Microarea.DataDictionary,key),
+	condition=true;
+	AddToDict($Dic.C_Microarea.DataDictionary,key,key)
+);
+
+condition
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">MicroArea	&lt;trans&gt;
+/*------------TeST-----*/
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+/*------------End TeST-----*/
+
+/*------------TeST-----*/
+//RunOperation("op.c90bd81a-b986-4dc8-8c5a-de10fb349fde");
+/*------------End TeST-----*/
+
+
+siteDec='';
+
+state=ToUpper(Customer_St);
+stateDesc='';
+
+if(HasKey($Dic.C_MICROAREAS.StateLookup,state),
+		stateDesc=$Dic.C_MICROAREAS.StateLookup[state];
+	);
+
+
+key= ToUpper(Customer_ps_site_loc);
+
+//default - logic: Take the value found in CUSTOMER.PS-SITE-LOC, match it to Column L in the 
+//Site Source File and return the corresponding value in Column B of the Site source file - if no match
+// found in column L, please use customer.ps-site-loc value
+siteDec=Customer_ps_site_loc;
+
+if(Length($Dic.C_Microareas.srclocation)&gt;0 &amp;&amp; HasKey($Dic.C_Microareas.srclocation, key),
+	siteDec=$Dic.C_Microareas.srclocation[key];
+);
+
+
+/**-Customer.NO &amp; "_" &amp;
+Take Value from CUSTOMER.ST Match it column A in State Lookup File and Return Column B &amp; "_" &amp;
+CUSTOMER.BU-ENTITY &amp; "_" &amp;
+(result of logic applied in col D)
+---**/
+
+Customer_cust_no+"_"+stateDesc+"_"+Customer_BU_entity+"_"+siteDec
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+    <Mapping>
+      <konga.string name="expr">Area	&lt;trans&gt;
+
+
+/*----------StartTest--------*/
+//RunOperation("op.c3d49b2e-ab8b-430e-8ef8-ce8e85028876");
+/*-----------End Test--------*/
+
+/*----------StartTest--------*/
+//RunOperation("op.c90bd81a-b986-4dc8-8c5a-de10fb349fde");
+/*-----------End Test--------*/
+
+state=ToUpper(Customer_St);
+stateDesc='';
+
+if(HasKey($Dic.C_MICROAREAS.StateLookup,state),
+		stateDesc=$Dic.C_MICROAREAS.StateLookup[state];
+	);
+
+
+siteDec='';
+
+key= ToUpper(Customer_ps_site_loc);
+
+//default value
+siteDec=Customer_ps_site_loc;
+
+if(Length($Dic.C_Microareas.srclocation)&gt;0 &amp;&amp; HasKey($Dic.C_Microareas.srclocation, key),
+	siteDec=$Dic.C_Microareas.srclocation[key];
+);
+
+/*---
+Take Value from CUSTOMER.ST Match it column A in State Lookup File and Return Column B &amp; "_" &amp;
+CUSTOMER.BU-ENTITY &amp; "_" &amp; (Result of logic in Column D)
+column D: Please apply the same logic to look up the Source location file for the Customer.PS-SITE-LOC field as per other extracts
+*/
+stateDesc+"_"+Customer_BU_entity+"_"+siteDec;
+&lt;/trans&gt;</konga.string>
+    </Mapping>
+  </Mappings>
+  <InvalidMappings/>
+  <RenamedNodes/>
+</Entity>

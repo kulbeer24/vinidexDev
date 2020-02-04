@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Operation">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="e0612b0e-89d8-4a02-9f62-7354e65809e3" Name="2.1 ProductSource: Excel Transformation">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="chunk_size" value="0"/>
+    <Item key="debug_mode_until" value=""/>
+    <Item key="description" value=""/>
+    <Item key="failure_message_id" value="e9b4e4ce-b495-4b3c-93bc-d10d1bc25b46"/>
+    <Item key="ignore_history" value="1"/>
+    <Item key="LogLevel" value="Everything"/>
+    <Item key="max_number_of_threads" value="1"/>
+    <Item key="operation_id" value="e0612b0e-89d8-4a02-9f62-7354e65809e3"/>
+    <Item key="operation_type_id" value="3"/>
+    <Item key="run_success_op_if_no_source_files" value="0"/>
+    <Item key="schedule_policy" value="skip_if_running"/>
+    <Item key="source_chunk_node" value=""/>
+    <Item key="source_id" value="a84b5dc1-7e58-4298-819f-ada036a786d1"/>
+    <Item key="target_chunk_node" value=""/>
+    <Item key="target_chunk_size" value="0"/>
+    <Item key="target_id" value="eab42376-3c77-4e7e-aead-b5f2673d9449"/>
+    <Item key="timeoutseconds" value="7200"/>
+    <Item key="timeoutuiunit" value="HOURS"/>
+    <Item key="trace" value="1"/>
+    <Item key="validate_source_text_file" value="0"/>
+  </Properties>
+  <Pipeline opType="Transformation">
+    <Activities>
+      <SCRIPT activityId="d580ed24-30f1-4ebe-907b-40b741c8b48b" contentId="0afb65ec-3864-41f3-854b-934d00bf81fa" role="Script" type="23"/>
+      <SOURCE activityId="6ed3d267-c1f1-4927-a446-4a424f2ec278" contentId="a84b5dc1-7e58-4298-819f-ada036a786d1" role="Source" type="2"/>
+      <TRANSFORMATION activityId="7fdc112f-71e3-4003-a671-ba607f0febc5" contentId="3068394f-c565-4398-9e06-120d1237ec7d" role="Transformation" type="4"/>
+      <TARGET activityId="6fd1fa3f-9f3a-44ef-a963-b5f79db4ebef" contentId="eab42376-3c77-4e7e-aead-b5f2673d9449" role="Target" type="3"/>
+      <SCRIPT activityId="8812b6a2-611e-48f7-a2d2-8dc8e8def1e7" contentId="4bcd112f-9ede-4f45-943d-e9399dbb6c76" role="Script" type="23"/>
+    </Activities>
+  </Pipeline>
+  <Siblings/>
+</Entity>

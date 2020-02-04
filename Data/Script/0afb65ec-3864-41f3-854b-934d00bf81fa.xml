@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Entity type="Script">
+  <Header Deleted="false" DeployDirty="false" Deployed="true" HasMoved="false" ID="0afb65ec-3864-41f3-854b-934d00bf81fa" Name="2.1 Product Source: Dictionary Creation">
+    <konga.string name="Description"/>
+  </Header>
+  <Properties>
+    <Item key="script_condition" value="0"/>
+    <Item key="script_id" value="0afb65ec-3864-41f3-854b-934d00bf81fa"/>
+  </Properties>
+  <konga.string name="script">&lt;trans&gt;
+
+$Dic.C_masterfile.FreeAttr1=Dict();
+
+$Dic.C_masterfile.FreeAttr2=Dict();
+
+$Dic.C_masterfile.FreeAttr3=Dict();
+
+$Dic.C_masterfile.FreeAttr5=Dict();
+
+$Dic.C_masterfile.FreeAttr6=Dict();
+
+$Dic.C_prodfams=Dict();
+
+$Dic.C_macrofams=Dict();
+
+$Dic.C_Freeattr_item2=Dict();
+$Dic.c_freeattr_item6=Dict();
+$Dic.C_freeattr_item_3=Dict();
+&lt;/trans&gt;</konga.string>
+</Entity>
